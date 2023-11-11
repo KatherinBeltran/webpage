@@ -335,6 +335,31 @@ return [
                     'icon'        => 'fa fa-upload',
                     'can' => 'cargar.index',
                 ],
+                [
+                    'text'        => 'Cobertura bruta',
+                    'url'         => 'cob-bruta',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'cob-bruta.index',
+                ],
+                [
+                    'text'        => 'Cobertura neta',
+                    'url'         => 'cob-neta',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'cob-neta.index',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Dashboard',
+            'icon'    => 'fas fa-fw fa-share',
+            'can' => 'home',
+            'submenu' => [
+                [
+                    'text'        => 'Reporte cobertura',
+                    'url'         => 'cob-dash',
+                    'icon'        => 'fa fa-angle-double-down',
+                    'can' => 'cob-dash.index',
+                ],
             ],
         ],
     ],
