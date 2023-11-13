@@ -336,6 +336,12 @@ return [
                     'can' => 'cargar.index',
                 ],
                 [
+                    'text'        => 'Matricula sector',
+                    'url'         => 'mat-sectors',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'mat-sectors.index',
+                ],
+                [
                     'text'        => 'Cobertura bruta',
                     'url'         => 'cob-bruta',
                     'icon'        => 'fa fa-table',
@@ -355,9 +361,15 @@ return [
             'can' => 'home',
             'submenu' => [
                 [
+                    'text'        => 'Reporte matricula',
+                    'url'         => 'mat-dash',
+                    'icon'        => 'fa fa-angle-double-down',
+                    'can' => 'mat-dash.index',
+                ],
+                [
                     'text'        => 'Reporte cobertura',
                     'url'         => 'cob-dash',
-                    'icon'        => 'fa fa-angle-double-down',
+                    'icon'        => 'fa fa-angle-double-left',
                     'can' => 'cob-dash.index',
                 ],
             ],

@@ -108,8 +108,8 @@
                 datasets: [
                     {
                         label: valoresAñoAnterior.año,
-                        backgroundColor: 'rgba(192, 57, 43)',
-                        borderColor: 'rgba(192, 57, 43)',
+                        backgroundColor: 'rgba(214, 84.5, 71)',
+                        borderColor: 'rgba(214, 84.5, 71)',
                         borderWidth: 1,
                         data: datosAñoAnterior
                     },
@@ -228,8 +228,8 @@
                 datasets: [
                     {
                         label: valoresAñoAnterior.año,
-                        backgroundColor: 'rgba(192, 57, 43)',
-                        borderColor: 'rgba(192, 57, 43)',
+                        backgroundColor: 'rgba(214, 84.5, 71)',
+                        borderColor: 'rgba(214, 84.5, 71)',
                         borderWidth: 1,
                         data: datosAñoAnterior
                     },

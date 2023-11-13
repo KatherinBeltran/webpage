@@ -32,6 +32,12 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name' => 'cargar.index', 'description' => 'Cargar datos'])->syncRoles([$role1]);
 
+        Permission::create(['name' => 'mat-sectors.index', 'description' => 'Ver listado de matricula por grados según sector'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'mat-sectors.create', 'description' => 'Registrar nueva matricula por grados según sector'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'mat-sectors.show', 'description' => 'Ver matricula por grados según sector'])->syncRoles([$role1]);
+        Permission::create(['name' => 'mat-sectors.edit', 'description' => 'Editar matricula por grados según sector'])->syncRoles([$role1]);
+        Permission::create(['name' => 'mat-sectors.destroy', 'description' => 'Eliminar matricula por grados según sector'])->syncRoles([$role1]);
+
         Permission::create(['name' => 'cob-bruta.index', 'description' => 'Ver listado de cobertura bruta'])->syncRoles([$role1]); 
         Permission::create(['name' => 'cob-bruta.create', 'description' => 'Registrar nueva cobertura bruta'])->syncRoles([$role1]); 
         Permission::create(['name' => 'cob-bruta.show', 'description' => 'Ver cobertura bruta'])->syncRoles([$role1]);
@@ -43,6 +49,8 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'cob-neta.show', 'description' => 'Ver cobertura neta'])->syncRoles([$role1]);
         Permission::create(['name' => 'cob-neta.edit', 'description' => 'Editar cobertura neta'])->syncRoles([$role1]);
         Permission::create(['name' => 'cob-neta.destroy', 'description' => 'Eliminar cobertura neta'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matricula'])->syncRoles([$role1,$role2]);
 
         Permission::create(['name' => 'cob-dash.index', 'description' => 'Ver dashboard reporte cobertura'])->syncRoles([$role1,$role2]);
     }

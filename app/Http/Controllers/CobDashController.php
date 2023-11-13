@@ -23,7 +23,6 @@ class CobDashController extends Controller
                                 DB::raw('AVG(cobertura_neta_secundaria) as avg_secundaria'),
                                 DB::raw('AVG(cobertura_neta_media) as avg_media'),
                                 DB::raw('AVG(cobertura_neta_basica) as avg_basica'))
-            ->where('nombre_etc', 'SOACHA')
             ->groupBy('año')
             ->get();
 
@@ -37,7 +36,6 @@ class CobDashController extends Controller
 
         $datosNeta = DB::table('cob_neta')
             ->select('año', 'cobertura_neta_transicion', 'cobertura_neta_primaria', 'cobertura_neta_secundaria', 'cobertura_neta_media', 'cobertura_neta_basica')
-            ->where('nombre_etc', 'SOACHA')
             ->orderBy('año', 'desc')
             ->take(2)
             ->get();
@@ -49,7 +47,6 @@ class CobDashController extends Controller
                                 DB::raw('AVG(cobertura_bruta_secundaria) as avg_secundaria'),
                                 DB::raw('AVG(cobertura_bruta_media) as avg_media'),
                                 DB::raw('AVG(cobertura_bruta_basica) as avg_basica'))
-            ->where('nombre_etc', 'SOACHA')
             ->groupBy('año')
             ->get();
 
@@ -63,7 +60,6 @@ class CobDashController extends Controller
 
         $datosBruta = DB::table('cob_bruta')
             ->select('año', 'cobertura_bruta_transicion', 'cobertura_bruta_primaria', 'cobertura_bruta_secundaria', 'cobertura_bruta_media', 'cobertura_bruta_basica')
-            ->where('nombre_etc', 'SOACHA')
             ->orderBy('año', 'desc')
             ->take(2)
             ->get();

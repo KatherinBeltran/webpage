@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Excel;
 use App\Models\CobBrutum;
 use App\Models\CobNetum;
+use App\Models\MatSector;
 
 class CargaController extends Controller
 {
@@ -26,26 +27,79 @@ class CargaController extends Controller
     {
         if ($request->hasFile('fileDatos')) {
             $path = $request->file('fileDatos')->getRealPath();
-    
+
             // Carga el archivo Excel y obtén un array de todas las hojas
             $excel = Excel::toArray([], $path);
-    
+
+            // Accede a la hoja 'MAT SECTOR'
+            $matSector = $excel[0]; // Primer índice porque es la primera hoja
+
             // Accede a la hoja 'COB BRUTA'
-            $cobBruta = $excel[0]; // Primer índice porque es la primera hoja
-    
-            // Accede a la hoja 'CON_NETA'
-            $conNeta = $excel[1]; // Segundo índice porque es la segunda hoja
-    
+            $cobBruta = $excel[1]; // Segundo índice porque es la segunda hoja
+
+            // Accede a la hoja 'COB NETA'
+            $conNeta = $excel[2]; // Tercer índice porque es la tercera hoja
+
+            // Maneja la hoja 'MAT SECTOR'
+            $this->importarHojaMatSector($matSector);
+            
             // Maneja la hoja 'COB BRUTA'
             $this->importarHojaCobBruta($cobBruta);
-    
-            // Maneja la hoja 'CON_NETA'
+
+            // Maneja la hoja 'COB NETA'
             $this->importarHojaCobNeta($conNeta);
         }
-    
+
         return back();
     }
-    
+
+    private function importarHojaMatSector($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $entidad = $hoja[$i][0];
+
+                // Verifica si la entidad es "SOACHA"
+                if ($entidad === 'SOACHA') {
+                    $grado = $hoja[$i][1];
+
+                    // Itera sobre los años y valores correspondientes
+                    for ($j = 2; $j < count($hoja[$i]); $j += 3) {
+                        $año = $hoja[0][$j]; // Obtiene el año desde la fila de encabezados
+                        $oficial = $hoja[$i][$j];
+                        $contratada = $hoja[$i][$j + 1];
+                        $privada = $hoja[$i][$j + 2];
+
+                        // Busca si ya existe una fila con el mismo valor en 'entidad', 'grado' y 'año'
+                        $datoExistente = MatSector::where('entidad', $entidad)
+                            ->where('grado', $grado)
+                            ->where('año', $año)
+                            ->first();
+
+                        if ($datoExistente) {
+                            // Si ya existe, actualiza los valores
+                            $datoExistente->update([
+                                'oficial' => $oficial,
+                                'contratada' => $contratada,
+                                'privada' => $privada,
+                            ]);
+                        } else {
+                            // Si no existe, crea un nuevo registro
+                            MatSector::create([
+                                'entidad' => $entidad,
+                                'grado' => $grado,
+                                'año' => $año,
+                                'oficial' => $oficial,
+                                'contratada' => $contratada,
+                                'privada' => $privada,
+                            ]);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     private function importarHojaCobBruta($hoja)
     {
@@ -53,6 +107,12 @@ class CargaController extends Controller
             // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
             for ($i = 1; $i < count($hoja); $i++) {
                 $nombre_etc = $hoja[$i][0];
+
+                // Agrega la condición para filtrar por 'nombre_etc' igual a 'SOACHA'
+                if ($nombre_etc !== 'SOACHA') {
+                    continue; // Salta a la siguiente iteración si no cumple la condición
+                }
+
                 $año = $hoja[$i][1];
                 $cobertura_bruta_transicion = $hoja[$i][2];
                 $cobertura_bruta_primaria = $hoja[$i][3];
@@ -97,6 +157,12 @@ class CargaController extends Controller
             for ($i = 1; $i < count($hoja); $i++) {
                 $nombre_etc = $hoja[$i][0];
                 $año = $hoja[$i][1];
+
+                // Agrega la condición para filtrar por 'nombre_etc' igual a 'SOACHA'
+                if ($nombre_etc !== 'SOACHA') {
+                    continue; // Salta a la siguiente iteración si no cumple la condición
+                }
+
                 $cobertura_neta_transicion = $hoja[$i][2];
                 $cobertura_neta_primaria = $hoja[$i][3];
                 $cobertura_neta_secundaria = $hoja[$i][4];
