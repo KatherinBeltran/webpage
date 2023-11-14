@@ -3,10 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Lista de matrícula grupos etnicos</h1>
+    <h1>Lista de trayectoria por grados</h1>
 
     <div class="float-right">
-        <a href="{{ route('mat-etnicos.create') }}" class="btn btn-block btn-outline-secondary btn-sm float-right"  data-placement="left">
+        <a href="{{ route('tra-grados.create') }}" class="btn btn-block btn-outline-secondary btn-sm float-right"  data-placement="left">
             {{ __('Nuevo') }}
         </a>
     </div>
@@ -37,19 +37,19 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($matEtnicos as $matEtnico)
+            @foreach ($traGrados as $traGrado)
                 <tr>
                     <td>{{ ++$i }}</td>
                     
-                    <td>{{ $matEtnico->entidad }}</td>
-                    <td>{{ $matEtnico->etnia }}</td>
-                    <td>{{ $matEtnico->año }}</td>
-                    <td>{{ $matEtnico->matricula }}</td>
+                    <td>{{ $traGrado->entidad }}</td>
+                    <td>{{ $traGrado->grado }}</td>
+                    <td>{{ $traGrado->año }}</td>
+                    <td>{{ $traGrado->matricula }}</td>
 
                     <td>
-                        <form action="{{ route('mat-etnicos.destroy',$matEtnico->id) }}" method="POST">
-                            <a class="btn btn-sm btn-secundary" href="{{ route('mat-etnicos.show',$matEtnico->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('') }}</a>
-                            <a class="btn btn-sm btn-secundary" href="{{ route('mat-etnicos.edit',$matEtnico->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('') }}</a>
+                        <form action="{{ route('tra-grados.destroy',$traGrado->id) }}" method="POST">
+                            <a class="btn btn-sm btn-secundary" href="{{ route('tra-grados.show',$traGrado->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('') }}</a>
+                            <a class="btn btn-sm btn-secundary" href="{{ route('tra-grados.edit',$traGrado->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('') }}</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-secundary btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('') }}</button>

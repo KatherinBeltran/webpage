@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-right">
-                            <a class="btn btn-secundary border border-secondary btn-sm" href="{{ route('mat-etnicos.index') }}"> {{ __('Volver') }}</a>
+                            <a class="btn btn-secundary border border-secondary btn-sm" href="{{ route('tra-grados.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
@@ -21,19 +21,19 @@
                         
                         <div class="form-group">
                             <strong>Entidad:</strong>
-                            {{ $matEtnico->entidad }}
+                            {{ $traGrado->entidad }}
                         </div>
                         <div class="form-group">
-                            <strong>Etnia:</strong>
-                            {{ $matEtnico->etnia }}
+                            <strong>Grado:</strong>
+                            {{ $traGrado->grado }}
                         </div>
                         <div class="form-group">
                             <strong>Año:</strong>
-                            {{ $matEtnico->año }}
+                            {{ $traGrado->año }}
                         </div>
                         <div class="form-group">
                             <strong>Valor:</strong>
-                            {{ $matEtnico->matricula }}
+                            {{ $traGrado->matricula }}
                         </div>
 
                     </div>

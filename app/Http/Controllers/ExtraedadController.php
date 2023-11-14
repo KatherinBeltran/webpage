@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MatSectorZona;
+use App\Models\Extraedad;
 use Illuminate\Http\Request;
 
 /**
- * Class MatSectorZonaController
+ * Class ExtraedadController
  * @package App\Http\Controllers
  */
-class MatSectorZonaController extends Controller
+class ExtraedadController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:mat-sector-zonas.index')->only('index');
-        $this->middleware('can:mat-sector-zonas.create')->only('create', 'store');
-        $this->middleware('can:mat-sector-zonas.show')->only('show');
-        $this->middleware('can:mat-sector-zonas.edit')->only('edit', 'update');
-        $this->middleware('can:mat-sector-zonas.destroy')->only('destroy');
+        $this->middleware('can:extraedads.index')->only('index');
+        $this->middleware('can:extraedads.create')->only('create', 'store');
+        $this->middleware('can:extraedads.show')->only('show');
+        $this->middleware('can:extraedads.edit')->only('edit', 'update');
+        $this->middleware('can:extraedads.destroy')->only('destroy');
     }
     /**
      * Display a listing of the resource.
@@ -26,10 +26,10 @@ class MatSectorZonaController extends Controller
      */
     public function index()
     {
-        $matSectorZonas = MatSectorZona::paginate(10000);
+        $extraedads = Extraedad::paginate(10000);
 
-        return view('mat-sector-zona.index', compact('matSectorZonas'))
-            ->with('i', (request()->input('page', 1) - 1) * $matSectorZonas->perPage());
+        return view('extraedad.index', compact('extraedads'))
+            ->with('i', (request()->input('page', 1) - 1) * $extraedads->perPage());
     }
 
     /**
@@ -39,8 +39,8 @@ class MatSectorZonaController extends Controller
      */
     public function create()
     {
-        $matSectorZona = new MatSectorZona();
-        return view('mat-sector-zona.create', compact('matSectorZona'));
+        $extraedad = new Extraedad();
+        return view('extraedad.create', compact('extraedad'));
     }
 
     /**
@@ -51,14 +51,14 @@ class MatSectorZonaController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(MatSectorZona::$rules);
+        request()->validate(Extraedad::$rules);
 
-        $matSectorZona = MatSectorZona::create($request->all());
+        $extraedad = Extraedad::create($request->all());
 
-        return redirect()->route('mat-sector-zonas.index')
+        return redirect()->route('extraedads.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matrícula por grados según sector zona creado exitosamente.
+                                    Registro matrícula según grados y edad creado exitosamente.
                                 </div>');
     }
 
@@ -70,9 +70,9 @@ class MatSectorZonaController extends Controller
      */
     public function show($id)
     {
-        $matSectorZona = MatSectorZona::find($id);
+        $extraedad = Extraedad::find($id);
 
-        return view('mat-sector-zona.show', compact('matSectorZona'));
+        return view('extraedad.show', compact('extraedad'));
     }
 
     /**
@@ -83,28 +83,28 @@ class MatSectorZonaController extends Controller
      */
     public function edit($id)
     {
-        $matSectorZona = MatSectorZona::find($id);
+        $extraedad = Extraedad::find($id);
 
-        return view('mat-sector-zona.edit', compact('matSectorZona'));
+        return view('extraedad.edit', compact('extraedad'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  MatSectorZona $matSectorZona
+     * @param  Extraedad $extraedad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MatSectorZona $matSectorZona)
+    public function update(Request $request, Extraedad $extraedad)
     {
-        request()->validate(MatSectorZona::$rules);
+        request()->validate(Extraedad::$rules);
 
-        $matSectorZona->update($request->all());
+        $extraedad->update($request->all());
 
-        return redirect()->route('mat-sector-zonas.index')
+        return redirect()->route('extraedads.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matrícula por grados según sector zona actualizado exitosamente.
+                                    Registro matrícula según grados y edad actualizado exitosamente.
                                 </div>');
     }
 
@@ -115,12 +115,12 @@ class MatSectorZonaController extends Controller
      */
     public function destroy($id)
     {
-        $matSectorZona = MatSectorZona::find($id)->delete();
+        $extraedad = Extraedad::find($id)->delete();
 
-        return redirect()->route('mat-sector-zonas.index')
+        return redirect()->route('extraedads.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matrícula por grados según sector zona eliminado exitosamente.
+                                    Registro matrícula según grados y edad eliminado exitosamente.
                                 </div>');
     }
 }

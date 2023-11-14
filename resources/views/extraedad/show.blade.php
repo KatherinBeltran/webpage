@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-right">
-                            <a class="btn btn-secundary border border-secondary btn-sm" href="{{ route('mat-etnicos.index') }}"> {{ __('Volver') }}</a>
+                            <a class="btn btn-secundary border border-secondary btn-sm" href="{{ route('extraedads.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
@@ -28,8 +28,8 @@
                             {{ $matEtnico->etnia }}
                         </div>
                         <div class="form-group">
-                            <strong>Año:</strong>
-                            {{ $matEtnico->año }}
+                            <strong>Edad:</strong>
+                            {{ $matEtnico->edad }}
                         </div>
                         <div class="form-group">
                             <strong>Valor:</strong>

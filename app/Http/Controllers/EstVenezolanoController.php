@@ -58,7 +58,7 @@ class EstVenezolanoController extends Controller
         return redirect()->route('est-venezolanos.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula estudiantes venezolanos creado exitosamente.
+                                    Registro matrícula estudiantes venezolanos creado exitosamente.
                                 </div>');
     }
 
@@ -104,7 +104,7 @@ class EstVenezolanoController extends Controller
         return redirect()->route('est-venezolanos.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula estudiantes venezolanos actualizado exitosamente.
+                                    Registro matrícula estudiantes venezolanos actualizado exitosamente.
                                 </div>');
     }
 
@@ -120,7 +120,7 @@ class EstVenezolanoController extends Controller
         return redirect()->route('est-venezolanos.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula estudiantes venezolanos eliminado exitosamente.
+                                    Registro matrícula estudiantes venezolanos eliminado exitosamente.
                                 </div>');
     }
 }

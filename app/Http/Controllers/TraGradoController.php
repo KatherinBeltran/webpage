@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MatSectorZona;
+use App\Models\TraGrado;
 use Illuminate\Http\Request;
 
 /**
- * Class MatSectorZonaController
+ * Class TraGradoController
  * @package App\Http\Controllers
  */
-class MatSectorZonaController extends Controller
+class TraGradoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:mat-sector-zonas.index')->only('index');
-        $this->middleware('can:mat-sector-zonas.create')->only('create', 'store');
-        $this->middleware('can:mat-sector-zonas.show')->only('show');
-        $this->middleware('can:mat-sector-zonas.edit')->only('edit', 'update');
-        $this->middleware('can:mat-sector-zonas.destroy')->only('destroy');
+        $this->middleware('can:tra-grados.index')->only('index');
+        $this->middleware('can:tra-grados.create')->only('create', 'store');
+        $this->middleware('can:tra-grados.show')->only('show');
+        $this->middleware('can:tra-grados.edit')->only('edit', 'update');
+        $this->middleware('can:tra-grados.destroy')->only('destroy');
     }
     /**
      * Display a listing of the resource.
@@ -26,10 +26,10 @@ class MatSectorZonaController extends Controller
      */
     public function index()
     {
-        $matSectorZonas = MatSectorZona::paginate(10000);
+        $traGrados = TraGrado::paginate(10000);
 
-        return view('mat-sector-zona.index', compact('matSectorZonas'))
-            ->with('i', (request()->input('page', 1) - 1) * $matSectorZonas->perPage());
+        return view('tra-grado.index', compact('traGrados'))
+            ->with('i', (request()->input('page', 1) - 1) * $traGrados->perPage());
     }
 
     /**
@@ -39,8 +39,8 @@ class MatSectorZonaController extends Controller
      */
     public function create()
     {
-        $matSectorZona = new MatSectorZona();
-        return view('mat-sector-zona.create', compact('matSectorZona'));
+        $traGrado = new TraGrado();
+        return view('tra-grado.create', compact('traGrado'));
     }
 
     /**
@@ -51,14 +51,14 @@ class MatSectorZonaController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(MatSectorZona::$rules);
+        request()->validate(TraGrado::$rules);
 
-        $matSectorZona = MatSectorZona::create($request->all());
+        $traGrado = TraGrado::create($request->all());
 
-        return redirect()->route('mat-sector-zonas.index')
+        return redirect()->route('tra-grados.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matrícula por grados según sector zona creado exitosamente.
+                                    Registro trayectoria por grados creado exitosamente.
                                 </div>');
     }
 
@@ -70,9 +70,9 @@ class MatSectorZonaController extends Controller
      */
     public function show($id)
     {
-        $matSectorZona = MatSectorZona::find($id);
+        $traGrado = TraGrado::find($id);
 
-        return view('mat-sector-zona.show', compact('matSectorZona'));
+        return view('tra-grado.show', compact('traGrado'));
     }
 
     /**
@@ -83,28 +83,28 @@ class MatSectorZonaController extends Controller
      */
     public function edit($id)
     {
-        $matSectorZona = MatSectorZona::find($id);
+        $traGrado = TraGrado::find($id);
 
-        return view('mat-sector-zona.edit', compact('matSectorZona'));
+        return view('tra-grado.edit', compact('traGrado'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  MatSectorZona $matSectorZona
+     * @param  TraGrado $traGrado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MatSectorZona $matSectorZona)
+    public function update(Request $request, TraGrado $traGrado)
     {
-        request()->validate(MatSectorZona::$rules);
+        request()->validate(TraGrado::$rules);
 
-        $matSectorZona->update($request->all());
+        $traGrado->update($request->all());
 
-        return redirect()->route('mat-sector-zonas.index')
+        return redirect()->route('tra-grados.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matrícula por grados según sector zona actualizado exitosamente.
+                                    Registro trayectoria por grados actualizado exitosamente.
                                 </div>');
     }
 
@@ -115,12 +115,12 @@ class MatSectorZonaController extends Controller
      */
     public function destroy($id)
     {
-        $matSectorZona = MatSectorZona::find($id)->delete();
+        $traGrado = TraGrado::find($id)->delete();
 
-        return redirect()->route('mat-sector-zonas.index')
+        return redirect()->route('tra-grados.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matrícula por grados según sector zona eliminado exitosamente.
+                                    Registro trayectoria por grados eliminado exitosamente.
                                 </div>');
     }
 }

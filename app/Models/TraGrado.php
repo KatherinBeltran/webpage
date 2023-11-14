@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class MatEtnico
+ * Class TraGrado
  *
  * @property $id
  * @property $entidad
- * @property $etnia
+ * @property $grado
  * @property $año
  * @property $matricula
  * @property $created_at
@@ -18,12 +18,13 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class MatEtnico extends Model
+class TraGrado extends Model
 {
+  protected $table = 'tra_grado';
     
     static $rules = [
 		'entidad' => 'required',
-		'etnia' => 'required',
+		'grado' => 'required',
 		'año' => 'required',
 		'matricula' => 'required',
     ];
@@ -35,7 +36,7 @@ class MatEtnico extends Model
      *
      * @var array
      */
-    protected $fillable = ['entidad','etnia','año','matricula'];
+    protected $fillable = ['entidad','grado','año','matricula'];
 
 
 

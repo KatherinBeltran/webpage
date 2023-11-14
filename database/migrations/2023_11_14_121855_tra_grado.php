@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mat_etnicos', function (Blueprint $table) {
+        Schema::create('tra_grado', function (Blueprint $table) {
             $table->increments('id');
             $table->string('entidad');
-            $table->string('etnia');
+            $table->string('grado');
             $table->integer('año');
             $table->integer('matricula');
             $table->timestamps();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mat_etnicos');
+        Schema::dropIfExists('tra_grado');
     }
 };

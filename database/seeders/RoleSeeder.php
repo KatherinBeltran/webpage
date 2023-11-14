@@ -50,11 +50,29 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'mat-etnicos.edit', 'description' => 'Editar matrícula grupos etnicos'])->syncRoles([$role1]);
         Permission::create(['name' => 'mat-etnicos.destroy', 'description' => 'Eliminar matrícula grupos etnicos'])->syncRoles([$role1]);
 
+        Permission::create(['name' => 'extraedads.index', 'description' => 'Ver listado de matrícula según grados y edad'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'extraedads.create', 'description' => 'Registrar nueva matrícula según grados y edad'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'extraedads.show', 'description' => 'Ver matrícula según grados y edad'])->syncRoles([$role1]);
+        Permission::create(['name' => 'extraedads.edit', 'description' => 'Editar matrícula según grados y edad'])->syncRoles([$role1]);
+        Permission::create(['name' => 'extraedads.destroy', 'description' => 'Eliminar matrícula según grados y edad'])->syncRoles([$role1]);
+
         Permission::create(['name' => 'est-venezolanos.index', 'description' => 'Ver listado de matrícula estudiantes venezolanos'])->syncRoles([$role1]); 
         Permission::create(['name' => 'est-venezolanos.create', 'description' => 'Registrar nueva matrícula estudiantes venezolanos'])->syncRoles([$role1]); 
         Permission::create(['name' => 'est-venezolanos.show', 'description' => 'Ver matrícula estudiantes venezolanos'])->syncRoles([$role1]);
         Permission::create(['name' => 'est-venezolanos.edit', 'description' => 'Editar matrícula estudiantes venezolanos'])->syncRoles([$role1]);
         Permission::create(['name' => 'est-venezolanos.destroy', 'description' => 'Eliminar matrícula estudiantes venezolanos'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'tra-grados.index', 'description' => 'Ver listado de trayectoria por grados'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'tra-grados.create', 'description' => 'Registrar nueva trayectoria por grados'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'tra-grados.show', 'description' => 'Ver trayectoria por grados'])->syncRoles([$role1]);
+        Permission::create(['name' => 'tra-grados.edit', 'description' => 'Editar trayectoria por grados'])->syncRoles([$role1]);
+        Permission::create(['name' => 'tra-grados.destroy', 'description' => 'Eliminar trayectoria por grados'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pob-discapacidads.index', 'description' => 'Ver listado de matrícula población discapacidad'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pob-discapacidads.create', 'description' => 'Registrar nueva matrícula población discapacidad'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pob-discapacidads.show', 'description' => 'Ver matrícula población discapacidad'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pob-discapacidads.edit', 'description' => 'Editar matrícula población discapacidad'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pob-discapacidads.destroy', 'description' => 'Eliminar matrícula población discapacidad'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'cob-bruta.index', 'description' => 'Ver listado de cobertura bruta'])->syncRoles([$role1]); 
         Permission::create(['name' => 'cob-bruta.create', 'description' => 'Registrar nueva cobertura bruta'])->syncRoles([$role1]); 

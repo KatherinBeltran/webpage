@@ -9,6 +9,9 @@ use App\Models\CobNetum;
 use App\Models\MatSector;
 use App\Models\MatEtnico;
 use App\Models\EstVenezolano;
+use App\Models\TraGrado;
+use App\Models\Extraedad;
+use App\Models\PobDiscapacidad;
 
 class CargaController extends Controller
 {
@@ -39,14 +42,23 @@ class CargaController extends Controller
             // Accede a la hoja 'MAT ETNICOS'
             $matEtnicos = $excel[1]; // Segundo índice porque es la segunda hoja
 
+            // Accede a la hoja 'EXTRAEDAD'
+            $extraedad = $excel[2]; // Tercer índice porque es la tercera hoja
+
             // Accede a la hoja 'EST. VENEZONALOS'
-            $estVenezolanos = $excel[2]; // Tercer índice porque es la tercera hoja
+            $estVenezolanos = $excel[3]; // Cuarto índice porque es la cuarta hoja
+
+            // Accede a la hoja 'TRAYECTORIA GRADO'
+            $traGrado = $excel[4]; // Quinto índice porque es la quinta hoja
+
+            // Accede a la hoja 'POB DISCAPACIDAD'
+            $pobDiscapacidad = $excel[5]; // Sexto índice porque es la sexta hoja
 
             // Accede a la hoja 'COB BRUTA'
-            $cobBruta = $excel[3]; // Cuarta índice porque es la cuarta hoja
+            $cobBruta = $excel[6]; // Septimo índice porque es la septima hoja
 
             // Accede a la hoja 'COB NETA'
-            $conNeta = $excel[4]; // Quinta índice porque es la quinta hoja
+            $conNeta = $excel[7]; // Octavo índice porque es la octava hoja
 
             // Maneja la hoja 'MAT SECTOR'
             $this->importarHojaMatSector($matSector);
@@ -54,8 +66,17 @@ class CargaController extends Controller
             // Maneja la hoja 'MAT ETNICOS'
             $this->importarHojaMatEtnicos($matEtnicos);
 
+            // Maneja la hoja 'EXTRAEDAD'
+            $this->importarHojaExtraedad($extraedad);
+
             // Maneja la hoja 'EST. VENEZOLANOS'
             $this->importarHojaEstVenezolanos($estVenezolanos);
+
+            // Maneja la hoja 'TRAYECTORIA GRADO'
+            $this->importarHojaTraGrado($traGrado);
+
+            // Maneja la hoja 'POB DISCAPACIDAD'
+            $this->importarHojaPobDiscapacidad($pobDiscapacidad);
             
             // Maneja la hoja 'COB BRUTA'
             $this->importarHojaCobBruta($cobBruta);
@@ -132,7 +153,7 @@ class CargaController extends Controller
                 // Itera sobre los años y valores correspondientes
                 for ($j = 2; $j < count($hoja[$i]); $j++) {
                     $año = $hoja[0][$j]; // Obtiene el año desde la fila de encabezados
-                    $valor = $hoja[$i][$j];
+                    $matricula = $hoja[$i][$j];
 
                     // Busca si ya existe una fila con el mismo valor en 'entidad', 'etnia' y 'año'
                     $datoExistente = MatEtnico::where('entidad', $entidad)
@@ -143,7 +164,7 @@ class CargaController extends Controller
                     if ($datoExistente) {
                         // Si ya existe, actualiza los valores
                         $datoExistente->update([
-                            'valor' => $valor,
+                            'matricula' => $matricula,
                         ]);
                     } else {
                         // Si no existe, crea un nuevo registro
@@ -151,7 +172,51 @@ class CargaController extends Controller
                             'entidad' => $entidad,
                             'etnia' => $etnia,
                             'año' => $año,
-                            'valor' => $valor,
+                            'matricula' => $matricula,
+                        ]);
+                    }
+                }
+            }
+        }
+    }
+
+    private function importarHojaExtraedad($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $entidad = $hoja[$i][0];
+
+                // Agrega la condición para procesar solo cuando la entidad sea 'SOACHA'
+                if ($entidad !== 'SOACHA') {
+                    continue; // Salta a la siguiente iteración si no cumple la condición
+                }
+
+                $grado = $hoja[$i][1];
+
+                // Itera sobre las edades y valores correspondientes
+                for ($j = 2; $j < count($hoja[$i]); $j++) {
+                    $edad = $hoja[0][$j]; // Obtiene la edad desde la fila de encabezados
+                    $matricula = $hoja[$i][$j];
+
+                    // Busca si ya existe una fila con el mismo valor en 'entidad', 'grado' y 'edad'
+                    $datoExistente = Extraedad::where('entidad', $entidad)
+                        ->where('grado', $grado)
+                        ->where('edad', $edad)
+                        ->first();
+
+                    if ($datoExistente) {
+                        // Si ya existe, actualiza los valores
+                        $datoExistente->update([
+                            'matricula' => $matricula,
+                        ]);
+                    } else {
+                        // Si no existe, crea un nuevo registro
+                        Extraedad::create([
+                            'entidad' => $entidad,
+                            'grado' => $grado,
+                            'edad' => $edad,
+                            'matricula' => $matricula,
                         ]);
                     }
                 }
@@ -201,6 +266,94 @@ class CargaController extends Controller
                                 'privada' => $privada,
                             ]);
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    private function importarHojaTraGrado($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $entidad = $hoja[$i][0];
+
+                // Agrega la condición para procesar solo cuando la entidad sea 'SOACHA'
+                if ($entidad !== 'SOACHA') {
+                    continue; // Salta a la siguiente iteración si no cumple la condición
+                }
+
+                $grado = $hoja[$i][1];
+
+                // Itera sobre los años y valores correspondientes
+                for ($j = 2; $j < count($hoja[$i]); $j++) {
+                    $año = $hoja[0][$j]; // Obtiene el año desde la fila de encabezados
+                    $matricula = $hoja[$i][$j];
+
+                    // Busca si ya existe una fila con el mismo valor en 'entidad', 'grado' y 'año'
+                    $datoExistente = TraGrado::where('entidad', $entidad)
+                        ->where('grado', $grado)
+                        ->where('año', $año)
+                        ->first();
+
+                    if ($datoExistente) {
+                        // Si ya existe, actualiza los valores
+                        $datoExistente->update([
+                            'matricula' => $matricula,
+                        ]);
+                    } else {
+                        // Si no existe, crea un nuevo registro
+                        TraGrado::create([
+                            'entidad' => $entidad,
+                            'grado' => $grado,
+                            'año' => $año,
+                            'matricula' => $matricula,
+                        ]);
+                    }
+                }
+            }
+        }
+    }
+
+    private function importarHojaPobDiscapacidad($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $entidad = $hoja[$i][0];
+
+                // Agrega la condición para procesar solo cuando la entidad sea 'SOACHA'
+                if ($entidad !== 'SOACHA') {
+                    continue; // Salta a la siguiente iteración si no cumple la condición
+                }
+
+                $sector = $hoja[$i][1];
+
+                // Itera sobre los años y valores correspondientes
+                for ($j = 2; $j < count($hoja[$i]); $j++) {
+                    $discapacidad = $hoja[0][$j]; // Obtiene el discapacidad desde la fila de encabezados
+                    $matricula = $hoja[$i][$j];
+
+                    // Busca si ya existe una fila con el mismo valor en 'entidad', 'sector' y 'discapacidad'
+                    $datoExistente = PobDiscapacidad::where('entidad', $entidad)
+                        ->where('sector', $sector)
+                        ->where('discapacidad', $discapacidad)
+                        ->first();
+
+                    if ($datoExistente) {
+                        // Si ya existe, actualiza los valores
+                        $datoExistente->update([
+                            'matricula' => $matricula,
+                        ]);
+                    } else {
+                        // Si no existe, crea un nuevo registro
+                        PobDiscapacidad::create([
+                            'entidad' => $entidad,
+                            'sector' => $sector,
+                            'discapacidad' => $discapacidad,
+                            'matricula' => $matricula,
+                        ]);
                     }
                 }
             }

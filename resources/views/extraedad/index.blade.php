@@ -3,10 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Lista de matrícula grupos etnicos</h1>
+    <h1>Lista de matrícula según grados y edad</h1>
 
     <div class="float-right">
-        <a href="{{ route('mat-etnicos.create') }}" class="btn btn-block btn-outline-secondary btn-sm float-right"  data-placement="left">
+        <a href="{{ route('extraedads.create') }}" class="btn btn-block btn-outline-secondary btn-sm float-right"  data-placement="left">
             {{ __('Nuevo') }}
         </a>
     </div>
@@ -30,26 +30,26 @@
                 <th>No</th>
                                             
                 <th>Entidad</th>
-                <th>Etnia</th>
-                <th>Año</th>
+                <th>Grado</th>
+                <th>Edad</th>
                 <th>Matricula</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($matEtnicos as $matEtnico)
+            @foreach ($extraedads as $extraedad)
                 <tr>
                     <td>{{ ++$i }}</td>
                     
-                    <td>{{ $matEtnico->entidad }}</td>
-                    <td>{{ $matEtnico->etnia }}</td>
-                    <td>{{ $matEtnico->año }}</td>
-                    <td>{{ $matEtnico->matricula }}</td>
+                    <td>{{ $extraedad->entidad }}</td>
+                    <td>{{ $extraedad->grado }}</td>
+                    <td>{{ $extraedad->edad }}</td>
+                    <td>{{ $extraedad->matricula }}</td>
 
                     <td>
-                        <form action="{{ route('mat-etnicos.destroy',$matEtnico->id) }}" method="POST">
-                            <a class="btn btn-sm btn-secundary" href="{{ route('mat-etnicos.show',$matEtnico->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('') }}</a>
-                            <a class="btn btn-sm btn-secundary" href="{{ route('mat-etnicos.edit',$matEtnico->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('') }}</a>
+                        <form action="{{ route('extraedads.destroy',$extraedad->id) }}" method="POST">
+                            <a class="btn btn-sm btn-secundary" href="{{ route('extraedads.show',$extraedad->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('') }}</a>
+                            <a class="btn btn-sm btn-secundary" href="{{ route('extraedads.edit',$extraedad->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('') }}</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-secundary btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('') }}</button>

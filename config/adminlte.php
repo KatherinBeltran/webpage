@@ -354,10 +354,28 @@ return [
                     'can' => 'mat-etnicos.index',
                 ],
                 [
+                    'text'        => 'Extraedad',
+                    'url'         => 'extraedads',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'extraedads.index',
+                ],
+                [
                     'text'        => 'Matrícula est. venezolanos',
                     'url'         => 'est-venezolanos',
                     'icon'        => 'fa fa-table',
                     'can' => 'est-venezolanos.index',
+                ],
+                [
+                    'text'        => 'Trayectoria por grados',
+                    'url'         => 'tra-grados',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'tra-grados.index',
+                ],
+                [
+                    'text'        => 'Matrícula pob. discapacidad',
+                    'url'         => 'pob-discapacidads',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'pob-discapacidads.index',
                 ],
                 [
                     'text'        => 'Cobertura bruta',

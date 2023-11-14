@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class MatEtnico
+ * Class PobDiscapacidad
  *
  * @property $id
  * @property $entidad
- * @property $etnia
- * @property $año
+ * @property $sector
+ * @property $discapacidad
  * @property $matricula
  * @property $created_at
  * @property $updated_at
@@ -18,13 +18,14 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class MatEtnico extends Model
+class PobDiscapacidad extends Model
 {
+  protected $table = 'pob_discapacidad';
     
     static $rules = [
 		'entidad' => 'required',
-		'etnia' => 'required',
-		'año' => 'required',
+		'sector' => 'required',
+		'discapacidad' => 'required',
 		'matricula' => 'required',
     ];
 
@@ -35,7 +36,7 @@ class MatEtnico extends Model
      *
      * @var array
      */
-    protected $fillable = ['entidad','etnia','año','matricula'];
+    protected $fillable = ['entidad','sector','discapacidad','matricula'];
 
 
 

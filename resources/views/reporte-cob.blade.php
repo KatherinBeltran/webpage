@@ -67,6 +67,12 @@
                             text: 'Promedio de Cobertura Bruta (%)' // Ajusta la etiqueta
                         }
                     }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Tendencia del Promedio de Cobertura Bruta a lo largo de los Años',
+                    }
                 }
             }
         });
@@ -115,8 +121,8 @@
                     },
                     {
                         label: valoresAñoActual.año,
-                        backgroundColor: 'rgba(236, 112, 99)',
-                        borderColor: 'rgba(236, 112, 99)',
+                        backgroundColor: 'rgba(245, 183, 177)',
+                        borderColor: 'rgba(245, 183, 177)',
                         borderWidth: 1,
                         data: datosAñoActual
                     }
@@ -145,6 +151,12 @@
                 barGroup: {
                     categoryPercentage: 0.8,
                     barPercentage: 0.4
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Comparación de Cobertura Bruta en Diferentes Niveles Educativos en los Últimos Dos Años',
+                    }
                 }
             }
         });
@@ -186,6 +198,12 @@
                             display: true,
                             text: 'Promedio de Cobertura Neta (%)' // Ajusta la etiqueta
                         }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Tendencia Anual del Promedio de Cobertura Neta (%)',
                     }
                 }
             }
@@ -235,8 +253,8 @@
                     },
                     {
                         label: valoresAñoActual.año,
-                        backgroundColor: 'rgba(236, 112, 99)',
-                        borderColor: 'rgba(236, 112, 99)',
+                        backgroundColor: 'rgba(245, 183, 177)',
+                        borderColor: 'rgba(245, 183, 177)',
                         borderWidth: 1,
                         data: datosAñoActual
                     }
@@ -265,6 +283,12 @@
                 barGroup: {
                     categoryPercentage: 0.8,
                     barPercentage: 0.4
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Comparación de Cobertura Neta en Niveles Educativos en los Últimos Dos Años',
+                    }
                 }
             }
         });

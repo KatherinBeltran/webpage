@@ -17,9 +17,9 @@
             {!! $errors->first('año', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('valor') }}
-            {{ Form::text('valor', $matEtnico->valor, ['class' => 'form-control' . ($errors->has('valor') ? ' is-invalid' : ''), 'placeholder' => 'Valor']) }}
-            {!! $errors->first('valor', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('matricula') }}
+            {{ Form::text('matricula', $matEtnico->matricula, ['class' => 'form-control' . ($errors->has('matricula') ? ' is-invalid' : ''), 'placeholder' => 'Matricula']) }}
+            {!! $errors->first('matricula', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

@@ -58,7 +58,7 @@ class MatSectorController extends Controller
         return redirect()->route('mat-sectors.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula por grados según sector creado exitosamente.
+                                    Registro matrícula por grados según sector creado exitosamente.
                                 </div>');
     }
 
@@ -104,7 +104,7 @@ class MatSectorController extends Controller
         return redirect()->route('mat-sectors.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula por grados según sector actualizado exitosamente.
+                                    Registro matrícula por grados según sector actualizado exitosamente.
                                 </div>');
     }
 
@@ -120,7 +120,7 @@ class MatSectorController extends Controller
         return redirect()->route('mat-sectors.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula por grados según sector eliminado exitosamente.
+                                    Registro matrícula por grados según sector eliminado exitosamente.
                                 </div>');
     }
 }

@@ -58,7 +58,7 @@ class MatEtnicoController extends Controller
         return redirect()->route('mat-etnicos.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula grupos etnicos creado exitosamente.
+                                    Registro matrícula grupos etnicos creado exitosamente.
                                 </div>');
     }
 
@@ -104,7 +104,7 @@ class MatEtnicoController extends Controller
         return redirect()->route('mat-etnicos.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula grupos etnicos actualizado exitosamente.
+                                    Registro matrícula grupos etnicos actualizado exitosamente.
                                 </div>');
     }
 
@@ -120,7 +120,7 @@ class MatEtnicoController extends Controller
         return redirect()->route('mat-etnicos.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro matricula grupos etnicos eliminado exitosamente.
+                                    Registro matrícula grupos etnicos eliminado exitosamente.
                                 </div>');
     }
 }
