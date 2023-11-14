@@ -336,10 +336,28 @@ return [
                     'can' => 'cargar.index',
                 ],
                 [
-                    'text'        => 'Matricula sector',
+                    'text'        => 'Matrícula sector',
                     'url'         => 'mat-sectors',
                     'icon'        => 'fa fa-table',
                     'can' => 'mat-sectors.index',
+                ],
+                [
+                    'text'        => 'Matrícula sector zona',
+                    'url'         => 'mat-sector-zonas',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'mat-sector-zonas.index',
+                ],
+                [
+                    'text'        => 'Matrícula etnicos',
+                    'url'         => 'mat-etnicos',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'mat-etnicos.index',
+                ],
+                [
+                    'text'        => 'Matrícula est. venezolanos',
+                    'url'         => 'est-venezolanos',
+                    'icon'        => 'fa fa-table',
+                    'can' => 'est-venezolanos.index',
                 ],
                 [
                     'text'        => 'Cobertura bruta',
@@ -356,12 +374,12 @@ return [
             ],
         ],
         [
-            'text'    => 'Dashboard',
+            'text'    => 'Dashboards',
             'icon'    => 'fas fa-fw fa-share',
             'can' => 'home',
             'submenu' => [
                 [
-                    'text'        => 'Reporte matricula',
+                    'text'        => 'Reporte matrícula',
                     'url'         => 'mat-dash',
                     'icon'        => 'fa fa-angle-double-down',
                     'can' => 'mat-dash.index',

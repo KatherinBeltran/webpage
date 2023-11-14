@@ -3,10 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Lista de matrícula por grados según sector</h1>
+    <h1>Lista de matrícula grupos etnicos</h1>
 
     <div class="float-right">
-        <a href="{{ route('mat-sectors.create') }}" class="btn btn-block btn-outline-secondary btn-sm float-right"  data-placement="left">
+        <a href="{{ route('mat-etnicos.create') }}" class="btn btn-block btn-outline-secondary btn-sm float-right"  data-placement="left">
             {{ __('Nuevo') }}
         </a>
     </div>
@@ -28,32 +28,28 @@
         <thead class="thead">
             <tr>
                 <th>No</th>
-                
+                                            
                 <th>Entidad</th>
-                <th>Grado</th>
+                <th>Etnia</th>
                 <th>Año</th>
-                <th>Oficial</th>
-                <th>Contratada</th>
-                <th>Privada</th>
+                <th>Valor</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($matSectors as $matSector)
+            @foreach ($matEtnicos as $matEtnico)
                 <tr>
                     <td>{{ ++$i }}</td>
                     
-                    <td>{{ $matSector->entidad }}</td>
-                    <td>{{ $matSector->grado }}</td>
-                    <td>{{ $matSector->año }}</td>
-                    <td>{{ $matSector->oficial }}</td>
-                    <td>{{ $matSector->contratada }}</td>
-                    <td>{{ $matSector->privada }}</td>
+                    <td>{{ $matEtnico->entidad }}</td>
+                    <td>{{ $matEtnico->etnia }}</td>
+                    <td>{{ $matEtnico->año }}</td>
+                    <td>{{ $matEtnico->valor }}</td>
 
                     <td>
-                        <form action="{{ route('mat-sectors.destroy',$matSector->id) }}" method="POST">
-                            <a class="btn btn-sm btn-secundary" href="{{ route('mat-sectors.show',$matSector->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('') }}</a>
-                            <a class="btn btn-sm btn-secundary" href="{{ route('mat-sectors.edit',$matSector->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('') }}</a>
+                        <form action="{{ route('mat-etnicos.destroy',$matEtnico->id) }}" method="POST">
+                            <a class="btn btn-sm btn-secundary" href="{{ route('mat-etnicos.show',$matEtnico->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('') }}</a>
+                            <a class="btn btn-sm btn-secundary" href="{{ route('mat-etnicos.edit',$matEtnico->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('') }}</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-secundary btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('') }}</button>

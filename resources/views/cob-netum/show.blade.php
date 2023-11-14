@@ -19,7 +19,7 @@
 
                     <div class="card-body">
                         
-                    <div class="form-group">
+                        <div class="form-group">
                             <strong>Nombre Etc:</strong>
                             {{ $cobNetum->nombre_etc }}
                         </div>
