@@ -13,6 +13,8 @@ use App\Models\TraGrado;
 use App\Models\Extraedad;
 use App\Models\PobDiscapacidad;
 use App\Models\Desercion;
+use App\Models\FueSistema;
+use App\Models\Eficiencium;
 
 class CargaController extends Controller
 {
@@ -64,6 +66,12 @@ class CargaController extends Controller
             // Accede a la hoja 'DESERCION'
             $desercion = $excel[8]; // Noveno índice porque es la novena hoja
 
+            // Accede a la hoja 'FUERA SISTEMA'
+            $fueSistema = $excel[9]; // Decimo índice porque es la decima hoja
+
+            // Accede a la hoja 'EFICIENCIA'
+            $eficiencia = $excel[10]; // Undecimo índice porque es la undecima hoja
+
             // Maneja la hoja 'MAT SECTOR'
             $this->importarHojaMatSector($matSector);
 
@@ -90,6 +98,12 @@ class CargaController extends Controller
 
             // Maneja la hoja 'DESERCION'
             $this->importarHojaDesercion($desercion);
+
+            // Maneja la hoja 'FUERA SISTEMA'
+            $this->importarHojaFueSistema($fueSistema);
+
+            // Maneja la hoja 'EFICIENCIA'
+            $this->importarHojaEficiencia($eficiencia);
         }
 
         return back();
@@ -504,6 +518,98 @@ class CargaController extends Controller
                         'desercion_secundaria' => $desercion_secundaria,
                         'desercion_media' => $desercion_media,
                     ]);
+                }
+            }
+        }
+    }
+
+    private function importarHojaFueSistema($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $entidad = $hoja[$i][0];
+
+                // Agrega la condición para procesar solo cuando la entidad sea 'SOACHA'
+                if ($entidad !== 'SOACHA') {
+                    continue; // Salta a la siguiente iteración si no cumple la condición
+                }
+
+                $sector = $hoja[$i][1];
+
+                // Itera sobre los años y valores correspondientes
+                for ($j = 2; $j < count($hoja[$i]); $j++) {
+                    $año = $hoja[0][$j]; // Obtiene el año desde la fila de encabezados
+                    $desercion = $hoja[$i][$j];
+
+                    // Busca si ya existe una fila con el mismo valor en 'entidad', 'sector' y 'año'
+                    $datoExistente = FueSistema::where('entidad', $entidad)
+                        ->where('sector', $sector)
+                        ->where('sector', $año)
+                        ->first();
+
+                    if ($datoExistente) {
+                        // Si ya existe, actualiza los valores
+                        $datoExistente->update([
+                            'matricula' => $desercion,
+                        ]);
+                    } else {
+                        // Si no existe, crea un nuevo registro
+                        FueSistema::create([
+                            'entidad' => $entidad,
+                            'sector' => $sector,
+                            'año' => $año,
+                            'desercion' => $desercion,
+                        ]);
+                    }
+                }
+            }
+        }
+    }
+
+    private function importarHojaEficiencia($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $nombre_etc = $hoja[$i][0];
+
+                // Verifica si la nombre_etc es "SOACHA"
+                if ($nombre_etc === 'SOACHA') {
+                    $año = $hoja[$i][1];
+
+                    // Itera sobre los años y valores correspondientes
+                    for ($j = 2; $j < count($hoja[$i]); $j += 3) {
+                        $sector = $hoja[0][$j]; // Obtiene el sector desde la fila de encabezados
+                        $aprobado = $hoja[$i][$j];
+                        $desertor = $hoja[$i][$j + 1];
+                        $reprobado = $hoja[$i][$j + 2];
+
+                        // Busca si ya existe una fila con el mismo valor en 'nombre_etc', 'año' y 'sector'
+                        $datoExistente = Eficiencium::where('nombre_etc', $nombre_etc)
+                            ->where('año', $año)
+                            ->where('sector', $sector)
+                            ->first();
+
+                        if ($datoExistente) {
+                            // Si ya existe, actualiza los valores
+                            $datoExistente->update([
+                                'aprobado' => $aprobado,
+                                'desertor' => $desertor,
+                                'reprobado' => $reprobado,
+                            ]);
+                        } else {
+                            // Si no existe, crea un nuevo registro
+                            Eficiencium::create([
+                                'nombre_etc' => $nombre_etc,
+                                'año' => $año,
+                                'sector' => $sector,
+                                'aprobado' => $aprobado,
+                                'desertor' => $desertor,
+                                'reprobado' => $reprobado,
+                            ]);
+                        }
+                    }
                 }
             }
         }

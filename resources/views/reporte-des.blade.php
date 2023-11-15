@@ -12,9 +12,11 @@
             <div class="row">
                 <section class="col-lg-6 connectedSortable ui-sortable">
                     <canvas id="lineChartDesercion"></canvas>
+                    <canvas id="lineChartDesercion1"></canvas>
                 </section>
                 <section class="col-lg-6 connectedSortable ui-sortable">
                     <canvas id="desercionChart" width="800" height="400"></canvas>
+                    <canvas id="desercionPorSectorChart" width="800" height="400"></canvas>
                 </section>
             </div>
         </div>
@@ -144,6 +146,123 @@
                     title: {
                         display: true,
                         text: 'Índice de Deserción Escolar por Niveles Educativos a lo largo de los Años',
+                    }
+                }
+            },
+        });
+
+        //Tercer gráfico (lineas)
+        // Obtén los datos desde PHP
+        var chartDataDiferencia = {!! json_encode($chartDataDiferencia) !!};
+
+        // Prepara los datos para Chart.js
+        var yearsDiferencia = chartDataDiferencia.map(data => data.año);
+        var diferencias = chartDataDiferencia.map(data => data.diferencia);
+
+        // Crea el gráfico de líneas
+        var ctxDiferencia = document.getElementById('lineChartDesercion1').getContext('2d');
+        var myLineChartDiferencia = new Chart(ctxDiferencia, {
+            type: 'line',
+            data: {
+                labels: yearsDiferencia,
+                datasets: [{
+                    label: 'Población por fuera',
+                    data: diferencias,
+                    backgroundColor: 'rgba(192, 57, 43)',
+                    borderColor: 'rgba(192, 57, 43)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Año'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Población por fuera'
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Tendencia de la Población por fuera a lo largo de los Años',
+                    }
+                }
+            }
+        });
+
+        //Cuarto gráfico (barras apiladas)
+        // Obtén los datos de tu base de datos y organízalos
+        var datos = {!! json_encode($datosEficiencia) !!};
+
+        // Define los dos colores para alternar
+        var color1 = 'rgba(245, 183, 177)';
+        var color2 = 'rgba(214, 84.5, 71)';
+
+        // Organiza los datos para el gráfico
+        var labels = [];
+        var datasets = {};
+        var alternarColor = false; // Variable para alternar entre colores
+
+        datos.forEach(function (dato) {
+            // Agrega la etiqueta solo si aún no existe en el array
+            if (!labels.includes(dato.año)) {
+                labels.push(dato.año);
+            }
+
+            // Alterna entre los dos colores
+            var color = alternarColor ? color1 : color2;
+            alternarColor = !alternarColor;
+
+            // Crea o actualiza el conjunto de datos para cada sector
+            if (!datasets[dato.sector]) {
+                datasets[dato.sector] = {
+                    label: dato.sector,
+                    data: [],
+                    backgroundColor: color,
+                };
+            }
+
+            // Agrega el dato solo si es de la etiqueta actual
+            datasets[dato.sector].data[labels.indexOf(dato.año)] = dato.desertor * 100;
+        });
+
+        // Configura el gráfico
+        var ctx = document.getElementById('desercionPorSectorChart').getContext('2d');
+        var desercionPorSectorChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: Object.values(datasets),
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Año'
+                        },
+                        stacked: false,
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Promedio de Deserción (%)'
+                        },
+                        stacked: false,
+                    },
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Índice de Deserción Escolar por Sectores a lo largo de los Años',
                     }
                 }
             },

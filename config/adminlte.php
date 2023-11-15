@@ -336,7 +336,7 @@ return [
                     'can' => 'cargar.index',
                 ],
                     [
-                        'text'    => 'Secretaria de educación',
+                        'text'    => 'Secretaría de educación',
                         'icon'    => 'fa fa-graduation-cap',
                         'can' => 'home',
                         'submenu' => [
@@ -400,6 +400,18 @@ return [
                             'icon'        => 'fa fa-table',
                             'can' => 'desercions.index',
                         ],
+                        [
+                            'text'        => 'Fuera sistema',
+                            'url'         => 'fue-sistemas',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'fue-sistemas.index',
+                        ],
+                        [
+                            'text'        => 'Eficiencia',
+                            'url'         => 'eficiencia',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'eficiencia.index',
+                        ],
                     ],
                 ],
             ],
@@ -410,7 +422,7 @@ return [
             'can' => 'home',
             'submenu' => [
                 [
-                    'text'    => 'Secretaria de educación',
+                    'text'    => 'Secretaría de educación',
                     'icon'    => 'fa fa-graduation-cap',
                     'can' => 'home',
                     'submenu' => [

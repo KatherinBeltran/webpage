@@ -92,6 +92,18 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'desercions.edit', 'description' => 'Editar deserción intra anual sector oficial'])->syncRoles([$role1]);
         Permission::create(['name' => 'desercions.destroy', 'description' => 'Eliminar deserción intra anual sector oficial'])->syncRoles([$role1]);
 
+        Permission::create(['name' => 'fue-sistemas.index', 'description' => 'Ver listado de estimación población por fuera del sistema educativo'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'fue-sistemas.create', 'description' => 'Registrar nuevaestimación población por fuera del sistema educativo'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'fue-sistemas.show', 'description' => 'Ver estimación población por fuera del sistema educativo'])->syncRoles([$role1]);
+        Permission::create(['name' => 'fue-sistemas.edit', 'description' => 'Editar estimación población por fuera del sistema educativo'])->syncRoles([$role1]);
+        Permission::create(['name' => 'fue-sistemas.destroy', 'description' => 'Eliminar estimación población por fuera del sistema educativo'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'eficiencia.index', 'description' => 'Ver listado de tasa eficiencia interna total'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'eficiencia.create', 'description' => 'Registrar nuevatasa eficiencia interna total'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'eficiencia.show', 'description' => 'Ver tasa eficiencia interna total'])->syncRoles([$role1]);
+        Permission::create(['name' => 'eficiencia.edit', 'description' => 'Editar tasa eficiencia interna total'])->syncRoles([$role1]);
+        Permission::create(['name' => 'eficiencia.destroy', 'description' => 'Eliminar tasa eficiencia interna total'])->syncRoles([$role1]);
+
         Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matrícula'])->syncRoles([$role1,$role2]);
 
         Permission::create(['name' => 'cob-dash.index', 'description' => 'Ver dashboard reporte tasa de cobertura'])->syncRoles([$role1,$role2]);

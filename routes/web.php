@@ -25,6 +25,8 @@ Auth::routes();
 Route::resource('des-dash', App\Http\Controllers\DesDashController::class);
 Route::resource('cob-dash', App\Http\Controllers\CobDashController::class);
 Route::resource('mat-dash', App\Http\Controllers\MatDashController::class);
+Route::resource('eficiencia', App\Http\Controllers\EficienciumController::class);
+Route::resource('fue-sistemas', App\Http\Controllers\FueSistemaController::class);
 Route::resource('desercions', App\Http\Controllers\DesercionController::class);
 Route::resource('cob-neta', App\Http\Controllers\CobNetumController::class);
 Route::resource('cob-bruta', App\Http\Controllers\CobBrutumController::class);
