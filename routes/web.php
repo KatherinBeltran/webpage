@@ -22,8 +22,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
+Route::resource('des-dash', App\Http\Controllers\DesDashController::class);
 Route::resource('cob-dash', App\Http\Controllers\CobDashController::class);
 Route::resource('mat-dash', App\Http\Controllers\MatDashController::class);
+Route::resource('desercions', App\Http\Controllers\DesercionController::class);
 Route::resource('cob-neta', App\Http\Controllers\CobNetumController::class);
 Route::resource('cob-bruta', App\Http\Controllers\CobBrutumController::class);
 Route::resource('pob-discapacidads', App\Http\Controllers\PobDiscapacidadController::class);

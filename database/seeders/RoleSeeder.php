@@ -86,8 +86,16 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'cob-neta.edit', 'description' => 'Editar cobertura neta'])->syncRoles([$role1]);
         Permission::create(['name' => 'cob-neta.destroy', 'description' => 'Eliminar cobertura neta'])->syncRoles([$role1]);
 
+        Permission::create(['name' => 'desercions.index', 'description' => 'Ver listado de deserción intra anual sector oficial'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'desercions.create', 'description' => 'Registrar nueva deserción intra anual sector oficial'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'desercions.show', 'description' => 'Ver deserción intra anual sector oficial'])->syncRoles([$role1]);
+        Permission::create(['name' => 'desercions.edit', 'description' => 'Editar deserción intra anual sector oficial'])->syncRoles([$role1]);
+        Permission::create(['name' => 'desercions.destroy', 'description' => 'Eliminar deserción intra anual sector oficial'])->syncRoles([$role1]);
+
         Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matrícula'])->syncRoles([$role1,$role2]);
 
-        Permission::create(['name' => 'cob-dash.index', 'description' => 'Ver dashboard reporte cobertura'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'cob-dash.index', 'description' => 'Ver dashboard reporte tasa de cobertura'])->syncRoles([$role1,$role2]);
+
+        Permission::create(['name' => 'des-dash.index', 'description' => 'Ver dashboard reporte tasa de deserción'])->syncRoles([$role1,$role2]);
     }
 }

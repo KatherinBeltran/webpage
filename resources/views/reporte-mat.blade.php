@@ -33,7 +33,6 @@
 
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Primer gráfico (líneas)
@@ -586,14 +585,14 @@
                             beginAtZero: true,
                             title: {
                                 display: true,
-                                text: 'Total de Personas con Discapacidad'
+                                text: 'Matrícula'
                             }
                         }
                     },
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Total de Personas con Discapacidad por Sector y Tipo de Discapacidad'
+                            text: 'Matrícula por Sector según Tipo de Discapacidad'
                         },
                         legend: {
                             display: true,

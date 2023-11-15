@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Reporte cobertura</h1>
+    <h1>Reporte tasa de cobertura</h1>
 @stop
 
 @section('content')

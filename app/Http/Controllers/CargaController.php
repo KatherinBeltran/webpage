@@ -12,6 +12,7 @@ use App\Models\EstVenezolano;
 use App\Models\TraGrado;
 use App\Models\Extraedad;
 use App\Models\PobDiscapacidad;
+use App\Models\Desercion;
 
 class CargaController extends Controller
 {
@@ -60,6 +61,9 @@ class CargaController extends Controller
             // Accede a la hoja 'COB NETA'
             $conNeta = $excel[7]; // Octavo índice porque es la octava hoja
 
+            // Accede a la hoja 'DESERCION'
+            $desercion = $excel[8]; // Noveno índice porque es la novena hoja
+
             // Maneja la hoja 'MAT SECTOR'
             $this->importarHojaMatSector($matSector);
 
@@ -83,6 +87,9 @@ class CargaController extends Controller
 
             // Maneja la hoja 'COB NETA'
             $this->importarHojaCobNeta($conNeta);
+
+            // Maneja la hoja 'DESERCION'
+            $this->importarHojaDesercion($desercion);
         }
 
         return back();
@@ -452,6 +459,50 @@ class CargaController extends Controller
                         'cobertura_neta_media' => $cobertura_neta_media,
                         'cobertura_neta_basica' => $cobertura_neta_basica,
                         'cobertura_neta' => $cobertura_neta
+                    ]);
+                }
+            }
+        }
+    }
+
+    private function importarHojaDesercion($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los hoja desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $nombre_etc = $hoja[$i][0];
+                $año = $hoja[$i][1];
+
+                // Agrega la condición para filtrar por 'nombre_etc' igual a 'SOACHA'
+                if ($nombre_etc !== 'SOACHA') {
+                    continue; // Salta a la siguiente iteración si no cumple la condición
+                }
+
+                $desercion_transicion = $hoja[$i][2];
+                $desercion_primaria = $hoja[$i][3];
+                $desercion_secundaria = $hoja[$i][4];
+                $desercion_media = $hoja[$i][5];  
+
+                // Busca si ya existe una fila con el mismo valor en 'fruta' y 'fruta_codigo'
+                $datoExistente = Desercion::where('nombre_etc', $nombre_etc)->where('año', $año)->first();
+
+                if ($datoExistente) {
+                    // Si ya existe, actualiza los valores
+                    $datoExistente->update([
+                        'desercion_transicion' => $desercion_transicion,
+                        'desercion_primaria' => $desercion_primaria,
+                        'desercion_secundaria' => $desercion_secundaria,
+                        'desercion_media' => $desercion_media,
+                    ]);
+                } else {
+                    // Si no existe, crea un nuevo registro
+                    Desercion::create([
+                        'nombre_etc' => $nombre_etc,
+                        'año' => $año,
+                        'desercion_transicion' => $desercion_transicion,
+                        'desercion_primaria' => $desercion_primaria,
+                        'desercion_secundaria' => $desercion_secundaria,
+                        'desercion_media' => $desercion_media,
                     ]);
                 }
             }
