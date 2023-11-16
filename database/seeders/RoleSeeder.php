@@ -98,16 +98,24 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'fue-sistemas.edit', 'description' => 'Editar estimación población por fuera del sistema educativo'])->syncRoles([$role1]);
         Permission::create(['name' => 'fue-sistemas.destroy', 'description' => 'Eliminar estimación población por fuera del sistema educativo'])->syncRoles([$role1]);
 
-        Permission::create(['name' => 'eficiencia.index', 'description' => 'Ver listado de tasa eficiencia interna total'])->syncRoles([$role1]); 
-        Permission::create(['name' => 'eficiencia.create', 'description' => 'Registrar nuevatasa eficiencia interna total'])->syncRoles([$role1]); 
-        Permission::create(['name' => 'eficiencia.show', 'description' => 'Ver tasa eficiencia interna total'])->syncRoles([$role1]);
-        Permission::create(['name' => 'eficiencia.edit', 'description' => 'Editar tasa eficiencia interna total'])->syncRoles([$role1]);
-        Permission::create(['name' => 'eficiencia.destroy', 'description' => 'Eliminar tasa eficiencia interna total'])->syncRoles([$role1]);
+        Permission::create(['name' => 'eficiencia.index', 'description' => 'Ver listado de programa de alimentación escolar'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'eficiencia.create', 'description' => 'Registrar nuevo programa de alimentación escolar'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'eficiencia.show', 'description' => 'Ver programa de alimentación escolar'])->syncRoles([$role1]);
+        Permission::create(['name' => 'eficiencia.edit', 'description' => 'Editar programa de alimentación escolar'])->syncRoles([$role1]);
+        Permission::create(['name' => 'eficiencia.destroy', 'description' => 'Eliminar programa de alimentación escolar'])->syncRoles([$role1]);
+        
+        Permission::create(['name' => 'paes.index', 'description' => 'Ver listado de tasa paes interna total'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'paes.create', 'description' => 'Registrar nuevatasa paes interna total'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'paes.show', 'description' => 'Ver tasa paes interna total'])->syncRoles([$role1]);
+        Permission::create(['name' => 'paes.edit', 'description' => 'Editar tasa paes interna total'])->syncRoles([$role1]);
+        Permission::create(['name' => 'paes.destroy', 'description' => 'Eliminar tasa paes interna total'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matrícula'])->syncRoles([$role1,$role2]);
 
         Permission::create(['name' => 'cob-dash.index', 'description' => 'Ver dashboard reporte tasa de cobertura'])->syncRoles([$role1,$role2]);
 
         Permission::create(['name' => 'des-dash.index', 'description' => 'Ver dashboard reporte tasa de deserción'])->syncRoles([$role1,$role2]);
+
+        Permission::create(['name' => 'pae-dash.index', 'description' => 'Ver dashboard reporte PAE'])->syncRoles([$role1,$role2]);
     }
 }

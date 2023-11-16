@@ -15,6 +15,7 @@ use App\Models\PobDiscapacidad;
 use App\Models\Desercion;
 use App\Models\FueSistema;
 use App\Models\Eficiencium;
+use App\Models\Pae;
 
 class CargaController extends Controller
 {
@@ -72,6 +73,9 @@ class CargaController extends Controller
             // Accede a la hoja 'EFICIENCIA'
             $eficiencia = $excel[10]; // Undecimo índice porque es la undecima hoja
 
+            // Accede a la hoja 'PAE'
+            $pae = $excel[11]; // Duodecimo índice porque es la duodecima hoja
+
             // Maneja la hoja 'MAT SECTOR'
             $this->importarHojaMatSector($matSector);
 
@@ -104,6 +108,9 @@ class CargaController extends Controller
 
             // Maneja la hoja 'EFICIENCIA'
             $this->importarHojaEficiencia($eficiencia);
+
+            // Maneja la hoja 'PAE'
+            $this->importarHojaPae($pae);
         }
 
         return back();
@@ -609,6 +616,44 @@ class CargaController extends Controller
                                 'reprobado' => $reprobado,
                             ]);
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    private function importarHojaPae($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $institucion = $hoja[$i][0];
+                $sede = $hoja[$i][1];
+
+                // Itera sobre los meses y valores correspondientes
+                for ($j = 2; $j < count($hoja[$i]); $j++) {
+                    $mes = $hoja[0][$j]; // Obtiene el mes desde la fila de encabezados
+                    $registro = $hoja[$i][$j];
+
+                    // Busca si ya existe una fila con el mismo valor en 'institucion', 'sede' y 'mes'
+                    $datoExistente = Pae::where('institucion', $institucion)
+                        ->where('sede', $sede)
+                        ->where('mes', $mes)
+                        ->first();
+
+                    if ($datoExistente) {
+                        // Si ya existe, actualiza los valores
+                        $datoExistente->update([
+                            'registro' => $registro,
+                        ]);
+                    } else {
+                        // Si no existe, crea un nuevo registro
+                        Pae::create([
+                            'institucion' => $institucion,
+                            'sede' => $sede,
+                            'mes' => $mes,
+                            'registro' => $registro,
+                        ]);
                     }
                 }
             }

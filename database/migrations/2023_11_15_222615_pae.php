@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eficiencia', function (Blueprint $table) {
+        Schema::create('pae', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_etc');
-            $table->integer('año');
-            $table->string('sector');
-            $table->decimal('aprobado', 15, 12);
-            $table->decimal('desertor', 15, 12);
-            $table->decimal('reprobado', 15, 12);
+            $table->string('institucion');
+            $table->string('sede');
+            $table->string('mes');
+            $table->integer('registro');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eficiencia');
+        Schema::dropIfExists('pae');
     }
 };

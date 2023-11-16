@@ -22,9 +22,11 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
+Route::resource('pae-dash', App\Http\Controllers\PaeDashController::class);
 Route::resource('des-dash', App\Http\Controllers\DesDashController::class);
 Route::resource('cob-dash', App\Http\Controllers\CobDashController::class);
 Route::resource('mat-dash', App\Http\Controllers\MatDashController::class);
+Route::resource('paes', App\Http\Controllers\PaeController::class);
 Route::resource('eficiencia', App\Http\Controllers\EficienciumController::class);
 Route::resource('fue-sistemas', App\Http\Controllers\FueSistemaController::class);
 Route::resource('desercions', App\Http\Controllers\DesercionController::class);
