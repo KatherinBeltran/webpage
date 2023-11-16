@@ -41,7 +41,7 @@ class DesDashController extends Controller
         // Obtener los datos de la base de datos para la "Población por fuera"
         $chartDataDiferencia = DB::table('fue_sistema')
             ->select('año', 
-                DB::raw('SUM(CASE WHEN sector = "Población  5 a 16 años" THEN desercion ELSE 0 END) as poblacion'),
+                DB::raw('SUM(CASE WHEN sector = "Población 5 a 16 años" THEN desercion ELSE 0 END) as poblacion'),
                 DB::raw('SUM(CASE WHEN sector = "Matrícula 5 a 16 años" THEN desercion ELSE 0 END) as matricula')
             )
             ->groupBy('año')

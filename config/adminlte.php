@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Banco de </b>DATOS',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -337,7 +337,7 @@ return [
                 ],
                     [
                         'text'    => 'Secretaría de educación',
-                        'icon'    => 'fa fa-graduation-cap',
+                        'icon'    => 'fa-fw fas fa-book-open',
                         'can' => 'home',
                         'submenu' => [
                         [
@@ -346,12 +346,13 @@ return [
                             'icon'        => 'fa fa-table',
                             'can' => 'mat-sectors.index',
                         ],
-                        [
+                        /*[
                             'text'        => 'Matrícula sector zona',
                             'url'         => 'mat-sector-zonas',
                             'icon'        => 'fa fa-table',
                             'can' => 'mat-sector-zonas.index',
                         ],
+                        **/
                         [
                             'text'        => 'Matrícula etnicos',
                             'url'         => 'mat-etnicos',
@@ -429,31 +430,31 @@ return [
             'submenu' => [
                 [
                     'text'    => 'Secretaría de educación',
-                    'icon'    => 'fa fa-graduation-cap',
+                    'icon'    => 'fa-fw fas fa-book-open',
                     'can' => 'home',
                     'submenu' => [
                         [
                             'text'        => 'Reporte matrícula',
                             'url'         => 'mat-dash',
-                            'icon'        => 'fa fa-angle-double-down',
+                            'icon'        => 'fa-fw fas fa-play-circle',
                             'can' => 'mat-dash.index',
                         ],
                         [
                             'text'        => 'Reporte cobertura',
                             'url'         => 'cob-dash',
-                            'icon'        => 'fa fa-angle-double-left',
+                            'icon'        => 'fa-fw fas fa-play-circle',
                             'can' => 'cob-dash.index',
                         ],
                         [
                             'text'        => 'Reporte deserción',
                             'url'         => 'des-dash',
-                            'icon'        => 'fa fa-angle-double-right',
+                            'icon'        => 'fa-fw fas fa-play-circle',
                             'can' => 'des-dash.index',
                         ],
                         [
                             'text'        => 'Reporte PAE',
                             'url'         => 'pae-dash',
-                            'icon'        => 'fa fa-angle-double-up',
+                            'icon'        => 'fa-fw fas fa-play-circle',
                             'can' => 'pae-dash.index',
                         ],
                     ],

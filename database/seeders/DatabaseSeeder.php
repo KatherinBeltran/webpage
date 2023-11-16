@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         
         User::create([
             'name' => 'Admin',
-            'email' => 'admin@alcaldiasoacha2023.com',
+            'email' => 'admin@alcaldiasoacha.gov.co',
             'password' => bcrypt('12345678')
         ])->assignRole('Administrador');
     }

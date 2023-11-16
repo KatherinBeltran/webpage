@@ -38,7 +38,7 @@
         {{-- Email field --}}
         <div class="input-group mb-3">
             <input type="text" name="email" id="email" class="form-control @error('email') is-invalid @enderror"
-                value="@alcaldiasoacha2023.com" placeholder="usuario" aria-label="Correo electrónico">
+                value="@alcaldiasoacha.gov.co" placeholder="usuario" aria-label="Correo electrónico">
             <div class="input-group-append">
                 <span class="input-group-text">
                     <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
