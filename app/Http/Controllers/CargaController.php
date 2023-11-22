@@ -16,6 +16,7 @@ use App\Models\Desercion;
 use App\Models\FueSistema;
 use App\Models\Eficiencium;
 use App\Models\Pae;
+use App\Models\AfiVacunacion;
 
 class CargaController extends Controller
 {
@@ -76,6 +77,9 @@ class CargaController extends Controller
             // Accede a la hoja 'PAE'
             $pae = $excel[11]; // Duodecimo índice porque es la duodecima hoja
 
+            // Accede a la hoja 'AFI. VACUNACION'
+            $afiVacunacion = $excel[12];
+
             // Maneja la hoja 'MAT SECTOR'
             $this->importarHojaMatSector($matSector);
 
@@ -111,6 +115,9 @@ class CargaController extends Controller
 
             // Maneja la hoja 'PAE'
             $this->importarHojaPae($pae);
+
+            //Maneja la hoja 'AFI. VACUNACION'
+            $this->importarHojaAfiVacunacion($afiVacunacion);
         }
 
         return back();
@@ -653,6 +660,47 @@ class CargaController extends Controller
                             'sede' => $sede,
                             'mes' => $mes,
                             'registro' => $registro,
+                        ]);
+                    }
+                }
+            }
+        }
+    }
+
+    private function importarHojaAfiVacunacion($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 2; $i < count($hoja); $i++) {
+                $indicadores_pts = $hoja[$i][0];
+
+                // Itera sobre los años y valores correspondientes
+                for ($j = 1; $j < count($hoja[$i]); $j += 3) {
+                    $año = $hoja[0][$j]; // Obtiene el año desde la fila de encabezados
+                    $numerador = $hoja[$i][$j];
+                    $denominador = $hoja[$i][$j + 1];
+                    $indicador = $hoja[$i][$j + 2];
+
+                    // Busca si ya existe una fila con el mismo valor en 'indicadores_pts', 'año' y 'año'
+                    $datoExistente = AfiVacunacion::where('indicadores_pts', $indicadores_pts)
+                        ->where('año', $año)
+                        ->first();
+
+                    if ($datoExistente) {
+                        // Si ya existe, actualiza los valores
+                        $datoExistente->update([
+                            'numerador' => $numerador,
+                            'denominador' => $denominador,
+                            'indicador' => $indicador,
+                        ]);
+                    } else {
+                        // Si no existe, crea un nuevo registro
+                        AfiVacunacion::create([
+                            'indicadores_pts' => $indicadores_pts,
+                            'año' => $año,
+                            'numerador' => $numerador,
+                            'denominador' => $denominador,
+                            'indicador' => $indicador,
                         ]);
                     }
                 }

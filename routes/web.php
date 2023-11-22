@@ -22,10 +22,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
+Route::resource('afivac-dash', App\Http\Controllers\AfiVacDashController::class);
 Route::resource('pae-dash', App\Http\Controllers\PaeDashController::class);
 Route::resource('des-dash', App\Http\Controllers\DesDashController::class);
 Route::resource('cob-dash', App\Http\Controllers\CobDashController::class);
 Route::resource('mat-dash', App\Http\Controllers\MatDashController::class);
+Route::resource('afi-vacunacions', App\Http\Controllers\AfiVacunacionController::class);
 Route::resource('paes', App\Http\Controllers\PaeController::class);
 Route::resource('eficiencia', App\Http\Controllers\EficienciumController::class);
 Route::resource('fue-sistemas', App\Http\Controllers\FueSistemaController::class);

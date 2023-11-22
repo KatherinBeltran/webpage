@@ -93,7 +93,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'desercions.destroy', 'description' => 'Eliminar deserción intra anual sector oficial'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'fue-sistemas.index', 'description' => 'Ver listado de estimación población por fuera del sistema educativo'])->syncRoles([$role1]); 
-        Permission::create(['name' => 'fue-sistemas.create', 'description' => 'Registrar nuevaestimación población por fuera del sistema educativo'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'fue-sistemas.create', 'description' => 'Registrar nueva estimación población por fuera del sistema educativo'])->syncRoles([$role1]); 
         Permission::create(['name' => 'fue-sistemas.show', 'description' => 'Ver estimación población por fuera del sistema educativo'])->syncRoles([$role1]);
         Permission::create(['name' => 'fue-sistemas.edit', 'description' => 'Editar estimación población por fuera del sistema educativo'])->syncRoles([$role1]);
         Permission::create(['name' => 'fue-sistemas.destroy', 'description' => 'Eliminar estimación población por fuera del sistema educativo'])->syncRoles([$role1]);
@@ -105,10 +105,16 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'eficiencia.destroy', 'description' => 'Eliminar programa de alimentación escolar'])->syncRoles([$role1]);
         
         Permission::create(['name' => 'paes.index', 'description' => 'Ver listado de tasa paes interna total'])->syncRoles([$role1]); 
-        Permission::create(['name' => 'paes.create', 'description' => 'Registrar nuevatasa paes interna total'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'paes.create', 'description' => 'Registrar nueva tasa paes interna total'])->syncRoles([$role1]); 
         Permission::create(['name' => 'paes.show', 'description' => 'Ver tasa paes interna total'])->syncRoles([$role1]);
         Permission::create(['name' => 'paes.edit', 'description' => 'Editar tasa paes interna total'])->syncRoles([$role1]);
         Permission::create(['name' => 'paes.destroy', 'description' => 'Eliminar tasa paes interna total'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'afi-vacunacions.index', 'description' => 'Ver listado de afiliación y vacunación'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'afi-vacunacions.create', 'description' => 'Registrar nueva afiliación y vacunación'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'afi-vacunacions.show', 'description' => 'Ver afiliación y vacunación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'afi-vacunacions.edit', 'description' => 'Editar afiliación y vacunación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'afi-vacunacions.destroy', 'description' => 'Eliminar afiliación y vacunación'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matrícula'])->syncRoles([$role1,$role2]);
 
@@ -117,5 +123,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'des-dash.index', 'description' => 'Ver dashboard reporte tasa de deserción'])->syncRoles([$role1,$role2]);
 
         Permission::create(['name' => 'pae-dash.index', 'description' => 'Ver dashboard reporte PAE'])->syncRoles([$role1,$role2]);
+
+        Permission::create(['name' => 'afivac-dash.index', 'description' => 'Ver dashboard reporte afiliación y vacunación'])->syncRoles([$role1,$role2]);
     }
 }

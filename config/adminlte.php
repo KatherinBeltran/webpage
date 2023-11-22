@@ -421,6 +421,19 @@ return [
                         ],
                     ],
                 ],
+                    [
+                        'text'    => 'Secretaría de salud',
+                        'icon'    => 'fa-fw fas fa-user-md',
+                        'can' => 'home',
+                        'submenu' => [
+                        [
+                            'text'        => 'Afiliación y vacunación',
+                            'url'         => 'afi-vacunacions',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'afi-vacunacions.index',
+                        ],
+                    ],
+                ],
             ],
         ],
         [
@@ -456,6 +469,19 @@ return [
                             'url'         => 'pae-dash',
                             'icon'        => 'fa-fw fas fa-play-circle',
                             'can' => 'pae-dash.index',
+                        ],
+                    ],
+                ],
+                    [
+                        'text'    => 'Secretaría de salud',
+                        'icon'    => 'fa-fw fas fa-user-md',
+                        'can' => 'home',
+                        'submenu' => [
+                        [
+                            'text'        => 'Reporte afiliación y vacunación',
+                            'url'         => 'afivac-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'afivac-dash.index',
                         ],
                     ],
                 ],
