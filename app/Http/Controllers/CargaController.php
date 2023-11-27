@@ -559,7 +559,7 @@ class CargaController extends Controller
                     // Busca si ya existe una fila con el mismo valor en 'entidad', 'sector' y 'año'
                     $datoExistente = FueSistema::where('entidad', $entidad)
                         ->where('sector', $sector)
-                        ->where('sector', $año)
+                        ->where('año', $año)
                         ->first();
 
                     if ($datoExistente) {
