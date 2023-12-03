@@ -59,24 +59,24 @@
                         {
                             label: 'Oficial',
                             data: oficialData,
-                            backgroundColor: 'rgba(192, 57, 43)',
-                            borderColor: 'rgba(192, 57, 43)',
+                            backgroundColor: 'rgba(234, 190, 63)',
+                            borderColor: 'rgba(234, 190, 63)',
                             borderWidth: 1,
                             fill: false
                         },
                         {
                             label: 'Contratada',
                             data: contratadaData,
-                            backgroundColor:  'rgba(214, 84.5, 71)',
-                            borderColor:  'rgba(214, 84.5, 71)',
+                            backgroundColor:  'rgba(0, 143, 57, 0.8)',
+                            borderColor:  'rgba(0, 143, 57, 0.8)',
                             borderWidth: 1,
                             fill: false
                         },
                         {
                             label: 'Privada',
                             data: privadaData,
-                            backgroundColor: 'rgba(236, 112, 99)',
-                            borderColor: 'rgba(236, 112, 99)',
+                            backgroundColor: 'rgba(0, 0, 255, 0.8)',
+                            borderColor: 'rgba(0, 0, 255, 0.8)',
                             borderWidth: 1,
                             fill: false
                         }
@@ -110,41 +110,24 @@
             });
 
             // Segundo gráfico (barras agrupadas)
-            var lastTwoYearsData = {!! json_encode($lastTwoYearsData) !!};
-
-            var labels = Object.keys(lastTwoYearsData);
-            var datasets = [];
-
-            labels.forEach(function (year, index) {
-                var sumOficial = lastTwoYearsData[year].reduce(function (total, item) {
-                    return total + item.oficial;
-                }, 0);
-
-                var sumContratada = lastTwoYearsData[year].reduce(function (total, item) {
-                    return total + item.contratada;
-                }, 0);
-
-                var sumPrivada = lastTwoYearsData[year].reduce(function (total, item) {
-                    return total + item.privada;
-                }, 0);
-
-                datasets.push({
-                    label: year,
-                    data: [sumOficial, sumContratada, sumPrivada],
-                    backgroundColor: index === 0 ? 'rgba(214, 84.5, 71)' : 'rgba(245, 183, 177)', // Ajusta los colores de fondo aquí
-                    borderColor: index === 0 ? 'rgba(1192, 57, 43)' : 'rgba(245, 183, 177)', // Ajusta los colores del borde aquí
-                    borderWidth: 1,
-                    barPercentage: 0.7, // Ajusta el ancho de las barras
-                    categoryPercentage: 0.6, // Ajusta el espacio entre las barras
-                });
-            });
-
+            var barChartData = {!! json_encode($barChartData) !!};
+            
             var ctx2 = document.getElementById('matChart1').getContext('2d');
             var matChart1 = new Chart(ctx2, {
                 type: 'bar',
                 data: {
                     labels: ['Oficial', 'Contratada', 'Privada'],
-                    datasets: datasets,
+                    datasets: barChartData.map(function (dataset, index) {
+                        return {
+                            label: dataset.label,
+                            data: dataset.data,
+                            backgroundColor: index === 0 ? 'rgba(234, 190, 63)' : 'rgba(0, 143, 57, 0.8)', // Ajusta los colores de fondo aquí
+                            borderColor: index === 0 ? 'rgba(234, 190, 63)' : 'rgba(0, 143, 57, 0.8)', // Ajusta los colores del borde aquí
+                            borderWidth: 1,
+                            barPercentage: 0.7, // Ajusta el ancho de las barras
+                            categoryPercentage: 0.6, // Ajusta el espacio entre las barras
+                        };
+                    }),
                 },
                 options: {
                     scales: {
@@ -152,25 +135,25 @@
                             stacked: false,
                             title: {
                                 display: true,
-                                text: 'Sector'
-                            }
+                                text: 'Sector',
+                            },
                         },
                         y: {
                             beginAtZero: true,
                             stacked: false,
                             title: {
                                 display: true,
-                                text: 'Matrícula'
-                            }
-                        }
+                                text: 'Matrícula',
+                            },
+                        },
                     },
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Tendencia de Matrícula en Sectores Oficial, Contratada y Privada en los Últimos Dos Años'
-                        }
-                    }
-                }
+                            text: 'Tendencia de Matrícula en Sectores Oficial, Contratada y Privada en los Últimos Dos Años',
+                        },
+                    },
+                },
             });
 
             // Tercer gráfico (barras agrupadas por año y etnias)
@@ -237,11 +220,11 @@
             // Función para obtener colores específicos para las barras
             function getBarColor(year) {
                 var colors = {
-                    '2023': 'rgba(192, 57, 43)',
-                    '2022': 'rgba(214, 84.5, 71)',
-                    '2021': 'rgba(236, 112, 99)',
-                    '2020': 'rgba(245, 183, 177)',
-                    '2019': 'rgba(255, 213, 207)',
+                    '2023': 'rgba(0, 0, 255)',
+                    '2022': 'rgba(0, 0, 255, 0.8)',
+                    '2021': 'rgba(0, 0, 255, 0.6)',
+                    '2020': 'rgba(0, 0, 255, 0.4)',
+                    '2019': 'rgba(0, 0, 255, 0.2)',
                 };
                 return colors[year];
             }
@@ -255,21 +238,21 @@
 
         // Colores fijos para cada grado
         var coloresPorGrado = {
-            'Prejardín': 'rgba(192, 57, 43)',
-            'Jardín': 'rgba(214, 84.5, 71)',
-            'Transición': 'rgba(236, 112, 99)',
-            'Primero' : 'rgba(255, 179, 51)',
-            'Segundo' : 'rgba(255, 118, 51)',
-            'Tercero' : 'rgba(255, 87, 34)',
-            'Cuarto' : 'rgba(255, 214, 51)',
-            'Quinto' : 'rgba(255, 171, 145)',
-            'Sexto' : 'rgba(255, 138, 101)',
-            'Septimo' : 'rgba(170, 102, 204)',
-            'Octavo' : 'rgba(136, 176, 75)',
-            'Noveno' : 'rgba(0, 151, 230)',
-            'Decimo' : 'rgba(64, 255, 0)',
-            'Once' : 'rgba(102, 153, 153)',
-            'Otros grados' : 'rgba(255, 204, 51)' 
+            'Prejardín': 'rgba(234, 190, 63, 0.2)',
+            'Jardín': 'rgba(234, 190, 63, 0.5)',
+            'Transición': 'rgba(234, 190, 63, 0.8)',
+            'Primero' : 'rgba(0, 143, 57)',
+            'Segundo' : 'rgba(0, 143, 57, 0.5)',
+            'Tercero' : 'rgba(0, 143, 57, 0.8)',
+            'Cuarto' : 'rgba(0, 0, 255)',
+            'Quinto' : 'rgba(0, 0, 255, 0.5)',
+            'Sexto' : 'rgba(0, 0, 255, 0.8)',
+            'Septimo' : 'rgba(234, 190, 63)',
+            'Octavo' : 'rgba(234, 190, 63, 0.5)',
+            'Noveno' : 'rgba(234, 190, 63, 0.8)',
+            'Decimo' : 'rgba(0, 143, 57, 0.5)',
+            'Once' : 'rgba(0, 143, 57, 0.8)',
+            'Otros grados' : 'rgba(0, 0, 255, 0.2)' 
         };
 
         // Itera sobre los años
@@ -332,24 +315,24 @@
                         {
                             label: 'Oficial',
                             data: oficialData,
-                            backgroundColor: 'rgba(192, 57, 43)',
-                            borderColor: 'rgba(192, 57, 43)',
+                            backgroundColor: 'rgba(234, 190, 63)',
+                            borderColor: 'rgba(234, 190, 63)',
                             borderWidth: 1,
                             fill: false
                         },
                         {
                             label: 'Contratada',
                             data: contratadaData,
-                            backgroundColor:  'rgba(214, 84.5, 71)',
-                            borderColor:  'rgba(214, 84.5, 71)',
+                            backgroundColor:  'rgba(0, 143, 57, 0.8)',
+                            borderColor:  'rgba(0, 143, 57, 0.8)',
                             borderWidth: 1,
                             fill: false
                         },
                         {
                             label: 'Privada',
                             data: privadaData,
-                            backgroundColor: 'rgba(236, 112, 99)',
-                            borderColor: 'rgba(236, 112, 99)',
+                            backgroundColor: 'rgba(0, 0, 255, 0.8)',
+                            borderColor: 'rgba(0, 0, 255, 0.8)',
                             borderWidth: 1,
                             fill: false
                         }
@@ -383,41 +366,24 @@
             });
 
         // Sexto gráfico (barras agrupadas)
-        var lastTwoYearsData = {!! json_encode($lastTwoYearsData1) !!};
-
-        var labels = Object.keys(lastTwoYearsData);
-        var datasets = [];
-
-        labels.forEach(function (year, index) {
-            var sumOficial = lastTwoYearsData[year].reduce(function (total, item) {
-                return total + item.oficial;
-            }, 0);
-
-            var sumContratada = lastTwoYearsData[year].reduce(function (total, item) {
-                return total + item.contratada;
-            }, 0);
-
-            var sumPrivada = lastTwoYearsData[year].reduce(function (total, item) {
-                return total + item.privada;
-            }, 0);
-
-            datasets.push({
-                label: year,
-                data: [sumOficial, sumContratada, sumPrivada],
-                backgroundColor: index === 0 ? 'rgba(214, 84.5, 71)' : 'rgba(245, 183, 177)', // Ajusta los colores de fondo aquí
-                borderColor: index === 0 ? 'rgba(1192, 57, 43)' : 'rgba(245, 183, 177)', // Ajusta los colores del borde aquí
-                borderWidth: 1,
-                barPercentage: 0.7, // Ajusta el ancho de las barras
-                categoryPercentage: 0.6, // Ajusta el espacio entre las barras
-            });
-        });
-
+        var barChartData1 = {!! json_encode($barChartData1) !!};
+        
         var ctx2 = document.getElementById('matChart4').getContext('2d');
         var matChart4 = new Chart(ctx2, {
             type: 'bar',
             data: {
                 labels: ['Oficial', 'Contratada', 'Privada'],
-                datasets: datasets,
+                datasets: barChartData1.map(function (dataset, index) {
+                    return {
+                        label: dataset.label,
+                        data: dataset.data,
+                        backgroundColor: index === 0 ? 'rgba(234, 190, 63)' : 'rgba(0, 143, 57, 0.8)',
+                        borderColor: index === 0 ? 'rgba(234, 190, 63)' : 'rgba(0, 143, 57, 0.8)',
+                        borderWidth: 1,
+                        barPercentage: 0.7,
+                        categoryPercentage: 0.6,
+                    };
+                }),
             },
             options: {
                 scales: {
@@ -425,25 +391,25 @@
                         stacked: false,
                         title: {
                             display: true,
-                            text: 'Sector'
-                        }
+                            text: 'Sector',
+                        },
                     },
                     y: {
                         beginAtZero: true,
                         stacked: false,
                         title: {
                             display: true,
-                            text: 'Matrícula'
-                        }
-                    }
+                            text: 'Matrícula',
+                        },
+                    },
                 },
                 plugins: {
                     title: {
                         display: true,
                         text: 'Matrícula Estudiantes Venezolanos por Sector en los Últimos Dos Años',
-                    }
-                }
-            }
+                    },
+                },
+            },
         });
 
         // Séptimo gráfico (circular)
@@ -465,32 +431,38 @@
                 datasets: [{
                     data: porcentajes,
                     backgroundColor: [
-                        'rgba(192, 57, 43)',
-                        'rgba(214, 84.5, 71)',
-                        'rgba(236, 112, 99)',
-                        'rgba(255, 179, 51)',
-                        'rgba(255, 118, 51)',
-                        'rgba(255, 87, 34)',
-                        'rgba(255, 214, 51)',
-                        'rgba(255, 171, 145)',
-                        'rgba(255, 138, 101)',
-                        'rgba(170, 102, 204)',
-                        'rgba(136, 176, 75)',
-                        'rgba(0, 151, 230)',
+                        'rgba(234, 190, 63, 0.2)',
+                        'rgba(234, 190, 63, 0.5)',
+                        'rgba(234, 190, 63, 0.8)',
+                        'rgba(0, 143, 57)',
+                        'rgba(0, 143, 57, 0.5)',
+                        'rgba(0, 143, 57, 0.8)',
+                        'rgba(0, 0, 255)',
+                        'rgba(0, 0, 255, 0.5)',
+                        'rgba(0, 0, 255, 0.8)',
+                        'rgba(234, 190, 63)',
+                        'rgba(234, 190, 63, 0.5)',
+                        'rgba(234, 190, 63, 0.8)',
+                        'rgba(0, 143, 57, 0.5)',
+                        'rgba(0, 143, 57, 0.8)',
+                        'rgba(0, 0, 255, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(192, 57, 43)',
-                        'rgba(214, 84.5, 71)',
-                        'rgba(236, 112, 99)',
-                        'rgba(255, 179, 51)',
-                        'rgba(255, 118, 51)',
-                        'rgba(255, 87, 34)',
-                        'rgba(255, 214, 51)',
-                        'rgba(255, 171, 145)',
-                        'rgba(255, 138, 101)',
-                        'rgba(170, 102, 204)',
-                        'rgba(136, 176, 75)',
-                        'rgba(0, 151, 230)',
+                        'rgba(234, 190, 63, 0.2)',
+                        'rgba(234, 190, 63, 0.5)',
+                        'rgba(234, 190, 63, 0.8)',
+                        'rgba(0, 143, 57)',
+                        'rgba(0, 143, 57, 0.5)',
+                        'rgba(0, 143, 57, 0.8)',
+                        'rgba(0, 0, 255)',
+                        'rgba(0, 0, 255, 0.5)',
+                        'rgba(0, 0, 255, 0.8)',
+                        'rgba(234, 190, 63)',
+                        'rgba(234, 190, 63, 0.5)',
+                        'rgba(234, 190, 63, 0.8)',
+                        'rgba(0, 143, 57, 0.5)',
+                        'rgba(0, 143, 57, 0.8)',
+                        'rgba(0, 0, 255, 0.2)'
                     ],
                     borderWidth: 1
                 }]

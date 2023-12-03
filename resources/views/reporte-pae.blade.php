@@ -31,10 +31,11 @@
 
         // Colores específicos para las barras
         var barColors = [
-            'rgba(192, 57, 43)',
-            'rgba(214, 84.5, 71)',
-            'rgba(236, 112, 99)',
-            'rgba(255, 179, 51)',
+            'rgba(0, 0, 255)',
+            'rgba(0, 0, 255, 0.8)',
+            'rgba(0, 0, 255, 0.6)',
+            'rgba(0, 0, 255, 0.4)',
+            'rgba(0, 0, 255, 0.2)',
         ];
 
         // Organizar datos para el gráfico de instituciones

@@ -47,8 +47,8 @@
                 datasets: [{
                     label: 'Promedio de Deserción (%)',
                     data: promedios,
-                    backgroundColor: 'rgba(192, 57, 43)', // Elimina esta línea si deseas quitar completamente el área sombreada
-                    borderColor: 'rgba(192, 57, 43)',
+                    backgroundColor: 'rgba(0, 0, 255, 0.8)',
+                    borderColor: 'rgba(0, 0, 255, 0.8)',
                     borderWidth: 2,
                     fill: false // Cambia a false para quitar el área sombreada
                 }]
@@ -106,22 +106,22 @@
                     {
                         label: 'Transición',
                         data: datosTransicion,
-                        backgroundColor: 'rgba(192, 57, 43)',
+                        backgroundColor: 'rgba(234, 190, 63)',
                     },
                     {
                         label: 'Primaria',
                         data: datosPrimaria,
-                        backgroundColor: 'rgba(214, 84.5, 71)',
+                        backgroundColor: 'rgba(0, 143, 57, 0.8)',
                     },
                     {
                         label: 'Secundaria',
                         data: datosSecundaria,
-                        backgroundColor: 'rgba(236, 112, 99)',
+                        backgroundColor: 'rgba(0, 0, 255, 0.8)',
                     },
                     {
                         label: 'Media',
                         data: datosMedia,
-                        backgroundColor: 'rgba(245, 183, 177)',
+                        backgroundColor: 'rgba(234, 190, 63, 0.4)',
                     },
                 ],
             },
@@ -168,8 +168,8 @@
                 datasets: [{
                     label: 'Población por fuera',
                     data: diferencias,
-                    backgroundColor: 'rgba(192, 57, 43)',
-                    borderColor: 'rgba(192, 57, 43)',
+                    backgroundColor: 'rgba(0, 0, 255, 0.8)',
+                    borderColor: 'rgba(0, 0, 255, 0.8)',
                     borderWidth: 2,
                     fill: false
                 }]
@@ -203,8 +203,8 @@
         var datos = {!! json_encode($datosEficiencia) !!};
 
         // Define los dos colores para alternar
-        var color1 = 'rgba(245, 183, 177)';
-        var color2 = 'rgba(214, 84.5, 71)';
+        var color1 =  'rgba(234, 190, 63)';
+        var color2 = 'rgba(0, 143, 57, 0.8)';
 
         // Organiza los datos para el gráfico
         var labels = [];

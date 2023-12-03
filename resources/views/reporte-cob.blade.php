@@ -47,8 +47,8 @@
                 datasets: [{
                     label: 'Promedio de Cobertura Bruta (%)', // Ajusta la etiqueta
                     data: promedios,
-                    backgroundColor: 'rgba(192, 57, 43)',
-                    borderColor: 'rgba(192, 57, 43)',
+                    backgroundColor: 'rgba(0, 0, 255, 0.8)',
+                    borderColor: 'rgba(0, 0, 255, 0.8)',
                     borderWidth: 2,
                     fill: false
                 }]
@@ -114,15 +114,15 @@
                 datasets: [
                     {
                         label: valoresAñoAnterior.año,
-                        backgroundColor: 'rgba(214, 84.5, 71)',
-                        borderColor: 'rgba(214, 84.5, 71)',
+                        backgroundColor:   'rgba(234, 190, 63)',
+                            borderColor:   'rgba(234, 190, 63)',
                         borderWidth: 1,
                         data: datosAñoAnterior
                     },
                     {
                         label: valoresAñoActual.año,
-                        backgroundColor: 'rgba(245, 183, 177)',
-                        borderColor: 'rgba(245, 183, 177)',
+                        backgroundColor:  'rgba(0, 143, 57, 0.8)',
+                            borderColor:  'rgba(0, 143, 57, 0.8)',
                         borderWidth: 1,
                         data: datosAñoActual
                     }
@@ -179,8 +179,8 @@
                 datasets: [{
                     label: 'Promedio de Cobertura Neta (%)', // Ajusta la etiqueta
                     data: promedios,
-                    backgroundColor: 'rgba(192, 57, 43)',
-                    borderColor: 'rgba(192, 57, 43)',
+                    backgroundColor: 'rgba(0, 0, 255, 0.8)',
+                            borderColor: 'rgba(0, 0, 255, 0.8)',
                     borderWidth: 2,
                     fill: false
                 }]
@@ -246,15 +246,15 @@
                 datasets: [
                     {
                         label: valoresAñoAnterior.año,
-                        backgroundColor: 'rgba(214, 84.5, 71)',
-                        borderColor: 'rgba(214, 84.5, 71)',
+                        backgroundColor: 'rgba(234, 190, 63)' ,
+                        borderColor: 'rgba(234, 190, 63)',
                         borderWidth: 1,
                         data: datosAñoAnterior
                     },
                     {
                         label: valoresAñoActual.año,
-                        backgroundColor: 'rgba(245, 183, 177)',
-                        borderColor: 'rgba(245, 183, 177)',
+                        backgroundColor: 'rgba(0, 143, 57, 0.8)',
+                        borderColor: 'rgba(0, 143, 57, 0.8)',
                         borderWidth: 1,
                         data: datosAñoActual
                     }

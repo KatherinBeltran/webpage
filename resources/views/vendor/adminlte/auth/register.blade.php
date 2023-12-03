@@ -135,7 +135,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const emailInput = document.getElementById('email');
-        const domain = '@alcaldiasoacha2023.com';
+        const domain = '@alcaldiasoacha.gov.co';
 
         emailInput.addEventListener('focus', function () {
             // Cuando el campo recibe el enfoque, asegúrate de que el usuario pueda editar el campo completo

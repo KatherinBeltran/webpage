@@ -26,11 +26,24 @@ class MatDashController extends Controller
             ->orderBy('año')
             ->get();
 
-        // Gráfico de barras agrupadas (segundo gráfico)
+        // Segundo gráfico (barras agrupadas)
         $lastTwoYearsData = MatSector::where('año', '>=', now()->year - 1)
             ->select('año', 'oficial', 'contratada', 'privada')
             ->get()
             ->groupBy('año');
+        
+        $barChartData = [];
+        
+        foreach ($lastTwoYearsData as $year => $dataOfYear) {
+            $sumOficial = $dataOfYear->sum('oficial');
+            $sumContratada = $dataOfYear->sum('contratada');
+            $sumPrivada = $dataOfYear->sum('privada');
+        
+            $barChartData[] = [
+                'label' => $year,
+                'data' => [$sumOficial, $sumContratada, $sumPrivada],
+            ];
+        }
         
         // Tercer gráfico (barras agrupadas por etnias)
         $lastFiveYearsDataEtnias = MatEtnico::whereIn('año', range(now()->year - 4, now()->year))
@@ -67,11 +80,24 @@ class MatDashController extends Controller
             ->orderBy('año')
             ->get();
 
-        // Gráfico de barras agrupadas (sexto gráfico)
+        // Sexto gráfico (barras agrupadas)
         $lastTwoYearsData1 = EstVenezolano::where('año', '>=', now()->year - 1)
             ->select('año', 'oficial', 'contratada', 'privada')
             ->get()
             ->groupBy('año');
+        
+        $barChartData1 = [];
+        
+        foreach ($lastTwoYearsData1 as $year => $dataOfYear) {
+            $sumOficial = $dataOfYear->sum('oficial');
+            $sumContratada = $dataOfYear->sum('contratada');
+            $sumPrivada = $dataOfYear->sum('privada');
+        
+            $barChartData1[] = [
+                'label' => $year,
+                'data' => [$sumOficial, $sumContratada, $sumPrivada],
+            ];
+        }
 
         // Gráfico circular (septimo gráfico)
         $edadesPorGrado = [
@@ -110,6 +136,6 @@ class MatDashController extends Controller
         ->groupBy('sector', 'discapacidad')
         ->get();
 
-        return view('reporte-mat', compact('matData', 'lastTwoYearsData', 'lastFiveYearsDataEtnias', 'data', 'matData1', 'lastTwoYearsData1', 'data1', 'data2'));
+        return view('reporte-mat', compact('matData', 'barChartData', 'lastFiveYearsDataEtnias', 'data', 'matData1', 'barChartData1', 'data1', 'data2'));
     }
 }
