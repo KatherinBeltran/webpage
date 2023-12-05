@@ -22,7 +22,15 @@ class CargaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:cargar.index')->only('index');
+        $user = auth()->user();
+
+        if ($user && $user->can('sec-edu-cargar.index')) {
+            // Solo tiene acceso a 'sec-edu-cargar.index'
+            $this->middleware('can:sec-edu-cargar.index')->only('index');
+        } elseif ($user && $user->can('sec-sal-cargar.index')) {
+            // Solo tiene acceso a 'sec-sal-cargar.index'
+            $this->middleware('can:sec-sal-cargar.index')->only('index');
+        }
     }
 
     /**
@@ -41,86 +49,63 @@ class CargaController extends Controller
             // Carga el archivo Excel y obtén un array de todas las hojas
             $excel = Excel::toArray([], $path);
 
-            // Accede a la hoja 'MAT SECTOR'
-            $matSector = $excel[0]; // Primer índice porque es la primera hoja
+            // Itera sobre cada hoja y la procesa
+            foreach ($excel as $index => $hoja) {
+                // Obtiene el nombre de la hoja proporcionando la ruta del archivo Excel
+                $nombreHoja = $this->getNombreHoja($index, $path);
 
-            // Accede a la hoja 'MAT ETNICOS'
-            $matEtnicos = $excel[1]; // Segundo índice porque es la segunda hoja
-
-            // Accede a la hoja 'EXTRAEDAD'
-            $extraedad = $excel[2]; // Tercer índice porque es la tercera hoja
-
-            // Accede a la hoja 'EST. VENEZONALOS'
-            $estVenezolanos = $excel[3]; // Cuarto índice porque es la cuarta hoja
-
-            // Accede a la hoja 'TRAYECTORIA GRADO'
-            $traGrado = $excel[4]; // Quinto índice porque es la quinta hoja
-
-            // Accede a la hoja 'POB DISCAPACIDAD'
-            $pobDiscapacidad = $excel[5]; // Sexto índice porque es la sexta hoja
-
-            // Accede a la hoja 'COB BRUTA'
-            $cobBruta = $excel[6]; // Septimo índice porque es la septima hoja
-
-            // Accede a la hoja 'COB NETA'
-            $conNeta = $excel[7]; // Octavo índice porque es la octava hoja
-
-            // Accede a la hoja 'DESERCION'
-            $desercion = $excel[8]; // Noveno índice porque es la novena hoja
-
-            // Accede a la hoja 'FUERA SISTEMA'
-            $fueSistema = $excel[9]; // Decimo índice porque es la decima hoja
-
-            // Accede a la hoja 'EFICIENCIA'
-            $eficiencia = $excel[10]; // Undecimo índice porque es la undecima hoja
-
-            // Accede a la hoja 'PAE'
-            $pae = $excel[11]; // Duodecimo índice porque es la duodecima hoja
-
-            // Accede a la hoja 'AFI. VACUNACION'
-            $afiVacunacion = $excel[12];
-
-            // Maneja la hoja 'MAT SECTOR'
-            $this->importarHojaMatSector($matSector);
-
-            // Maneja la hoja 'MAT ETNICOS'
-            $this->importarHojaMatEtnicos($matEtnicos);
-
-            // Maneja la hoja 'EXTRAEDAD'
-            $this->importarHojaExtraedad($extraedad);
-
-            // Maneja la hoja 'EST. VENEZOLANOS'
-            $this->importarHojaEstVenezolanos($estVenezolanos);
-
-            // Maneja la hoja 'TRAYECTORIA GRADO'
-            $this->importarHojaTraGrado($traGrado);
-
-            // Maneja la hoja 'POB DISCAPACIDAD'
-            $this->importarHojaPobDiscapacidad($pobDiscapacidad);
-            
-            // Maneja la hoja 'COB BRUTA'
-            $this->importarHojaCobBruta($cobBruta);
-
-            // Maneja la hoja 'COB NETA'
-            $this->importarHojaCobNeta($conNeta);
-
-            // Maneja la hoja 'DESERCION'
-            $this->importarHojaDesercion($desercion);
-
-            // Maneja la hoja 'FUERA SISTEMA'
-            $this->importarHojaFueSistema($fueSistema);
-
-            // Maneja la hoja 'EFICIENCIA'
-            $this->importarHojaEficiencia($eficiencia);
-
-            // Maneja la hoja 'PAE'
-            $this->importarHojaPae($pae);
-
-            //Maneja la hoja 'AFI. VACUNACION'
-            $this->importarHojaAfiVacunacion($afiVacunacion);
+                // Llama a la función correspondiente para manejar la hoja
+                $this->importarHoja($nombreHoja, $hoja);
+            }
         }
 
         return back();
+    }
+
+    private function importarHoja($nombreHoja, $hoja)
+    {
+        set_time_limit(0); // 0 significa sin límite de tiempo de ejecución
+        
+        // Define un mapeo entre el nombre de la hoja y la función correspondiente
+        $funciones = [
+            'MAT SECTOR' => 'importarHojaMatSector',
+            'MAT ETNICOS' => 'importarHojaMatEtnicos',
+            'EXTRAEDAD' => 'importarHojaExtraedad',
+            'EST. VENEZOLANOS' => 'importarHojaEstVenezolanos',
+            'TRAYECTORIA GRADO' => 'importarHojaTraGrado',
+            'POB DISCAPACIDAD' => 'importarHojaPobDiscapacidad',
+            'COB BRUTA' => 'importarHojaCobBruta',
+            'COB NETA' => 'importarHojaCobNeta',
+            'DESERCION' => 'importarHojaDesercion',
+            'FUERA SISTEMA' => 'importarHojaFueSistema',
+            'EFICIENCIA' => 'importarHojaEficiencia',
+            'PAE' => 'importarHojaPae',
+            'AFI. VACUNACION' => 'importarHojaAfiVacunacion',
+            // ... Agrega más hojas según sea necesario
+        ];
+
+        // Busca el nombre de la hoja en el conjunto de nombres conocidos
+        foreach ($funciones as $nombreConocido => $funcion) {
+            if (stripos($nombreHoja, $nombreConocido) !== false) {
+                // Llama a la función correspondiente para manejar la hoja
+                $this->{$funcion}($hoja);
+                return;
+            }
+        }
+    }
+
+    private function getNombreHoja($index, $excelFilePath)
+    {
+        // Carga todas las hojas del archivo Excel
+        $excelReader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
+        $excel = $excelReader->load($excelFilePath);
+
+        // Obtiene el nombre de todas las hojas en el archivo Excel
+        $nombresHojas = $excel->getSheetNames();
+        $excel->disconnectWorksheets(); 
+        
+        // Verifica si el índice existe en el arreglo y devuelve el nombre de la hoja
+        return $nombresHojas[$index] ?? null;
     }
 
     private function importarHojaMatSector($hoja)

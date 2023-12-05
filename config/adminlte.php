@@ -313,14 +313,14 @@ return [
         ],
         ['header' => 'Menú'],
         [
-            'text'    => 'Parámetros',
-            'icon'    => 'fas fa-fw fa-share',
-            'can' => 'home',
+            'text'    => 'Gestión de usuarios',
+            'icon'    => 'fa fa-users',
+            'can' => ['users.index', 'roles.index'],
             'submenu' => [
                 [
                     'text' => 'Usuarios',
                     'url'  => 'users',
-                    'icon' => 'fa fa-users',
+                    'icon' => 'fa fa-user-circle',
                     'can' => 'users.index',
                 ],
                 [
@@ -329,17 +329,24 @@ return [
                     'icon' => 'fa fa-user-secret',
                     'can' => 'roles.index',
                 ], 
+            ],
+        ],
+        [
+            'text'    => 'Secretaría de educación',
+            'icon'    => 'fa-fw fas fa-book-open',
+            'can' => ['sec-edu-cargar.index', 'mat-sectors.index', 'mat-etnicos.index', 'extraedads.index', 'est-venezolanos.index', 'tra-grados.index', 'pob-discapacidads.index', 'cob-bruta.index', 'cob-neta.index', 'desercions.index', 'fue-sistemas.index', 'eficiencia.index', 'paes.index', 'mat-dash.index', 'cob-dash.index', 'des-dash.index', 'pae-dash.index'],
+            'submenu' => [
                 [
                     'text'        => 'Cargar datos',
                     'url'         => 'cargar',
                     'icon'        => 'fa fa-upload',
-                    'can' => 'cargar.index',
+                    'can' => 'sec-edu-cargar.index',
                 ],
-                    [
-                        'text'    => 'Secretaría de educación',
-                        'icon'    => 'fa-fw fas fa-book-open',
-                        'can' => 'home',
-                        'submenu' => [
+                [
+                    'text'    => 'Parámetros',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'can' => ['mat-sectors.index', 'mat-etnicos.index', 'extraedads.index', 'est-venezolanos.index', 'tra-grados.index', 'pob-discapacidads.index', 'cob-bruta.index', 'cob-neta.index', 'desercions.index', 'fue-sistemas.index', 'eficiencia.index', 'paes.index'],
+                    'submenu' => [
                         [
                             'text'        => 'Matrícula sector',
                             'url'         => 'mat-sectors',
@@ -421,30 +428,10 @@ return [
                         ],
                     ],
                 ],
-                    [
-                        'text'    => 'Secretaría de salud',
-                        'icon'    => 'fa-fw fas fa-user-md',
-                        'can' => 'home',
-                        'submenu' => [
-                        [
-                            'text'        => 'Afiliación y vacunación',
-                            'url'         => 'afi-vacunacions',
-                            'icon'        => 'fa fa-table',
-                            'can' => 'afi-vacunacions.index',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        [
-            'text'    => 'Dashboards',
-            'icon'    => 'fas fa-fw fa-share',
-            'can' => 'home',
-            'submenu' => [
                 [
-                    'text'    => 'Secretaría de educación',
-                    'icon'    => 'fa-fw fas fa-book-open',
-                    'can' => 'home',
+                    'text'    => 'Dashboards',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'can' => ['mat-dash.index', 'cob-dash.index', 'des-dash.index', 'pae-dash.index'],
                     'submenu' => [
                         [
                             'text'        => 'Reporte matrícula',
@@ -472,11 +459,37 @@ return [
                         ],
                     ],
                 ],
-                    [
-                        'text'    => 'Secretaría de salud',
-                        'icon'    => 'fa-fw fas fa-user-md',
-                        'can' => 'home',
-                        'submenu' => [
+            ],
+        ],
+        [
+            'text'    => 'Secretaría de salud',
+            'icon'    => 'fa-fw fas fa-user-md',
+            'can' => ['sec-sal-cargar.index', 'afi-vacunacions.index', 'afivac-dash.index'],
+            'submenu' => [
+                [
+                    'text'        => 'Cargar datos',
+                    'url'         => 'cargar',
+                    'icon'        => 'fa fa-upload',
+                    'can' => 'sec-sal-cargar.index',
+                ],
+                [
+                    'text'    => 'Parámetros',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'can' => ['afi-vacunacions.index'],
+                    'submenu' => [
+                        [
+                            'text'        => 'Afiliación y vacunación',
+                            'url'         => 'afi-vacunacions',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'afi-vacunacions.index',
+                        ],
+                    ],
+                ],
+                [
+                    'text'    => 'Dashboards',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'can' => ['afivac-dash.index'],
+                    'submenu' => [
                         [
                             'text'        => 'Reporte afiliación y vacunación',
                             'url'         => 'afivac-dash',

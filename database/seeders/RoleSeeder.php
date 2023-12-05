@@ -16,9 +16,10 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         $role1 = Role::create(['name' => 'Administrador']);
-        $role2 = Role::create(['name' => 'Analista']);
+        $role2 = Role::create(['name' => 'Analista Secretaría de Educación']);
+        $role3 = Role::create(['name' => 'Analista Secretaría de Salud']);
 
-        Permission::create(['name' => 'home', 'description' => 'Ver dashboard'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'home', 'description' => 'Ver panel principal'])->syncRoles([$role1]);
         
         Permission::create(['name' => 'users.index', 'description' => 'Ver listado de usuarios'])->syncRoles([$role1]); 
         Permission::create(['name' => 'users.edit', 'description' => 'Asignar un rol'])->syncRoles([$role1]);
@@ -30,7 +31,8 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'roles.edit', 'description' => 'Editar rol'])->syncRoles([$role1]);
         Permission::create(['name' => 'roles.destroy', 'description' => 'Eliminar rol'])->syncRoles([$role1]);
 
-        Permission::create(['name' => 'cargar.index', 'description' => 'Cargar datos'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-edu-cargar.index', 'description' => 'Cargar datos secretaría de educación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-sal-cargar.index', 'description' => 'Cargar datos secretaría de salud'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'mat-sectors.index', 'description' => 'Ver listado de matrícula por grados según sector'])->syncRoles([$role1]); 
         Permission::create(['name' => 'mat-sectors.create', 'description' => 'Registrar nueva matrícula por grados según sector'])->syncRoles([$role1]); 
@@ -124,6 +126,6 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name' => 'pae-dash.index', 'description' => 'Ver dashboard reporte PAE'])->syncRoles([$role1,$role2]);
 
-        Permission::create(['name' => 'afivac-dash.index', 'description' => 'Ver dashboard reporte afiliación y vacunación'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'afivac-dash.index', 'description' => 'Ver dashboard reporte afiliación y vacunación'])->syncRoles([$role1,$role3]);
     }
 }
