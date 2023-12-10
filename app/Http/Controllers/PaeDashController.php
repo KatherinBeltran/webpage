@@ -26,7 +26,17 @@ class PaeDashController extends Controller
         $dataSedes = Pae::select('sede', 'mes', \DB::raw('SUM(registro) as total'))
             ->groupBy('sede', 'mes')
             ->get();
+        // Contar instituciones únicas
+        $numInstituciones = Pae::distinct('institucion')->count();
 
-        return view('reporte-pae', compact('dataInstituciones', 'dataSedes'));
+          // Contar sedes únicas
+          $numSedes = Pae::distinct('sede')->count();
+
+              // Calcular la suma total de registros
+        $totalRegistros = Pae::sum('registro');
+
+        $beneficiariosUltimoMes = Pae::where('mes', now()->format('m'))->sum('registro');
+
+        return view('reporte-pae', compact('dataInstituciones', 'dataSedes', 'numInstituciones', 'numSedes', 'totalRegistros'));
     }
 }
