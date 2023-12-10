@@ -1,8 +1,10 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
-@section('template_title')
-    {{ $pae->name ?? "{{ __('Show') Pae" }}
-@endsection
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Ver registro</h1>
+@stop
 
 @section('content')
     <section class="content container-fluid">
@@ -10,11 +12,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Pae</span>
-                        </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('paes.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-secundary border border-secondary btn-sm" href="{{ route('paes.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
@@ -42,4 +41,12 @@
             </div>
         </div>
     </section>
-@endsection
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop

@@ -16,8 +16,15 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         $role1 = Role::create(['name' => 'Administrador']);
-        $role2 = Role::create(['name' => 'Analista Secretaría de Educación']);
-        $role3 = Role::create(['name' => 'Analista Secretaría de Salud']);
+        $role2 = Role::create(['name' => 'Analista secretaría general']);
+        $role3 = Role::create(['name' => 'Analista secretaría de gobierno']);
+        $role4 = Role::create(['name' => 'Analista secretaría de salud']);
+        $role5 = Role::create(['name' => 'Analista secretaría de planeación']);
+        $role6 = Role::create(['name' => 'Analista secretaría de hacienda']);
+        $role7 = Role::create(['name' => 'Analista secretaría de desarrollo']);
+        $role8 = Role::create(['name' => 'Analista secretaría de educación']);
+        $role9 = Role::create(['name' => 'Analista secretaría de infraestructura']);
+        $role10 = Role::create(['name' => 'Analista secretaría de movilidad']);
 
         Permission::create(['name' => 'home', 'description' => 'Ver panel principal'])->syncRoles([$role1]);
         
@@ -31,8 +38,15 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'roles.edit', 'description' => 'Editar rol'])->syncRoles([$role1]);
         Permission::create(['name' => 'roles.destroy', 'description' => 'Eliminar rol'])->syncRoles([$role1]);
 
-        Permission::create(['name' => 'sec-edu-cargar.index', 'description' => 'Cargar datos secretaría de educación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-gen-cargar.index', 'description' => 'Cargar datos secretaría general'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-gob-cargar.index', 'description' => 'Cargar datos secretaría de gobierno'])->syncRoles([$role1]);
         Permission::create(['name' => 'sec-sal-cargar.index', 'description' => 'Cargar datos secretaría de salud'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-pla-cargar.index', 'description' => 'Cargar datos secretaría de planeación y ordenamiento territorial'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-hac-cargar.index', 'description' => 'Cargar datos secretaría de hacienda'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-des-cargar.index', 'description' => 'Cargar datos secretaría de desarrollo'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-edu-cargar.index', 'description' => 'Cargar datos secretaría de educación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-inf-cargar.index', 'description' => 'Cargar datos secretaría de infraestructura'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sec-mov-cargar.index', 'description' => 'Cargar datos secretaría de movilidad'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'mat-sectors.index', 'description' => 'Ver listado de matrícula por grados según sector'])->syncRoles([$role1]); 
         Permission::create(['name' => 'mat-sectors.create', 'description' => 'Registrar nueva matrícula por grados según sector'])->syncRoles([$role1]); 
@@ -118,14 +132,22 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'afi-vacunacions.edit', 'description' => 'Editar afiliación y vacunación'])->syncRoles([$role1]);
         Permission::create(['name' => 'afi-vacunacions.destroy', 'description' => 'Eliminar afiliación y vacunación'])->syncRoles([$role1]);
 
-        Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matrícula'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'pis.index', 'description' => 'Ver listado de metas planeación y ordenamiento'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pis.create', 'description' => 'Registrar nueva meta planeación y ordenamiento'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pis.show', 'description' => 'Ver meta planeación y ordenamiento'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pis.edit', 'description' => 'Editar meta planeación y ordenamiento'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pis.destroy', 'description' => 'Eliminar meta planeación y ordenamiento'])->syncRoles([$role1]);
 
-        Permission::create(['name' => 'cob-dash.index', 'description' => 'Ver dashboard reporte tasa de cobertura'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matrícula'])->syncRoles([$role1,$role8]);
 
-        Permission::create(['name' => 'des-dash.index', 'description' => 'Ver dashboard reporte tasa de deserción'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'cob-dash.index', 'description' => 'Ver dashboard reporte tasa de cobertura'])->syncRoles([$role1,$role8]);
 
-        Permission::create(['name' => 'pae-dash.index', 'description' => 'Ver dashboard reporte PAE'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'des-dash.index', 'description' => 'Ver dashboard reporte tasa de deserción'])->syncRoles([$role1,$role8]);
 
-        Permission::create(['name' => 'afivac-dash.index', 'description' => 'Ver dashboard reporte afiliación y vacunación'])->syncRoles([$role1,$role3]);
+        Permission::create(['name' => 'pae-dash.index', 'description' => 'Ver dashboard reporte PAE'])->syncRoles([$role1,$role8]);
+
+        Permission::create(['name' => 'afivac-dash.index', 'description' => 'Ver dashboard reporte afiliación y vacunación'])->syncRoles([$role1,$role4]);
+
+        Permission::create(['name' => 'pi-dash.index', 'description' => 'Ver dashboard reporte PI'])->syncRoles([$role1,$role5]);
     }
 }

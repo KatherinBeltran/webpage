@@ -17,6 +17,7 @@ use App\Models\FueSistema;
 use App\Models\Eficiencium;
 use App\Models\Pae;
 use App\Models\AfiVacunacion;
+use App\Models\Pi;
 
 class CargaController extends Controller
 {
@@ -24,12 +25,33 @@ class CargaController extends Controller
     {
         $user = auth()->user();
 
-        if ($user && $user->can('sec-edu-cargar.index')) {
-            // Solo tiene acceso a 'sec-edu-cargar.index'
-            $this->middleware('can:sec-edu-cargar.index')->only('index');
+        if ($user && $user->can('sec-gen-cargar.index')) {
+            // Solo tiene acceso a 'sec-sal-cargar.index'
+            $this->middleware('can:sec-gen-cargar.index')->only('index');
+        } elseif ($user && $user->can('sec-gob-cargar.index')) {
+            // Solo tiene acceso a 'sec-sal-cargar.index'
+            $this->middleware('can:sec-gob-cargar.index')->only('index');
         } elseif ($user && $user->can('sec-sal-cargar.index')) {
             // Solo tiene acceso a 'sec-sal-cargar.index'
             $this->middleware('can:sec-sal-cargar.index')->only('index');
+        } elseif ($user && $user->can('sec-pla-cargar.index')) {
+            // Solo tiene acceso a 'sec-sal-cargar.index'
+            $this->middleware('can:sec-pla-cargar.index')->only('index');
+        }elseif ($user && $user->can('sec-hac-cargar.index')) {
+            // Solo tiene acceso a 'sec-edu-cargar.index'
+            $this->middleware('can:sec-hac-cargar.index')->only('index');
+        }elseif ($user && $user->can('sec-des-cargar.index')) {
+            // Solo tiene acceso a 'sec-edu-cargar.index'
+            $this->middleware('can:sec-des-cargar.index')->only('index');
+        }elseif ($user && $user->can('sec-edu-cargar.index')) {
+            // Solo tiene acceso a 'sec-edu-cargar.index'
+            $this->middleware('can:sec-edu-cargar.index')->only('index');
+        }elseif ($user && $user->can('sec-inf-cargar.index')) {
+            // Solo tiene acceso a 'sec-edu-cargar.index'
+            $this->middleware('can:sec-inf-cargar.index')->only('index');
+        }elseif ($user && $user->can('sec-mov-cargar.index')) {
+        // Solo tiene acceso a 'sec-edu-cargar.index'
+        $this->middleware('can:sec-mov-cargar.index')->only('index');
         }
     }
 
@@ -81,6 +103,7 @@ class CargaController extends Controller
             'EFICIENCIA' => 'importarHojaEficiencia',
             'PAE' => 'importarHojaPae',
             'AFI. VACUNACION' => 'importarHojaAfiVacunacion',
+            'PI' => 'importarHojaPi'
             // ... Agrega más hojas según sea necesario
         ];
 
@@ -688,6 +711,59 @@ class CargaController extends Controller
                             'indicador' => $indicador,
                         ]);
                     }
+                }
+            }
+        }
+    }
+
+    private function importarHojaPi($hoja)
+    {
+        if (!empty($hoja) && is_array($hoja)) {
+            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
+            for ($i = 1; $i < count($hoja); $i++) {
+                $indicador_de_bienestar = $hoja[$i][0];
+                $consecutivo_de_la_meta = $hoja[$i][1];
+                $meta = $hoja[$i][2];
+                $entidad_responsable = $hoja[$i][3];
+                $indicador = $hoja[$i][4];
+                $tipo_de_meta = $hoja[$i][5];
+                $total_compromisos_2023 = $hoja[$i][6];
+                $total_obligaciones = $hoja[$i][7];
+                $eficiencia_2023_avance_financiero_2023 = $hoja[$i][8];
+                $efectividad_2023 = $hoja[$i][9];
+                $eficiencia_acumulada_avance_fisico = $hoja[$i][10];
+
+                // Busca si ya existe una fila con el mismo valor en 'fruta' y 'fruta_codigo'
+                $datoExistente = Pi::where('indicador_de_bienestar', $indicador_de_bienestar)->where('consecutivo_de_la_meta', $consecutivo_de_la_meta)->first();
+
+                if ($datoExistente) {
+                    // Si ya existe, actualiza los valores
+                    $datoExistente->update([
+                        'meta' => $meta,
+                        'entidad_responsable' => $entidad_responsable,
+                        'indicador' => $indicador,
+                        'tipo_de_meta' => $tipo_de_meta,
+                        'total_compromisos_2023' => $total_compromisos_2023,
+                        'total_obligaciones' => $total_obligaciones,
+                        'eficiencia_2023_avance_financiero_2023' => $eficiencia_2023_avance_financiero_2023,
+                        'efectividad_2023' => $efectividad_2023,
+                        'eficiencia_acumulada_avance_fisico' => $eficiencia_acumulada_avance_fisico
+                    ]);
+                } else {
+                    // Si no existe, crea un nuevo registro
+                    Pi::create([
+                        'indicador_de_bienestar' => $indicador_de_bienestar,
+                        'consecutivo_de_la_meta' => $consecutivo_de_la_meta,
+                        'meta' => $meta,
+                        'entidad_responsable' => $entidad_responsable,
+                        'indicador' => $indicador,
+                        'tipo_de_meta' => $tipo_de_meta,
+                        'total_compromisos_2023' => $total_compromisos_2023,
+                        'total_obligaciones' => $total_obligaciones,
+                        'eficiencia_2023_avance_financiero_2023' => $eficiencia_2023_avance_financiero_2023,
+                        'efectividad_2023' => $efectividad_2023,
+                        'eficiencia_acumulada_avance_fisico' => $eficiencia_acumulada_avance_fisico
+                    ]);
                 }
             }
         }
