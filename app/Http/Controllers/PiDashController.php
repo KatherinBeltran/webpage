@@ -142,6 +142,16 @@ class PiDashController extends Controller
         $consecutivo179->efectividad_2023 *= 100;
         $consecutivo179->eficiencia_acumulada_avance_fisico *= 100;
 
-        return view('reporte-pi', ['consecutivo136' => $consecutivo136, 'consecutivo137' => $consecutivo137, 'consecutivo138' => $consecutivo138, 'consecutivo139' => $consecutivo139, 'consecutivo140' => $consecutivo140, 'consecutivo163' => $consecutivo163, 'consecutivo164' => $consecutivo164, 'consecutivo165' => $consecutivo165, 'consecutivo166' => $consecutivo166, 'consecutivo167' => $consecutivo167, 'consecutivo168' => $consecutivo168, 'consecutivo169' => $consecutivo169, 'consecutivo170' => $consecutivo170, 'consecutivo171' => $consecutivo171, 'consecutivo172' => $consecutivo172, 'consecutivo173' => $consecutivo173, 'consecutivo174' => $consecutivo174, 'consecutivo175' => $consecutivo175, 'consecutivo176' => $consecutivo176, 'consecutivo177' => $consecutivo177, 'consecutivo178' => $consecutivo178, 'consecutivo179' => $consecutivo179]);
+        
+        // Calculate the average for the specified column and round it to the nearest integer
+         $averageEficiencia = round(Pi::avg('eficiencia_2023_avance_financiero_2023') * 100);
+         $averageEficiencia1 = round(Pi::avg('efectividad_2023') * 100);
+         $averageEficiencia2 = round(Pi::avg('eficiencia_acumulada_avance_fisico') * 100);
+
+         $totalCompromisos = Pi::sum('total_compromisos_2023');
+         $totalCompromisos1 = Pi::sum('total_obligaciones');
+
+
+        return view('reporte-pi', ['consecutivo136' => $consecutivo136, 'consecutivo137' => $consecutivo137, 'consecutivo138' => $consecutivo138, 'consecutivo139' => $consecutivo139, 'consecutivo140' => $consecutivo140, 'consecutivo163' => $consecutivo163, 'consecutivo164' => $consecutivo164, 'consecutivo165' => $consecutivo165, 'consecutivo166' => $consecutivo166, 'consecutivo167' => $consecutivo167, 'consecutivo168' => $consecutivo168, 'consecutivo169' => $consecutivo169, 'consecutivo170' => $consecutivo170, 'consecutivo171' => $consecutivo171, 'consecutivo172' => $consecutivo172, 'consecutivo173' => $consecutivo173, 'consecutivo174' => $consecutivo174, 'consecutivo175' => $consecutivo175, 'consecutivo176' => $consecutivo176, 'consecutivo177' => $consecutivo177, 'consecutivo178' => $consecutivo178, 'consecutivo179' => $consecutivo179, 'averageEficiencia' =>  $averageEficiencia, 'averageEficiencia1' =>  $averageEficiencia1, 'averageEficiencia2' =>  $averageEficiencia2, 'totalCompromisos' =>  $totalCompromisos, 'totalCompromisos1' =>  $totalCompromisos1]);
     }
 }

@@ -131,37 +131,38 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                    <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
-                                                            <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo136->meta }}</p>
+                                                            <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo136->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                    <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
-                                                            <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo136->tipo_de_meta }}</p>
+                                                            <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo136->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                    <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo136->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                    <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
-                                                            <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo136->indicador }}</p>
+                                                            <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo136->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                    <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
-                                                            <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo136->entidad_responsable }}</p>
+                                                            <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo136->entidad_responsable }}</p>
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -213,31 +214,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo137->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo137->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo137->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo137->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo137->entidad_responsable }}</p>
@@ -295,31 +296,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo138->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo138->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo138->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo138->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo138->entidad_responsable }}</p>
@@ -378,31 +379,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo139->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo139->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo139->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo139->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo139->entidad_responsable }}</p>
@@ -463,31 +464,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo140->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo140->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo140->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo140->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo140->entidad_responsable }}</p>
@@ -546,31 +547,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo163->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo163->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo163->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo163->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo163->entidad_responsable }}</p>
@@ -629,31 +630,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo164->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo164->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo164->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo164->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo164->entidad_responsable }}</p>
@@ -712,31 +713,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo165->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo165->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo165->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo165->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo165->entidad_responsable }}</p>
@@ -794,31 +795,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo166->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo166->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo166->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo166->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo166->entidad_responsable }}</p>
@@ -876,31 +877,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo167->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo167->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo167->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo167->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo167->entidad_responsable }}</p>
@@ -959,31 +960,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo168->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo168->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo168->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo168->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo168->entidad_responsable }}</p>
@@ -1041,31 +1042,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo169->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo169->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo169->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo169->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo169->entidad_responsable }}</p>
@@ -1123,31 +1124,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo170->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo170->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo170->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo170->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo170->entidad_responsable }}</p>
@@ -1205,31 +1206,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo171->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo171->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo171->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo171->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo171->entidad_responsable }}</p>
@@ -1288,31 +1289,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo172->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo172->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo172->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo172->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo172->entidad_responsable }}</p>
@@ -1371,31 +1372,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo173->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo173->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo173->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo173->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo173->entidad_responsable }}</p>
@@ -1454,31 +1455,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo174->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo174->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo174->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo174->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo174->entidad_responsable }}</p>
@@ -1537,31 +1538,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo175->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo175->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo175->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo175->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo175->entidad_responsable }}</p>
@@ -1621,31 +1622,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo176->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo176->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo176->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo176->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo176->entidad_responsable }}</p>
@@ -1705,31 +1706,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo177->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo177->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo177->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo177->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo177->entidad_responsable }}</p>
@@ -1788,31 +1789,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo178->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo178->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo178->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo178->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo178->entidad_responsable }}</p>
@@ -1871,31 +1872,31 @@
                                                 </div>
                                                 <!-- Tarjetas con datos -->
                                                 <div class="col-lg-5">
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo179->meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Tipo de Meta</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo179->tipo_de_meta }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador de Bienestar</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1;">{{ $consecutivo179->indicador_de_bienestar }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Indicador</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo179->indicador }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="card mb-2" style="height: 50px;">
+                                                     <div class="card mb-2" style="height: 50px; background-color: #f8d7da;">
                                                         <div class="card-body" style="padding: 0; line-height: 2;">
                                                             <h5 class="card-title font-weight-bold" style="font-size: 13px; margin: 0;">Entidad Responsable</h5>
                                                             <p class="card-text" style="font-size: 12px; margin: 0; line-height: 1">{{ $consecutivo179->entidad_responsable }}</p>
@@ -1905,14 +1906,68 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="row">
+                                                <div class="col-lg-12 text-center mb-4" id="additionalText">
+                                                    <div class="row">
+                                                    <div class="col-lg-4 mx-auto">
+                                                <div class="card h-100">
+                                                    <div class="card-header">
+                                                        <h5 class="card-title mb-0">EFICIENCIA ACTUAL</h5>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="velocimeter" data-value="{{ $averageEficiencia }}" data-max-value="100" style="--color-primary: #3498db; --color-secondary: #85c1e9; --gradient-start: 0%; --gradient-end: {{ $averageEficiencia }}%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-4 mx-auto"> <!-- Utiliza col-lg-4 para dividir en 3 columnas dentro del contenedor -->
+                                                <div class="card h-100">
+                                                    <div class="card-header">
+                                                        <h5 class="card-title mb-0">EFECTIVIDAD ACTUAL</h5>
+                                                    </div>
+                                                    <div class="card-body">
+                                                    <div class="velocimeter" data-value="{{ $averageEficiencia1 }}" data-max-value="100" style="--color-primary: #6b8e23; --color-secondary:  #c0d68e; --gradient-start: 0%; --gradient-end: {{ $averageEficiencia1 }}%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 mx-auto"> <!-- Utiliza col-lg-4 para dividir en 3 columnas dentro del contenedor -->
+                                                <div class="card h-100">
+                                                    <div class="card-header">
+                                                        <h5 class="card-title mb-0">EFICIENCIA ACUMULADA ACTUAL</h5>
+                                                    </div>
+                                                    <div class="card-body">
+                                                    <div class="velocimeter" data-value="{{ $averageEficiencia2 }}" data-max-value="100" style="--color-primary: #f1c40f; --color-secondary: #f7dc6f; --gradient-start: 0%; --gradient-end: {{ $averageEficiencia2 }}%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 mx-auto" id="additionalText">
+                                            <canvas id="barChart22" width="800" height="400"></canvas>
+                                        </div>
+
+                            </div>
+                        </div>
+
             </div>
     </section>
 @stop
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        $('.nav-tabs a').on('click', function (e) {
+            // Oculta el texto cuando se hace clic en una pestaña
+            $('#additionalText').addClass('d-none');
+        });
+    });
+</script>
+
 
     <script>
         // Obtén los valores de las variables PHP
@@ -1926,7 +1981,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -1958,7 +2013,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -1989,7 +2044,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2020,7 +2075,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2051,7 +2106,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2082,7 +2137,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2113,7 +2168,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2144,7 +2199,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2175,7 +2230,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2206,7 +2261,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2237,7 +2292,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2268,7 +2323,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2298,7 +2353,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2328,7 +2383,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2358,7 +2413,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2388,7 +2443,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2418,7 +2473,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2448,7 +2503,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2478,7 +2533,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2508,7 +2563,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2538,7 +2593,7 @@
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
                 datasets: [{
-                    label: 'Comparación',
+                    label: 'Comparación Actual',
                     data: [totalCompromisos, totalObligaciones],
                     backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
                     borderWidth: 0
@@ -2567,6 +2622,37 @@
             type: 'bar',
             data: {
                 labels: ['Total Compromisos 2023', 'Total Obligaciones'],
+                datasets: [{
+                    label: 'Comparación',
+                    data: [totalCompromisos, totalObligaciones],
+                    backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        maxBarThickness: 50 // Ajusta el grosor máximo de las barras
+                    }
+                }
+            }
+        });
+    </script>
+
+<script>
+        // Obtén los valores de las variables PHP
+        var totalCompromisos = {{ $totalCompromisos}};
+        var totalObligaciones = {{ $totalCompromisos1}};
+
+        // Inicializa Chart.js
+        var ctx = document.getElementById('barChart22').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Total Compromisos ', 'Total Obligaciones'],
                 datasets: [{
                     label: 'Comparación',
                     data: [totalCompromisos, totalObligaciones],
