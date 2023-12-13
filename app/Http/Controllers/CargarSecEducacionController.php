@@ -16,51 +16,20 @@ use App\Models\Desercion;
 use App\Models\FueSistema;
 use App\Models\Eficiencium;
 use App\Models\Pae;
-use App\Models\AfiVacunacion;
 use App\Models\Pi;
 
-class CargaController extends Controller
+class CargarSecEducacionController extends Controller
 {
     public function __construct()
     {
-        $user = auth()->user();
-
-        if ($user && $user->can('sec-gen-cargar.index')) {
-            // Solo tiene acceso a 'sec-sal-cargar.index'
-            $this->middleware('can:sec-gen-cargar.index')->only('index');
-        } elseif ($user && $user->can('sec-gob-cargar.index')) {
-            // Solo tiene acceso a 'sec-sal-cargar.index'
-            $this->middleware('can:sec-gob-cargar.index')->only('index');
-        } elseif ($user && $user->can('sec-sal-cargar.index')) {
-            // Solo tiene acceso a 'sec-sal-cargar.index'
-            $this->middleware('can:sec-sal-cargar.index')->only('index');
-        } elseif ($user && $user->can('sec-pla-cargar.index')) {
-            // Solo tiene acceso a 'sec-sal-cargar.index'
-            $this->middleware('can:sec-pla-cargar.index')->only('index');
-        }elseif ($user && $user->can('sec-hac-cargar.index')) {
-            // Solo tiene acceso a 'sec-edu-cargar.index'
-            $this->middleware('can:sec-hac-cargar.index')->only('index');
-        }elseif ($user && $user->can('sec-des-cargar.index')) {
-            // Solo tiene acceso a 'sec-edu-cargar.index'
-            $this->middleware('can:sec-des-cargar.index')->only('index');
-        }elseif ($user && $user->can('sec-edu-cargar.index')) {
-            // Solo tiene acceso a 'sec-edu-cargar.index'
-            $this->middleware('can:sec-edu-cargar.index')->only('index');
-        }elseif ($user && $user->can('sec-inf-cargar.index')) {
-            // Solo tiene acceso a 'sec-edu-cargar.index'
-            $this->middleware('can:sec-inf-cargar.index')->only('index');
-        }elseif ($user && $user->can('sec-mov-cargar.index')) {
-        // Solo tiene acceso a 'sec-edu-cargar.index'
-        $this->middleware('can:sec-mov-cargar.index')->only('index');
-        }
+        $this->middleware('can:cargar-sec-educacion.index')->only('index');
     }
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('carga');
+        return view('cargar-sec-educacion');
     }
 
     public function importar(Request $request)
@@ -102,7 +71,6 @@ class CargaController extends Controller
             'FUERA SISTEMA' => 'importarHojaFueSistema',
             'EFICIENCIA' => 'importarHojaEficiencia',
             'PAE' => 'importarHojaPae',
-            'AFI. VACUNACION' => 'importarHojaAfiVacunacion',
             'PI' => 'importarHojaPi'
             // ... Agrega más hojas según sea necesario
         ];
@@ -668,47 +636,6 @@ class CargaController extends Controller
                             'sede' => $sede,
                             'mes' => $mes,
                             'registro' => $registro,
-                        ]);
-                    }
-                }
-            }
-        }
-    }
-
-    private function importarHojaAfiVacunacion($hoja)
-    {
-        if (!empty($hoja) && is_array($hoja)) {
-            // Itera sobre los datos desde la segunda fila (omitir la fila de encabezados)
-            for ($i = 2; $i < count($hoja); $i++) {
-                $indicadores_pts = $hoja[$i][0];
-
-                // Itera sobre los años y valores correspondientes
-                for ($j = 1; $j < count($hoja[$i]); $j += 3) {
-                    $año = $hoja[0][$j]; // Obtiene el año desde la fila de encabezados
-                    $numerador = $hoja[$i][$j];
-                    $denominador = $hoja[$i][$j + 1];
-                    $indicador = $hoja[$i][$j + 2];
-
-                    // Busca si ya existe una fila con el mismo valor en 'indicadores_pts', 'año' y 'año'
-                    $datoExistente = AfiVacunacion::where('indicadores_pts', $indicadores_pts)
-                        ->where('año', $año)
-                        ->first();
-
-                    if ($datoExistente) {
-                        // Si ya existe, actualiza los valores
-                        $datoExistente->update([
-                            'numerador' => $numerador,
-                            'denominador' => $denominador,
-                            'indicador' => $indicador,
-                        ]);
-                    } else {
-                        // Si no existe, crea un nuevo registro
-                        AfiVacunacion::create([
-                            'indicadores_pts' => $indicadores_pts,
-                            'año' => $año,
-                            'numerador' => $numerador,
-                            'denominador' => $denominador,
-                            'indicador' => $indicador,
                         ]);
                     }
                 }

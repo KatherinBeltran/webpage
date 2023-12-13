@@ -21,7 +21,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="{{ url('cargar/importar') }}" method="post" enctype="multipart/form-data" id="form_carga_datos">
+                            <form action="{{ url('cargar-sec-planeacion/importar') }}" method="post" enctype="multipart/form-data" id="form_carga_datos">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-10">
