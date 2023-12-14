@@ -15,10 +15,10 @@
 
                 <div class="card card-default">
                     <div class="card-body">
-                        <form method="POST" action="{{ route('pis.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('pi-sec-movilidads.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('pi.form')
+                            @include('pi-sec-movilidad.form')
 
                         </form>
                     </div>

@@ -60,6 +60,6 @@
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-outline-success btn-sm custom-btn">{{ __('Guardar') }}</button>
-        <a href="  {{ route('pis.index') }}" class="btn  btn-outline-danger btn-sm custom-btn">Cancelar</a>
+        <a href="  {{ route('pi-sec-educacions.index') }}" class="btn  btn-outline-danger btn-sm custom-btn">Cancelar</a>
     </div>
 </div>

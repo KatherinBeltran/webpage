@@ -3,10 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Lista metas planeación y ordenamiento territorial</h1>
+    <h1>Lista metas secretaría de infraestructura</h1>
 
     <div class="float-right">
-        <a href="{{ route('pis.create') }}" class="btn btn-block btn-outline-secondary btn-sm float-right"  data-placement="left">
+        <a href="{{ route('pi-sec-infraestructuras.create') }}" class="btn btn-block btn-outline-secondary btn-sm float-right"  data-placement="left">
             {{ __('Nuevo') }}
         </a>
     </div>
@@ -61,9 +61,9 @@
                     <td>{{ $pi->eficiencia_acumulada_avance_fisico }}</td>
 
                     <td>
-                        <form action="{{ route('pis.destroy',$pi->id) }}" method="POST">
-                            <a class="btn btn-sm btn-secundary" href="{{ route('pis.show',$pi->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('') }}</a>
-                            <a class="btn btn-sm btn-secundary" href="{{ route('pis.edit',$pi->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('') }}</a>
+                        <form action="{{ route('pi-sec-infraestructuras.destroy',$pi->id) }}" method="POST">
+                            <a class="btn btn-sm btn-secundary" href="{{ route('pi-sec-infraestructuras.show',$pi->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('') }}</a>
+                            <a class="btn btn-sm btn-secundary" href="{{ route('pi-sec-infraestructuras.edit',$pi->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('') }}</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-secundary btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('') }}</button>

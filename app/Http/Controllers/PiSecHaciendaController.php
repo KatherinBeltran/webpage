@@ -5,19 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Pi;
 use Illuminate\Http\Request;
 
-/**
- * Class PiController
- * @package App\Http\Controllers
- */
-class PiController extends Controller
+class PiSecHaciendaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:pis.index')->only('index');
-        $this->middleware('can:pis.create')->only('create', 'store');
-        $this->middleware('can:pis.show')->only('show');
-        $this->middleware('can:pis.edit')->only('edit', 'update');
-        $this->middleware('can:pis.destroy')->only('destroy');
+        $this->middleware('can:pi-sec-haciendas.index')->only('index');
+        $this->middleware('can:pi-sec-haciendas.create')->only('create', 'store');
+        $this->middleware('can:pi-sec-haciendas.show')->only('show');
+        $this->middleware('can:pi-sec-haciendas.edit')->only('edit', 'update');
+        $this->middleware('can:pi-sec-haciendas.destroy')->only('destroy');
     }
     /**
      * Display a listing of the resource.
@@ -28,7 +24,7 @@ class PiController extends Controller
     {
         $pis = Pi::paginate(10000);
 
-        return view('pi.index', compact('pis'))
+        return view('pi-sec-hacienda.index', compact('pis'))
             ->with('i', (request()->input('page', 1) - 1) * $pis->perPage());
     }
 
@@ -40,7 +36,7 @@ class PiController extends Controller
     public function create()
     {
         $pi = new Pi();
-        return view('pi.create', compact('pi'));
+        return view('pi-sec-hacienda.create', compact('pi'));
     }
 
     /**
@@ -55,10 +51,10 @@ class PiController extends Controller
 
         $pi = Pi::create($request->all());
 
-        return redirect()->route('pis.index')
+        return redirect()->route('pi-sec-haciendas.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro meta planeación y ordenamiento territorial creado exitosamente.
+                                    Registro meta secretaría de hacienda creado exitosamente.
                                 </div>');
     }
 
@@ -72,7 +68,7 @@ class PiController extends Controller
     {
         $pi = Pi::find($id);
 
-        return view('pi.show', compact('pi'));
+        return view('pi-sec-hacienda.show', compact('pi'));
     }
 
     /**
@@ -85,7 +81,7 @@ class PiController extends Controller
     {
         $pi = Pi::find($id);
 
-        return view('pi.edit', compact('pi'));
+        return view('pi-sec-hacienda.edit', compact('pi'));
     }
 
     /**
@@ -101,10 +97,10 @@ class PiController extends Controller
 
         $pi->update($request->all());
 
-        return redirect()->route('pis.index')
+        return redirect()->route('pi-sec-haciendas.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro meta planeación y ordenamiento territorial actualizado exitosamente.
+                                    Registro meta secretaría de hacienda actualizado exitosamente.
                                 </div>');
     }
 
@@ -117,10 +113,10 @@ class PiController extends Controller
     {
         $pi = Pi::find($id)->delete();
 
-        return redirect()->route('pis.index')
+        return redirect()->route('pi-sec-haciendas.index')
             ->with('success', '<div class="alert alert-success alert-dismissible">
                                     <h5><i class="icon fas fa-check"></i> ¡Éxito!</h5>
-                                    Registro meta planeación y ordenamiento territorial eliminado exitosamente.
+                                    Registro meta secretaría de hacienda eliminado exitosamente.
                                 </div>');
     }
 }

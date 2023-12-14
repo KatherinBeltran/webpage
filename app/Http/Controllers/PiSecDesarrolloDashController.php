@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pi;
 
-class PiSecPlaneacionDashController extends Controller
+class PiSecDesarrolloDashController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:pi-sec-planeacion-dash.index')->only('index');
+        $this->middleware('can:pi-sec-desarrollo-dash.index')->only('index');
     }
     /**
      * Display a listing of the resource.
@@ -157,6 +157,6 @@ class PiSecPlaneacionDashController extends Controller
          $totalCompromisos = Pi::sum('total_compromisos_2023');
          $totalCompromisos1 = Pi::sum('total_obligaciones');
 
-        return view('reporte-pi-sec-planeacion', ['consecutivo136' => $consecutivo136, 'consecutivo137' => $consecutivo137, 'consecutivo138' => $consecutivo138, 'consecutivo139' => $consecutivo139, 'consecutivo140' => $consecutivo140, 'consecutivo163' => $consecutivo163, 'consecutivo164' => $consecutivo164, 'consecutivo165' => $consecutivo165, 'consecutivo166' => $consecutivo166, 'consecutivo167' => $consecutivo167, 'consecutivo168' => $consecutivo168, 'consecutivo169' => $consecutivo169, 'consecutivo170' => $consecutivo170, 'consecutivo171' => $consecutivo171, 'consecutivo172' => $consecutivo172, 'consecutivo173' => $consecutivo173, 'consecutivo174' => $consecutivo174, 'consecutivo175' => $consecutivo175, 'consecutivo176' => $consecutivo176, 'consecutivo177' => $consecutivo177, 'consecutivo178' => $consecutivo178, 'consecutivo179' => $consecutivo179, 'averageEficiencia' =>  $averageEficiencia, 'averageEficiencia1' =>  $averageEficiencia1, 'averageEficiencia2' =>  $averageEficiencia2, 'totalCompromisos' =>  $totalCompromisos, 'totalCompromisos1' =>  $totalCompromisos1]);
+        return view('reporte-pi-sec-desarrollo', ['consecutivo136' => $consecutivo136, 'consecutivo137' => $consecutivo137, 'consecutivo138' => $consecutivo138, 'consecutivo139' => $consecutivo139, 'consecutivo140' => $consecutivo140, 'consecutivo163' => $consecutivo163, 'consecutivo164' => $consecutivo164, 'consecutivo165' => $consecutivo165, 'consecutivo166' => $consecutivo166, 'consecutivo167' => $consecutivo167, 'consecutivo168' => $consecutivo168, 'consecutivo169' => $consecutivo169, 'consecutivo170' => $consecutivo170, 'consecutivo171' => $consecutivo171, 'consecutivo172' => $consecutivo172, 'consecutivo173' => $consecutivo173, 'consecutivo174' => $consecutivo174, 'consecutivo175' => $consecutivo175, 'consecutivo176' => $consecutivo176, 'consecutivo177' => $consecutivo177, 'consecutivo178' => $consecutivo178, 'consecutivo179' => $consecutivo179, 'averageEficiencia' =>  $averageEficiencia, 'averageEficiencia1' =>  $averageEficiencia1, 'averageEficiencia2' =>  $averageEficiencia2, 'totalCompromisos' =>  $totalCompromisos, 'totalCompromisos1' =>  $totalCompromisos1]);
     }
 }

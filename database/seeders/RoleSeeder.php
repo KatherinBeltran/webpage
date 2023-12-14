@@ -41,7 +41,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'cargar-sec-general.index', 'description' => 'Cargar datos secretaría general'])->syncRoles([$role1]);
         Permission::create(['name' => 'cargar-sec-gobierno.index', 'description' => 'Cargar datos secretaría de gobierno'])->syncRoles([$role1]);
         Permission::create(['name' => 'cargar-sec-salud.index', 'description' => 'Cargar datos secretaría de salud'])->syncRoles([$role1]);
-        Permission::create(['name' => 'cargar-sec-planeacion.index', 'description' => 'Cargar datos secretaría de planeación y ordenamiento territorial'])->syncRoles([$role1]);
+        Permission::create(['name' => 'cargar-sec-planeacion.index', 'description' => 'Cargar datos secretaría de planeación'])->syncRoles([$role1]);
         Permission::create(['name' => 'cargar-sec-hacienda.index', 'description' => 'Cargar datos secretaría de hacienda'])->syncRoles([$role1]);
         Permission::create(['name' => 'cargar-sec-desarrollo.index', 'description' => 'Cargar datos secretaría de desarrollo'])->syncRoles([$role1]);
         Permission::create(['name' => 'cargar-sec-educacion.index', 'description' => 'Cargar datos secretaría de educación'])->syncRoles([$role1]);
@@ -132,11 +132,59 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'afi-vacunacions.edit', 'description' => 'Editar afiliación y vacunación'])->syncRoles([$role1]);
         Permission::create(['name' => 'afi-vacunacions.destroy', 'description' => 'Eliminar afiliación y vacunación'])->syncRoles([$role1]);
 
-        Permission::create(['name' => 'pis.index', 'description' => 'Ver listado de metas planeación y ordenamiento'])->syncRoles([$role1]); 
-        Permission::create(['name' => 'pis.create', 'description' => 'Registrar nueva meta planeación y ordenamiento'])->syncRoles([$role1]); 
-        Permission::create(['name' => 'pis.show', 'description' => 'Ver meta planeación y ordenamiento'])->syncRoles([$role1]);
-        Permission::create(['name' => 'pis.edit', 'description' => 'Editar meta planeación y ordenamiento'])->syncRoles([$role1]);
-        Permission::create(['name' => 'pis.destroy', 'description' => 'Eliminar meta planeación y ordenamiento'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-generals.index', 'description' => 'Ver listado de metas secretaría general'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-generals.create', 'description' => 'Registrar nueva meta secretaría general'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-generals.show', 'description' => 'Ver meta secretaría general'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-generals.edit', 'description' => 'Editar meta secretaría general'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-generals.destroy', 'description' => 'Eliminar meta secretaría general'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-gobiernos.index', 'description' => 'Ver listado de metas secretaría de gobierno'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-gobiernos.create', 'description' => 'Registrar nueva meta secretaría de gobierno'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-gobiernos.show', 'description' => 'Ver meta secretaría de gobierno'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-gobiernos.edit', 'description' => 'Editar meta secretaría de gobierno'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-gobiernos.destroy', 'description' => 'Eliminar meta secretaría de gobierno'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-saluds.index', 'description' => 'Ver listado de metas secretaría de salud'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-saluds.create', 'description' => 'Registrar nueva meta secretaría de salud'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-saluds.show', 'description' => 'Ver meta secretaría de salud'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-saluds.edit', 'description' => 'Editar meta secretaría de salud'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-saluds.destroy', 'description' => 'Eliminar meta secretaría de salud'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-planeacions.index', 'description' => 'Ver listado de metas secretaría de planeación'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-planeacions.create', 'description' => 'Registrar nueva meta secretaría de planeación'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-planeacions.show', 'description' => 'Ver meta secretaría de planeación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-planeacions.edit', 'description' => 'Editar meta secretaría de planeación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-planeacions.destroy', 'description' => 'Eliminar meta secretaría de planeación'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-haciendas.index', 'description' => 'Ver listado de metas secretaría de hacienda'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-haciendas.create', 'description' => 'Registrar nueva meta secretaría de hacienda'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-haciendas.show', 'description' => 'Ver meta secretaría de hacienda'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-haciendas.edit', 'description' => 'Editar meta secretaría de hacienda'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-haciendas.destroy', 'description' => 'Eliminar meta secretaría de hacienda'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-desarrollos.index', 'description' => 'Ver listado de metas secretaría de desarrollo'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-desarrollos.create', 'description' => 'Registrar nueva meta secretaría de desarrollo'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-desarrollos.show', 'description' => 'Ver meta secretaría de desarrollo'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-desarrollos.edit', 'description' => 'Editar meta secretaría de desarrollo'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-desarrollos.destroy', 'description' => 'Eliminar meta secretaría de desarrollo'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-educacions.index', 'description' => 'Ver listado de metas secretaría de educación'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-educacions.create', 'description' => 'Registrar nueva meta secretaría de educación'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-educacions.show', 'description' => 'Ver meta secretaría de educación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-educacions.edit', 'description' => 'Editar meta secretaría de educación'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-educacions.destroy', 'description' => 'Eliminar meta secretaría de educación'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-infraestructuras.index', 'description' => 'Ver listado de metas secretaría de infraestructura'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-infraestructuras.create', 'description' => 'Registrar nueva meta secretaría de infraestructura'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-infraestructuras.show', 'description' => 'Ver meta secretaría de infraestructura'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-infraestructuras.edit', 'description' => 'Editar meta secretaría de infraestructura'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-infraestructuras.destroy', 'description' => 'Eliminar meta secretaría de infraestructura'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-movilidads.index', 'description' => 'Ver listado de metas secretaría de movilidad'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-movilidads.create', 'description' => 'Registrar nueva meta secretaría de movilidad'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-movilidads.show', 'description' => 'Ver meta secretaría de movilidad'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-movilidads.edit', 'description' => 'Editar meta secretaría de movilidad'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-movilidads.destroy', 'description' => 'Eliminar meta secretaría de movilidad'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matrícula'])->syncRoles([$role1,$role8]);
 
@@ -148,6 +196,22 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name' => 'afivac-dash.index', 'description' => 'Ver dashboard reporte afiliación y vacunación'])->syncRoles([$role1,$role4]);
 
-        Permission::create(['name' => 'pi-sec-planeacion-dash.index', 'description' => 'Ver dashboard reporte PI'])->syncRoles([$role1,$role5]);
+        Permission::create(['name' => 'pi-sec-general-dash.index', 'description' => 'Ver dashboard reporte PI secretaría general'])->syncRoles([$role1,$role2]);
+
+        Permission::create(['name' => 'pi-sec-gobierno-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de gobierno'])->syncRoles([$role1,$role3]);
+
+        Permission::create(['name' => 'pi-sec-salud-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de salud'])->syncRoles([$role1,$role4]);
+
+        Permission::create(['name' => 'pi-sec-planeacion-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de planeación'])->syncRoles([$role1,$role5]);
+
+        Permission::create(['name' => 'pi-sec-hacienda-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de hacienda'])->syncRoles([$role1,$role6]);
+
+        Permission::create(['name' => 'pi-sec-desarrollo-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de desarrollo'])->syncRoles([$role1,$role7]);
+
+        Permission::create(['name' => 'pi-sec-educacion-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de educación'])->syncRoles([$role1,$role8]);
+
+        Permission::create(['name' => 'pi-sec-infraestructura-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de infraestructura'])->syncRoles([$role1,$role9]);
+
+        Permission::create(['name' => 'pi-sec-movilidad-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de movilidad'])->syncRoles([$role1,$role9]);
     }
 }

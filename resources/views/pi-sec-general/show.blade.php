@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-right">
-                            <a class="btn btn-secundary border border-secondary btn-sm" href="{{ route('pis.index') }}"> {{ __('Volver') }}</a>
+                            <a class="btn btn-secundary border border-secondary btn-sm" href="{{ route('pi-sec-generals.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 

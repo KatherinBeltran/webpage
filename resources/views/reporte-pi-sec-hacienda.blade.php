@@ -97,7 +97,7 @@
                                                         <h5 class="card-title mb-0">EFICIENCIA 2023</h5>
                                                     </div>
                                                     <div class="card-body">
-                                                    <div class="velocimeter" data-value="{{ $consecutivo136->eficiencia_2023_avance_financiero_2023 }}" data-max-value="100" style="--color-primary: #3498db; --color-secondary: #85c1e9; --gradient-start: 0%; --gradient-end: {{ $consecutivo136->eficiencia_2023_avance_financiero_2023 }}%;"></div>
+                                                        <div class="velocimeter" data-value="{{ $consecutivo136->eficiencia_2023_avance_financiero_2023 }}" data-max-value="100" style="--color-primary: #3498db; --color-secondary: #85c1e9; --gradient-start: 0%; --gradient-end: {{ $consecutivo136->eficiencia_2023_avance_financiero_2023 }}%;"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +108,7 @@
                                                         <h5 class="card-title mb-0">EFECTIVIDAD 2023</h5>
                                                     </div>
                                                     <div class="card-body">
-                                                    <div class="velocimeter" data-value="{{ $consecutivo136->efectividad_2023 }}" data-max-value="100" style="--color-primary: #6b8e23; --color-secondary:  #c0d68e; --gradient-start: 0%; --gradient-end: {{ $consecutivo136->efectividad_2023 }}%;"></div>
+                                                        <div class="velocimeter" data-value="{{ $consecutivo136->efectividad_2023 }}" data-max-value="100" style="--color-primary: #6b8e23; --color-secondary:  #c0d68e; --gradient-start: 0%; --gradient-end: {{ $consecutivo136->efectividad_2023 }}%;"></div>
                                                     </div>
                                                 </div>
                                             </div>

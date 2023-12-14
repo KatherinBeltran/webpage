@@ -50,7 +50,7 @@
             <div class="icon">
                 <i class="fas fa-car"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="pi-sec-movilidad-dash" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -66,7 +66,7 @@
             <div class="icon">
                 <i class="fas fa-home"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="pi-sec-hacienda-dash" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>

@@ -334,7 +334,7 @@ return [
         [
             'text'    => 'Secretaría general',
             'icon'    => 'fa-fw fas fa-building',
-            'can' => ['cargar-sec-general.index'],
+            'can' => ['cargar-sec-general.index', 'pi-sec-generals.index', 'pi-sec-general-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -345,20 +345,26 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-general.index'],
+                    'can' => ['pi-sec-generals.index'],
                     'submenu' => [
                         [
-                            
+                            'text'        => 'Metas secretaría general',
+                            'url'         => 'pi-sec-generals',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-generals.index',
                         ],
                     ],
                 ],
                 [
                     'text'    => 'Dashboards',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-general.index'],
+                    'can' => ['pi-sec-general-dash.index'],
                     'submenu' => [
                         [
-
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-general-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-general-dash.index',
                         ],
                     ],
                 ],
@@ -367,7 +373,7 @@ return [
         [
             'text'    => 'Secretaría de gobierno',
             'icon'    => 'fa-fw fas fa-university',
-            'can' => ['cargar-sec-gobierno.index'],
+            'can' => ['cargar-sec-gobierno.index', 'pi-sec-gobiernos.index', 'pi-sec-gobierno-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -378,20 +384,26 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-gobierno.index'],
+                    'can' => ['pi-sec-gobiernos.index'],
                     'submenu' => [
                         [
-                            
+                            'text'        => 'Metas secretaría de gobierno',
+                            'url'         => 'pi-sec-gobiernos',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-gobiernos.index',
                         ],
                     ],
                 ],
                 [
                     'text'    => 'Dashboards',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-gobierno.index'],
+                    'can' => ['pi-sec-gobierno-dash.index'],
                     'submenu' => [
                         [
-
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-gobierno-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-gobierno-dash.index',
                         ],
                     ],
                 ],
@@ -400,7 +412,7 @@ return [
         [
             'text'    => 'Secretaría de salud',
             'icon'    => 'fa-fw fas fa-user-md',
-            'can' => ['cargar-sec-salud.index', 'afi-vacunacions.index', 'afivac-dash.index'],
+            'can' => ['cargar-sec-salud.index', 'afi-vacunacions.index', 'pi-sec-saluds.index', 'afivac-dash.index', 'pi-sec-salud-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -411,7 +423,7 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['afi-vacunacions.index'],
+                    'can' => ['afi-vacunacions.index', 'pi-sec-saluds.index'],
                     'submenu' => [
                         [
                             'text'        => 'Afiliación y vacunación',
@@ -419,18 +431,30 @@ return [
                             'icon'        => 'fa fa-table',
                             'can' => 'afi-vacunacions.index',
                         ],
+                        [
+                            'text'        => 'Metas secretaría de salud',
+                            'url'         => 'pi-sec-saluds',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-saluds.index',
+                        ],
                     ],
                 ],
                 [
                     'text'    => 'Dashboards',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['afivac-dash.index'],
+                    'can' => ['afivac-dash.index', 'pi-sec-salud-dash.index'],
                     'submenu' => [
                         [
                             'text'        => 'Reporte afiliación y vacunación',
                             'url'         => 'afivac-dash',
                             'icon'        => 'fa-fw fas fa-play-circle',
                             'can' => 'afivac-dash.index',
+                        ],
+                        [
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-salud-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-salud-dash.index',
                         ],
                     ],
                 ],
@@ -439,7 +463,7 @@ return [
         [
             'text'    => 'Secretaría de planeación',
             'icon'    => 'fa-fw fas fa-archway',
-            'can' => ['cargar-sec-planeacion.index', 'pis.index', 'pi-sec-planeacion-dash.index'],
+            'can' => ['cargar-sec-planeacion.index', 'pi-sec-planeacions.index', 'pi-sec-planeacion-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -450,13 +474,13 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['pis.index'],
+                    'can' => ['pi-sec-planeacions.index'],
                     'submenu' => [
                         [
-                            'text'        => 'Metas planeación y ordenamiento territorial',
-                            'url'         => 'pis',
+                            'text'        => 'Metas secretaría de planeación',
+                            'url'         => 'pi-sec-planeacions',
                             'icon'        => 'fa fa-table',
-                            'can' => 'pis.index',
+                            'can' => 'pi-sec-planeacions.index',
                         ],
                     ],
                 ],
@@ -478,7 +502,7 @@ return [
         [
             'text'    => 'Secretaría de hacienda',
             'icon'    => 'fa-fw fas fa-hand-holding-usd',
-            'can' => ['cargar-sec-hacienda.index'],
+            'can' => ['cargar-sec-hacienda.index', 'pi-sec-haciendas.index', 'pi-sec-hacienda-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -489,20 +513,26 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-hacienda.index'],
+                    'can' => ['pi-sec-haciendas.index'],
                     'submenu' => [
                         [
-                            
+                            'text'        => 'Metas secretaría de hacienda',
+                            'url'         => 'pi-sec-haciendas',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-haciendas.index',
                         ],
                     ],
                 ],
                 [
                     'text'    => 'Dashboards',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-hacienda.index'],
+                    'can' => ['pi-sec-hacienda-dash.index'],
                     'submenu' => [
                         [
-
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-hacienda-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-hacienda-dash.index',
                         ],
                     ],
                 ],
@@ -511,7 +541,7 @@ return [
         [
             'text'    => 'Secretaría de desarrollo',
             'icon'    => 'fa-fw fas fa-chart-line',
-            'can' => ['cargar-sec-desarrollo.index'],
+            'can' => ['cargar-sec-desarrollo.index', 'pi-sec-desarrollos.index', 'pi-sec-desarrollo-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -522,20 +552,26 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-desarrollo.index'],
+                    'can' => ['pi-sec-desarrollos.index'],
                     'submenu' => [
                         [
-                            
+                            'text'        => 'Metas secretaría de desarrollo',
+                            'url'         => 'pi-sec-desarrollos',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-desarrollos.index',
                         ],
                     ],
                 ],
                 [
                     'text'    => 'Dashboards',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-desarrollo.index'],
+                    'can' => ['pi-sec-desarrollo-dash.index'],
                     'submenu' => [
                         [
-
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-desarrollo-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-desarrollo-dash.index',
                         ],
                     ],
                 ],
@@ -544,7 +580,7 @@ return [
         [
             'text'    => 'Secretaría de educación',
             'icon'    => 'fa-fw fas fa-book-open',
-            'can' => ['cargar-sec-educacion.index', 'mat-sectors.index', 'mat-etnicos.index', 'extraedads.index', 'est-venezolanos.index', 'tra-grados.index', 'pob-discapacidads.index', 'cob-bruta.index', 'cob-neta.index', 'desercions.index', 'fue-sistemas.index', 'eficiencia.index', 'paes.index', 'mat-dash.index', 'cob-dash.index', 'des-dash.index', 'pae-dash.index'],
+            'can' => ['cargar-sec-educacion.index', 'mat-sectors.index', 'mat-etnicos.index', 'extraedads.index', 'est-venezolanos.index', 'tra-grados.index', 'pob-discapacidads.index', 'cob-bruta.index', 'cob-neta.index', 'desercions.index', 'fue-sistemas.index', 'eficiencia.index', 'paes.index', 'pi-sec-educacions.index', 'mat-dash.index', 'cob-dash.index', 'des-dash.index', 'pae-dash.index', 'pi-sec-educacion-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -555,7 +591,7 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['mat-sectors.index', 'mat-etnicos.index', 'extraedads.index', 'est-venezolanos.index', 'tra-grados.index', 'pob-discapacidads.index', 'cob-bruta.index', 'cob-neta.index', 'desercions.index', 'fue-sistemas.index', 'eficiencia.index', 'paes.index'],
+                    'can' => ['mat-sectors.index', 'mat-etnicos.index', 'extraedads.index', 'est-venezolanos.index', 'tra-grados.index', 'pob-discapacidads.index', 'cob-bruta.index', 'cob-neta.index', 'desercions.index', 'fue-sistemas.index', 'eficiencia.index', 'paes.index', 'pi-sec-educacions.index'],
                     'submenu' => [
                         [
                             'text'        => 'Matrícula sector',
@@ -636,12 +672,18 @@ return [
                             'icon'        => 'fa fa-table',
                             'can' => 'paes.index',
                         ],
+                        [
+                            'text'        => 'Metas secretaría de educación',
+                            'url'         => 'pi-sec-educacions',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-educacions.index',
+                        ],
                     ],
                 ],
                 [
                     'text'    => 'Dashboards',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['mat-dash.index', 'cob-dash.index', 'des-dash.index', 'pae-dash.index'],
+                    'can' => ['mat-dash.index', 'cob-dash.index', 'des-dash.index', 'pae-dash.index', 'pi-sec-educacion-dash.index'],
                     'submenu' => [
                         [
                             'text'        => 'Reporte matrícula',
@@ -667,6 +709,12 @@ return [
                             'icon'        => 'fa-fw fas fa-play-circle',
                             'can' => 'pae-dash.index',
                         ],
+                        [
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-educacion-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-educacion-dash.index',
+                        ],
                     ],
                 ],
             ],
@@ -674,7 +722,7 @@ return [
         [
             'text'    => 'Secretaría de infraestructura',
             'icon'    => 'fa-fw fas fa-bezier-curve',
-            'can' => ['cargar-sec-infraestructura.index'],
+            'can' => ['cargar-sec-infraestructura.index', 'pi-sec-infraestructuras.index', 'pi-sec-infraestructura-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -685,20 +733,26 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-infraestructura.index'],
+                    'can' => ['pi-sec-infraestructuras.index'],
                     'submenu' => [
                         [
-                            
+                            'text'        => 'Metas secretaría de infraestructura',
+                            'url'         => 'pi-sec-infraestructuras',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-infraestructuras.index',
                         ],
                     ],
                 ],
                 [
                     'text'    => 'Dashboards',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-infraestructura.index'],
+                    'can' => ['pi-sec-infraestructura-dash.index'],
                     'submenu' => [
                         [
-
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-infraestructura-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-infraestructura-dash.index',
                         ],
                     ],
                 ],
@@ -707,7 +761,7 @@ return [
         [
             'text'    => 'Secretaría de movilidad',
             'icon'    => 'fa-fw fas fa-car',
-            'can' => ['cargar-sec-movilidad.index'],
+            'can' => ['cargar-sec-movilidad.index', 'pi-sec-movilidads.index', 'pi-sec-movilidad-dash.index'],
             'submenu' => [
                 [
                     'text'        => 'Cargar datos',
@@ -718,20 +772,26 @@ return [
                 [
                     'text'    => 'Parámetros',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-movilidad.index'],
+                    'can' => ['pi-sec-movilidads.index'],
                     'submenu' => [
                         [
-                            
+                            'text'        => 'Metas secretaría de movilidad',
+                            'url'         => 'pi-sec-movilidads',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-movilidads.index',
                         ],
                     ],
                 ],
                 [
                     'text'    => 'Dashboards',
                     'icon'    => 'fas fa-fw fa-share',
-                    'can' => ['cargar-sec-movilidad.index'],
+                    'can' => ['pi-sec-movilidad-dash.index'],
                     'submenu' => [
                         [
-
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-movilidad-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-movilidad-dash.index',
                         ],
                     ],
                 ],
