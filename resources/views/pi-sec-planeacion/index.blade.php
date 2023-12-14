@@ -44,7 +44,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($pis as $pi)
+            @foreach ($pis->where('entidad_responsable', 'SECRETARÍA DE PLANEACIÓN Y ORDENAMIENTO TERRITORIAL') as $pi)
                 <tr>
                     <td>{{ ++$i }}</td>
                     
