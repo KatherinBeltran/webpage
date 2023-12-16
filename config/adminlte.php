@@ -797,6 +797,84 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => 'Secretaría de ambiente',
+            'icon'    => 'fa fa-leaf',
+            'can' => ['cargar-sec-ambiente.index', 'pi-sec-ambientes.index', 'pi-sec-ambiente-dash.index'],
+            'submenu' => [
+                [
+                    'text'        => 'Cargar datos',
+                    'url'         => 'cargar-sec-ambiente',
+                    'icon'        => 'fa fa-upload',
+                    'can' => 'cargar-sec-ambiente.index',
+                ],
+                [
+                    'text'    => 'Parámetros',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'can' => ['pi-sec-ambientes.index'],
+                    'submenu' => [
+                        [
+                            'text'        => 'Metas secretaría de ambiente',
+                            'url'         => 'pi-sec-ambientes',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-ambientes.index',
+                        ],
+                    ],
+                ],
+                [
+                    'text'    => 'Dashboards',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'can' => ['pi-sec-ambiente-dash.index'],
+                    'submenu' => [
+                        [
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-ambiente-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-ambiente-dash.index',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Secretaría de cultura',
+            'icon'    => 'fa fa-paper-plane',
+            'can' => ['cargar-sec-cultura.index', 'pi-sec-culturas.index', 'pi-sec-cultura-dash.index'],
+            'submenu' => [
+                [
+                    'text'        => 'Cargar datos',
+                    'url'         => 'cargar-sec-cultura',
+                    'icon'        => 'fa fa-upload',
+                    'can' => 'cargar-sec-cultura.index',
+                ],
+                [
+                    'text'    => 'Parámetros',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'can' => ['pi-sec-culturas.index'],
+                    'submenu' => [
+                        [
+                            'text'        => 'Metas secretaría de cultura',
+                            'url'         => 'pi-sec-culturas',
+                            'icon'        => 'fa fa-table',
+                            'can' => 'pi-sec-culturas.index',
+                        ],
+                    ],
+                ],
+                [
+                    'text'    => 'Dashboards',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'can' => ['pi-sec-cultura-dash.index'],
+                    'submenu' => [
+                        [
+                            'text'        => 'Reporte PI',
+                            'url'         => 'pi-sec-cultura-dash',
+                            'icon'        => 'fa-fw fas fa-play-circle',
+                            'can' => 'pi-sec-cultura-dash.index',
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
 
     /*

@@ -47,6 +47,8 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'cargar-sec-educacion.index', 'description' => 'Cargar datos secretaría de educación'])->syncRoles([$role1]);
         Permission::create(['name' => 'cargar-sec-infraestructura.index', 'description' => 'Cargar datos secretaría de infraestructura'])->syncRoles([$role1]);
         Permission::create(['name' => 'cargar-sec-movilidad.index', 'description' => 'Cargar datos secretaría de movilidad'])->syncRoles([$role1]);
+        Permission::create(['name' => 'cargar-sec-ambiente.index', 'description' => 'Cargar datos secretaría de ambiente'])->syncRoles([$role1]);
+        Permission::create(['name' => 'cargar-sec-cultura.index', 'description' => 'Cargar datos secretaría de cultura'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'mat-sectors.index', 'description' => 'Ver listado de matrícula por grados según sector'])->syncRoles([$role1]); 
         Permission::create(['name' => 'mat-sectors.create', 'description' => 'Registrar nueva matrícula por grados según sector'])->syncRoles([$role1]); 
@@ -186,6 +188,18 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'pi-sec-movilidads.edit', 'description' => 'Editar meta secretaría de movilidad'])->syncRoles([$role1]);
         Permission::create(['name' => 'pi-sec-movilidads.destroy', 'description' => 'Eliminar meta secretaría de movilidad'])->syncRoles([$role1]);
 
+        Permission::create(['name' => 'pi-sec-ambientes.index', 'description' => 'Ver listado de metas secretaría de ambiente'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-ambientes.create', 'description' => 'Registrar nueva meta secretaría de ambiente'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-ambientes.show', 'description' => 'Ver meta secretaría de ambiente'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-ambientes.edit', 'description' => 'Editar meta secretaría de ambiente'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-ambientes.destroy', 'description' => 'Eliminar meta secretaría de ambiente'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'pi-sec-culturas.index', 'description' => 'Ver listado de metas secretaría de cultura'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-culturas.create', 'description' => 'Registrar nueva meta secretaría de cultura'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'pi-sec-culturas.show', 'description' => 'Ver meta secretaría de cultura'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-culturas.edit', 'description' => 'Editar meta secretaría de cultura'])->syncRoles([$role1]);
+        Permission::create(['name' => 'pi-sec-culturas.destroy', 'description' => 'Eliminar meta secretaría de cultura'])->syncRoles([$role1]);
+
         Permission::create(['name' => 'mat-dash.index', 'description' => 'Ver dashboard reporte matrícula'])->syncRoles([$role1,$role8]);
 
         Permission::create(['name' => 'cob-dash.index', 'description' => 'Ver dashboard reporte tasa de cobertura'])->syncRoles([$role1,$role8]);
@@ -213,5 +227,9 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'pi-sec-infraestructura-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de infraestructura'])->syncRoles([$role1,$role9]);
 
         Permission::create(['name' => 'pi-sec-movilidad-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de movilidad'])->syncRoles([$role1,$role9]);
+
+        Permission::create(['name' => 'pi-sec-ambiente-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de ambiente'])->syncRoles([$role1,$role9]);
+
+        Permission::create(['name' => 'pi-sec-cultura-dash.index', 'description' => 'Ver dashboard reporte PI secretaría de cultura'])->syncRoles([$role1,$role9]);
     }
 }
