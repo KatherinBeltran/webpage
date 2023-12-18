@@ -72,31 +72,55 @@
         </div>
     </div>
 </div>
+                            <div class="row">
+                                        <div class="col-lg-7 mx-auto" id="additionalText">
+                                            <canvas id="barChart" width="800" height="400"></canvas>
+                                        </div>
 
-<div class="text-center" style="margin-top: 1cm;">
-    <p>
-        La Secretaría de Planeación y Ordenamiento Territorial en el cumplimiento del Plan de Desarrollo Municipal, “El
-        cambio avanza” (2020 – 2023), adoptado mediante Acuerdo 14 de 2020, refiere en el artículo 63. Programa 5.2
-        Ciudad Ordenada y en Crecimiento con integración regional, dando cumplimiento a la meta de producto No 178
-        Diseño y puesta en marcha del Banco de Datos “Soacha Municipio en cifras”, como estrategia de implementación
-        inicio la construcción y desarrollo del banco de datos la Secretaría de Planeación y Ordenamiento Territorial,
-        pretende gestionar, almacenar, integrar, y actualizar gran cantidad de información en cumplimiento de los
-        indicadores y metas del plan de desarrollo, que pueden provenir de diferentes fuentes, estos datos pueden ser
-        procesados y transformados en información recuperable de manera práctica y eficiente en datos estadísticos,
-        listados, e informes. Con el propósito principal de erradicar el riesgo constante de perdida de información por
-        la rotación de personal, incrementar los niveles de seguridad en la administración de la información, aumentar
-        los niveles de eficiencia en la prestación de servicios oportunos y de calidad a la población soachuna, basados
-        en información confiable actualizada, a su vez pretende beneficiar a funcionarios de la Alcaldía Municipal,
-        suministrándoles información oportuna en tiempo real, eficiente y confiable para prestar un mejor servicio y
-        afrontar de la mejor manera las problemáticas, necesidades y dificultades que afronta la comunidad.
-    </p>
-    <p style="font-size: 1.5em; font-weight: bold;" style="margin-top: 1cm;">
-        Este sistema contiene información relevante y de interés para la estructura, diseño e implementación que tengan
-        futuras administraciones en la implementación del plan de desarrollo.
-    </p>
-</div>
+                            </div>
 @stop
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+$(document).ready(function () {
+    $('.nav-tabs a').on('click', function (e) {
+        // Oculta el texto cuando se hace clic en una pestaña
+        $('#additionalText').addClass('d-none');
+    });
+});
+</script>
+
+<script>
+        // Obtén los valores de las variables PHP
+        var totalCompromisos = {{   $totalCompromisos}};
+        var totalObligaciones = {{  $totalCompromisos1}};
+
+        // Inicializa Chart.js
+        var ctx = document.getElementById('barChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Total Compromisos ', 'Total Obligaciones'],
+                datasets: [{
+                    label: 'Comparación',
+                    data: [totalCompromisos, totalObligaciones],
+                    backgroundColor: ['#f7dc6f', '#f7dc6f'], // Personaliza los colores de las barras
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        maxBarThickness: 50 // Ajusta el grosor máximo de las barras
+                    }
+                }
+            }
+        });
+    </script>
     <script> console.log('Hi!'); </script>
 @stop
