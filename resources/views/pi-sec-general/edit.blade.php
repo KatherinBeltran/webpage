@@ -15,7 +15,7 @@
 
                 <div class="card card-default">
                     <div class="card-body">
-                        <form method="POST" action="{{ route('pi-sec-generals.update', $pi-sec-general->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('pi-sec-generals.update', $pi->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
