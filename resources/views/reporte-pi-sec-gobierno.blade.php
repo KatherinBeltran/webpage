@@ -122,7 +122,7 @@
                                                         <h5 class="card-title mb-0">EFICIENCIA ACTUAL</h5>
                                                     </div>
                                                     <div class="card-body">
-                                                        <div class="velocimeter" data-value="{{ $averages['averageEficiencia'] }}" data-max-value="100" style="--color-primary: #3498db; --color-secondary: #85c1e9; --gradient-start: 0%; --gradient-end: {{ $averages['averageEficiencia'] }}%;"></div>
+                                                        <div id="velocimetro"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,7 +134,7 @@
                                                         <h5 class="card-title mb-0">EFECTIVIDAD ACTUAL</h5>
                                                     </div>
                                                     <div class="card-body">
-                                                    <div class="velocimeter" data-value="{{ $averages['averageEficiencia1'] }}" data-max-value="100" style="--color-primary: #6b8e23; --color-secondary:  #c0d68e; --gradient-start: 0%; --gradient-end: {{ $averages['averageEficiencia1'] }}%;"></div>
+                                                        <div id="velocimetro1"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -145,7 +145,7 @@
                                                         <h5 class="card-title mb-0">EFICIENCIA ACUMULADA ACTUAL</h5>
                                                     </div>
                                                     <div class="card-body">
-                                                    <div class="velocimeter" data-value="{{ $averages['averageEficiencia2'] }}" data-max-value="100" style="--color-primary: #f1c40f; --color-secondary: #f7dc6f; --gradient-start: 0%; --gradient-end: {{ $averages['averageEficiencia2'] }}%;"></div>
+                                                        <div id="velocimetro2"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -167,15 +167,15 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-    $(document).ready(function () {
-        $('.nav-tabs a').on('click', function (e) {
-            // Oculta el texto cuando se hace clic en una pestaña
-            $('#additionalText').addClass('d-none');
+        $(document).ready(function () {
+            $('.nav-tabs a').on('click', function (e) {
+                // Oculta el texto cuando se hace clic en una pestaña
+                $('#additionalText').addClass('d-none');
+            });
         });
-    });
-</script>
+    </script>
 
-<script>
+    <script>
         // Obtén los valores de las variables PHP
         @foreach ($consecutivos as $consecutivo)
             var totalCompromisos_{{ $consecutivo->consecutivo_de_la_meta }} = {{ $consecutivo->total_compromisos_2023 }};
@@ -208,9 +208,9 @@
                 }
             });
         @endforeach
-</script>
+    </script>
 
-<script>
+    <script>
         // Obtén los valores de las variables PHP
         var totalCompromisos = {{   $averages['totalCompromisos']}};
         var totalObligaciones = {{  $averages['totalCompromisos1']}};
@@ -241,7 +241,239 @@
         });
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var valorEficiencia = {{ $averages['averageEficiencia'] }};
+            var valorMaximo = 100;
+
+            var width = 200;
+            var height = 100;
+
+            var svg = d3.select("#velocimetro")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            // Definir el gradiente de colores
+            var gradiente = svg.append("defs")
+                .append("linearGradient")
+                .attr("id", "gradiente")
+                .attr("x1", "0%")
+                .attr("y1", "0%")
+                .attr("x2", "100%")
+                .attr("y2", "0%");
+
+            gradiente.append("stop")
+                .attr("offset", "0%")
+                .style("stop-color", "red");
+
+            gradiente.append("stop")
+                .attr("offset", "50%")
+                .style("stop-color", "yellow");
+
+            gradiente.append("stop")
+                .attr("offset", "100%")
+                .style("stop-color", "green");
+
+            // Calcular el ángulo del indicador
+            var anguloIndicador = Math.PI - (valorEficiencia / valorMaximo) * Math.PI; // Invertir el ángulo
+
+            // Dibujar el semicírculo
+            var arc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(height)
+                .startAngle(-Math.PI / 2)
+                .endAngle(Math.PI / 2);
+
+            svg.append("path")
+                .attr("d", arc)
+                .attr("transform", "translate(" + width / 2 + "," + height + ")")
+                .attr("fill", "url(#gradiente)");
+
+            // Dibujar el indicador
+            var indicador = d3.line()
+                .x(function (d) { return d[0]; })
+                .y(function (d) { return d[1]; });
+
+            var indicadorData = [
+                [width / 2, height],
+                [width / 2 + height * Math.cos(anguloIndicador), height - height * Math.sin(anguloIndicador)]
+            ];
+
+            svg.append("path")
+                .data([indicadorData])
+                .attr("d", indicador)
+                .attr("stroke", "black")
+                .attr("stroke-width", 2)
+                .attr("fill", "none");
+
+            // Agregar texto del porcentaje
+            svg.append("text")
+                .attr("x", width / 2 + height * 0.8 * Math.cos(anguloIndicador))
+                .attr("y", height - height * 0.8 * Math.sin(anguloIndicador))
+                .attr("text-anchor", "middle")
+                .style("font-size", "16px")
+                .style("fill", "black")
+                .text(valorEficiencia + "%");
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var valorEficiencia = {{ $averages['averageEficiencia1'] }};
+            var valorMaximo = 100;
+
+            var width = 200;
+            var height = 100;
+
+            var svg = d3.select("#velocimetro1")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            // Definir el gradiente de colores
+            var gradiente = svg.append("defs")
+                .append("linearGradient")
+                .attr("id", "gradiente")
+                .attr("x1", "0%")
+                .attr("y1", "0%")
+                .attr("x2", "100%")
+                .attr("y2", "0%");
+
+            gradiente.append("stop")
+                .attr("offset", "0%")
+                .style("stop-color", "red");
+
+            gradiente.append("stop")
+                .attr("offset", "50%")
+                .style("stop-color", "yellow");
+
+            gradiente.append("stop")
+                .attr("offset", "100%")
+                .style("stop-color", "green");
+
+            // Calcular el ángulo del indicador
+            var anguloIndicador = Math.PI - (valorEficiencia / valorMaximo) * Math.PI; // Invertir el ángulo
+
+            // Dibujar el semicírculo
+            var arc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(height)
+                .startAngle(-Math.PI / 2)
+                .endAngle(Math.PI / 2);
+
+            svg.append("path")
+                .attr("d", arc)
+                .attr("transform", "translate(" + width / 2 + "," + height + ")")
+                .attr("fill", "url(#gradiente)");
+
+            // Dibujar el indicador
+            var indicador = d3.line()
+                .x(function (d) { return d[0]; })
+                .y(function (d) { return d[1]; });
+
+            var indicadorData = [
+                [width / 2, height],
+                [width / 2 + height * Math.cos(anguloIndicador), height - height * Math.sin(anguloIndicador)]
+            ];
+
+            svg.append("path")
+                .data([indicadorData])
+                .attr("d", indicador)
+                .attr("stroke", "black")
+                .attr("stroke-width", 2)
+                .attr("fill", "none");
+
+            // Agregar texto del porcentaje
+            svg.append("text")
+                .attr("x", width / 2 + height * 0.8 * Math.cos(anguloIndicador))
+                .attr("y", height - height * 0.8 * Math.sin(anguloIndicador))
+                .attr("text-anchor", "middle")
+                .style("font-size", "16px")
+                .style("fill", "black")
+                .text(valorEficiencia + "%");
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var valorEficiencia = {{ $averages['averageEficiencia2'] }};
+            var valorMaximo = 100;
+
+            var width = 200;
+            var height = 100;
+
+            var svg = d3.select("#velocimetro2")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            // Definir el gradiente de colores
+            var gradiente = svg.append("defs")
+                .append("linearGradient")
+                .attr("id", "gradiente")
+                .attr("x1", "0%")
+                .attr("y1", "0%")
+                .attr("x2", "100%")
+                .attr("y2", "0%");
+
+            gradiente.append("stop")
+                .attr("offset", "0%")
+                .style("stop-color", "red");
+
+            gradiente.append("stop")
+                .attr("offset", "50%")
+                .style("stop-color", "yellow");
+
+            gradiente.append("stop")
+                .attr("offset", "100%")
+                .style("stop-color", "green");
+
+            // Calcular el ángulo del indicador
+            var anguloIndicador = Math.PI - (valorEficiencia / valorMaximo) * Math.PI; // Invertir el ángulo
+
+            // Dibujar el semicírculo
+            var arc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(height)
+                .startAngle(-Math.PI / 2)
+                .endAngle(Math.PI / 2);
+
+            svg.append("path")
+                .attr("d", arc)
+                .attr("transform", "translate(" + width / 2 + "," + height + ")")
+                .attr("fill", "url(#gradiente)");
+
+            // Dibujar el indicador
+            var indicador = d3.line()
+                .x(function (d) { return d[0]; })
+                .y(function (d) { return d[1]; });
+
+            var indicadorData = [
+                [width / 2, height],
+                [width / 2 + height * Math.cos(anguloIndicador), height - height * Math.sin(anguloIndicador)]
+            ];
+
+            svg.append("path")
+                .data([indicadorData])
+                .attr("d", indicador)
+                .attr("stroke", "black")
+                .attr("stroke-width", 2)
+                .attr("fill", "none");
+
+            // Agregar texto del porcentaje
+            svg.append("text")
+                .attr("x", width / 2 + height * 0.8 * Math.cos(anguloIndicador))
+                .attr("y", height - height * 0.8 * Math.sin(anguloIndicador))
+                .attr("text-anchor", "middle")
+                .style("font-size", "16px")
+                .style("fill", "black")
+                .text(valorEficiencia + "%");
+        });
+    </script>
 
     <script> console.log('Hi!'); </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

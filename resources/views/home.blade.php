@@ -18,7 +18,7 @@
             <div class="icon">
                 <i class="fas fa-stethoscope"></i>
             </div>
-            <a href="afivac-dash" class="small-box-footer">
+            <a href="pi-sec-salud-dash" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -34,7 +34,7 @@
             <div class="icon">
                 <i class="fas fa-book"></i>
             </div>
-            <a href="mat-dash" class="small-box-footer">
+            <a href="pi-sec-educacion-dash" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>

@@ -9,7 +9,7 @@ class PiSecGeneralDashController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:pi-sec-infraestructura-dash.index')->only('index');
+        $this->middleware('can:pi-sec-general-dash.index')->only('index');
     }
     /**
      * Display a listing of the resource.
@@ -35,7 +35,7 @@ class PiSecGeneralDashController extends Controller
         $averages['totalCompromisos'] = Pi::where('entidad_responsable', $entidadResponsable)->sum('total_compromisos_2023');
         $averages['totalCompromisos1'] = Pi::where('entidad_responsable', $entidadResponsable)->sum('total_obligaciones');
     
-        return view('reporte-pi-sec-infraestructura', ['consecutivos' => $consecutivos, 'averages' => $averages]);
+        return view('reporte-pi-sec-general', ['consecutivos' => $consecutivos, 'averages' => $averages]);
     }
 }
     
