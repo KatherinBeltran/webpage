@@ -2,6 +2,15 @@
 
 @section('adminlte_css_pre')
     <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+
+    <style>
+        body {
+            background-image: url('{{ asset('vendor/adminlte/dist/img/trucks-kenworth.jpg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
 @stop
 
 @php( $login_url = View::getSection('login_url') ?? config('adminlte.login_url', 'login') )
@@ -26,12 +35,13 @@
 
         {{-- Email field --}}
         <div class="input-group mb-3">
-            <input type="text" name="email" id="email" class="form-control @error('email') is-invalid @enderror"
-                value="@alcaldiasoacha.gov.co" placeholder="usuario" aria-label="Correo electrónico">
+            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                   value="{{ old('email') }}" placeholder="{{ __('Correo electrónico') }}" autofocus>
+
             <div class="input-group-append">
-                <span class="input-group-text">
+                <div class="input-group-text">
                     <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
-                </span>
+                </div>
             </div>
 
             @error('email')
@@ -101,22 +111,3 @@
         </p>--}}
     @endif
 @stop
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const emailInput = document.getElementById('email');
-        const domain = '@alcaldiasoacha.gov.co';
-
-        emailInput.addEventListener('focus', function () {
-            // Cuando el campo recibe el enfoque, asegúrate de que el usuario pueda editar el campo completo
-            emailInput.value = emailInput.value.replace(domain, '');
-        });
-
-        emailInput.addEventListener('blur', function () {
-            // Al salir del campo, vuelve a agregar el dominio si es necesario
-            if (!emailInput.value.endsWith(domain)) {
-                emailInput.value += domain;
-            }
-        });
-    });
-</script>
