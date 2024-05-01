@@ -42,7 +42,7 @@
 
                  Logo Label 
                 {!! config('adminlte.logo', '<b>Admin</b>LTE') !!} --}}
-                <img src="{{ asset('vendor/adminlte/dist/img/logomain.png') }}" height="300">
+                <img src="{{ asset('vendor/adminlte/dist/img/LOGO TU DRIVER-BLANCO.png') }}" height="250">
 
             </a>
         </div>

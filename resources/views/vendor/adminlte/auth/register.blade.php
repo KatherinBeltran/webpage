@@ -46,8 +46,8 @@
 
         {{-- Email field --}}
         <div class="input-group mb-3">
-            <input type="text" name="email" id="email" class="form-control @error('email') is-invalid @enderror"
-                placeholder="Correo electrónico" aria-label="Correo electrónico">
+        <input type="text" name="email" id="email" class="form-control @error('email') is-invalid @enderror"
+                value="@tudriver.com" placeholder="usuario" aria-label="Correo electrónico">
             <div class="input-group-append">
                 <span class="input-group-text">
                     <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
@@ -116,3 +116,46 @@
         </a>
     </p>
 @stop
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const passwordInput = document.getElementById('password');
+        const passwordError = document.getElementById('passwordError');
+        const registrationButton = document.querySelector('button[type="submit"]');
+
+        passwordInput.addEventListener('keyup', function () {
+            const password = passwordInput.value;
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
+
+            if (password.length < 8) {
+                passwordError.textContent = 'La contraseña debe tener al menos 8 caracteres.';
+                registrationButton.disabled = true;
+            } else if (!password.match(passwordPattern)) {
+                passwordError.textContent = 'La contraseña debe contener al menos una letra minúscula, una letra mayúscula y un dígito.';
+                registrationButton.disabled = true;
+            } else {
+                passwordError.textContent = ''; // Limpia el mensaje de error
+                registrationButton.disabled = false;
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const emailInput = document.getElementById('email');
+        const domain = '@tudriver.com';
+
+        emailInput.addEventListener('focus', function () {
+            // Cuando el campo recibe el enfoque, asegúrate de que el usuario pueda editar el campo completo
+            emailInput.value = emailInput.value.replace(domain, '');
+        });
+
+        emailInput.addEventListener('blur', function () {
+            // Al salir del campo, vuelve a agregar el dominio si es necesario
+            if (!emailInput.value.endsWith(domain)) {
+                emailInput.value += domain;
+            }
+        });
+    });
+</script>

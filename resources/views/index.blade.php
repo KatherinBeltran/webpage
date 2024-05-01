@@ -7,19 +7,35 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Portfolio Page Template</title>
+    <title>Tu Driver</title>
     <!-- Bootstrap -->
     <link href="file:///C|/Users/kathe/AppData/Roaming/Adobe/Dreamweaver 2021/es_ES/Configuration/Temp/Assets/eam71C4.tmp/css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+        .banner {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body>
+<body><br>
     <section>
         <div class="jumbotron text-center mt-2">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>Lorem ipsum dolor sit.</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, deleniti, ea nisi suscipit atque tempore aspernatur harum unde veritatis neque rem dolores assumenda. Recusandae facilis dolores cum iste assumenda accusamus.</p>
-                        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+                        <h1 class="display-4"><strong>Conoce nuestros planes</strong></h1>
+                        <h3>Nuestros planes están diseñados para adaptarse a tus necesidades específicas. Contáctanos para más información y descubre cómo podemos facilitar tu traslado entre Ibagué y Bogotá.</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mx-auto mr-1">
+                        <img src="vendor/adminlte/dist/img/PLANES-DE-TU-DRIVER-VIAJERO-1.png" alt="Imagen 1" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-4 mx-auto ml-1">
+                        <img src="vendor/adminlte/dist/img/PLANES-DE-TU-DRIVER-EXPRESO-1.png" alt="Imagen 2" class="img-fluid rounded">
                     </div>
                 </div>
             </div>

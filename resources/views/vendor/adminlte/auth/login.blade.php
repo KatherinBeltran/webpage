@@ -35,8 +35,8 @@
 
         {{-- Email field --}}
         <div class="input-group mb-3">
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                   value="{{ old('email') }}" placeholder="{{ __('Correo electrónico') }}" autofocus>
+        <input type="text" name="email" id="email" class="form-control @error('email') is-invalid @enderror"
+                value="@tudriver.com" placeholder="usuario" aria-label="Correo electrónico">
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -69,9 +69,16 @@
             @enderror
         </div>
 
+        <div class="col-13">
+            <button type=submit class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
+                <span class="fas fa-sign-in-alt"></span>
+                {{ __('Ingresar') }}
+            </button>
+        </div>
+
         {{-- Login field --}}
         <div class="row">
-            <div class="col-7">
+            <div class="col-12">
                 <div class="icheck-primary" title="{{ __('adminlte::adminlte.remember_me_hint') }}">
                 {{--<input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -89,13 +96,6 @@
                     @endif
                 </div>
             </div>
-
-            <div class="col-5">
-                <button type=submit class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
-                    <span class="fas fa-sign-in-alt"></span>
-                    {{ __('Ingresar') }}
-                </button>
-            </div>
         </div>
 
     </form>
@@ -111,3 +111,22 @@
         </p>--}}
     @endif
 @stop
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const emailInput = document.getElementById('email');
+        const domain = '@tudriver.com';
+
+        emailInput.addEventListener('focus', function () {
+            // Cuando el campo recibe el enfoque, asegúrate de que el usuario pueda editar el campo completo
+            emailInput.value = emailInput.value.replace(domain, '');
+        });
+
+        emailInput.addEventListener('blur', function () {
+            // Al salir del campo, vuelve a agregar el dominio si es necesario
+            if (!emailInput.value.endsWith(domain)) {
+                emailInput.value += domain;
+            }
+        });
+    });
+</script>
