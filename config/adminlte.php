@@ -314,7 +314,7 @@ return [
         ['header' => 'Menú'],
         [
             'text'    => 'Gestión de usuarios',
-            'icon'    => 'fa fa-users',
+            'icon'    => 'fa fa-users fa-2x',
             'can' => ['users.index', 'roles.index'],
             'submenu' => [
                 [
@@ -330,6 +330,12 @@ return [
                     'can' => 'roles.index',
                 ], 
             ],
+        ],
+        [
+            'text' => 'Clientes',
+            'url'  => 'clientes',
+            'icon' => 'fa fa-address-book fa-2x',
+            'can' => 'clientes.index',
         ],
     ],
 

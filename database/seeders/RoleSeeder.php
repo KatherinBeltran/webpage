@@ -29,5 +29,11 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'roles.show', 'description' => 'Ver rol'])->syncRoles([$role1]);
         Permission::create(['name' => 'roles.edit', 'description' => 'Editar rol'])->syncRoles([$role1]);
         Permission::create(['name' => 'roles.destroy', 'description' => 'Eliminar rol'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'clientes.index', 'description' => 'Ver listado de clientes'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'clientes.create', 'description' => 'Registrar nuevo cliente'])->syncRoles([$role1]); 
+        Permission::create(['name' => 'clientes.show', 'description' => 'Ver cliente'])->syncRoles([$role1]);
+        Permission::create(['name' => 'clientes.edit', 'description' => 'Editar cliente'])->syncRoles([$role1]);
+        Permission::create(['name' => 'clientes.destroy', 'description' => 'Eliminar cliente'])->syncRoles([$role1]);
     }
 }
