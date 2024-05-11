@@ -31,11 +31,7 @@
                             <strong>No. de celular:</strong>
                             {{ $cliente->num_cel_cli }}
                         </div>
-                        <div class="form-group">
-                            <strong>Dirección:</strong>
-                            {{ $cliente->dir_cli }}
-                        </div>
-
+                        
                     </div>
                 </div>
             </div>

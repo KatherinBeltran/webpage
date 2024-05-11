@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id
  * @property $nom_cli
  * @property $num_cel_cli
- * @property $dir_cli
  * @property $created_at
  * @property $updated_at
  *
@@ -23,7 +22,6 @@ class Cliente extends Model
     static $rules = [
 		'nom_cli' => 'required',
 		'num_cel_cli' => 'required',
-		'dir_cli' => 'required',
     ];
 
     protected $perPage = 20;
@@ -33,7 +31,7 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['nom_cli','num_cel_cli','dir_cli'];
+    protected $fillable = ['nom_cli','num_cel_cli'];
 
 
 

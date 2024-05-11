@@ -64,8 +64,24 @@
             </div>
         </nav>
         <div class="banner">
-            <img src="{{ asset('vendor/adminlte/dist/img/BANNER-FACEBOOK-TUDRIVER.png') }}" alt="Banner de TuDriver" class="img-fluid">
+            <img src="{{ asset('vendor/adminlte/dist/img/BANNER-TUDRIVER.png') }}" alt="Banner de TuDriver" class="img-fluid">
         </div>
+        <section>
+            <div class="row py-2 bg-dark align-items-center">
+                <div class="col-md-auto mx-auto d-flex align-items-center">
+                <a href="https://www.facebook.com/profile.php?id=100092648514440&mibextid=JRoKGi" target="_blank" style="text-decoration: none; display: flex; align-items: center;">
+                    <img src="vendor/adminlte/dist/img/facebook.png" alt="Imagen 1" class="img-fluid rounded" style="max-width: 40px;">
+                    <span class="ml-3 text-white" style="font-size: 1.5rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">@TuDriver</span>
+                </a>
+                </div>
+                <div class="col-md-auto mx-auto d-flex align-items-center">
+                <a href="https://www.instagram.com/tudriverco?igsh=cWJmdHRqb21wZDA5" target="_blank" style="text-decoration: none; display: flex; align-items: center;">
+                    <img src="vendor/adminlte/dist/img/instagram.png" alt="Imagen 1" class="img-fluid rounded" style="max-width: 40px;">
+                    <span class="ml-3 text-white" style="font-size: 1.5rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">@Tudriverco</span>
+                </a>
+                </div>
+            </div>
+        </section>
         <main class="py-4">
             @yield('content')
         </main>

@@ -56,14 +56,12 @@ class ClienteController extends Controller
             'nom_cli.required' => 'El nombre del cliente es obligatorio.',
             'num_cel_cli.required' => 'El número de celular del cliente es obligatorio.',
             'num_cel_cli.unique' => 'Ya existe un cliente con este numero de celular.',
-            'dir_cli.required' => 'La dirección del cliente es obligatoria.',
         ];
 
         // Validación personalizada para verificar si la cédula ya existe
         $request->validate([
             'nom_cli' => 'required',
             'num_cel_cli' => 'required|unique:clientes,num_cel_cli',
-            'dir_cli' => 'required',
         ], $messages);
 
         $cliente = Cliente::create($request->all());

@@ -31,7 +31,6 @@
                 
                 <th>Nombre</th>
                 <th>No. de celular</th>
-                <th>Dirección</th>
 
                 <th></th>
             </tr>
@@ -43,7 +42,6 @@
                     
                     <td>{{ $cliente->nom_cli }}</td>
                     <td>{{ $cliente->num_cel_cli }}</td>
-                    <td>{{ $cliente->dir_cli }}</td>
 
                     <td>
                         <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">

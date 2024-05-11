@@ -11,11 +11,6 @@
             {{ Form::text('num_cel_cli', $cliente->num_cel_cli, ['class' => 'form-control' . ($errors->has('num_cel_cli') ? ' is-invalid' : ''), 'placeholder' => 'No. de celular']) }}
             {!! $errors->first('num_cel_cli', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-        <div class="form-group">
-            {{ Form::label('Dirección') }}
-            {{ Form::text('dir_cli', $cliente->dir_cli, ['class' => 'form-control' . ($errors->has('dir_cli') ? ' is-invalid' : ''), 'placeholder' => 'Dirección']) }}
-            {!! $errors->first('dir_cli', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
 
     </div>
     <div class="box-footer mt20 text-center">

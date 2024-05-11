@@ -15,7 +15,6 @@ return new class extends Migration
             $table->increments('id'); // codigo cliente
             $table->string('nom_cli', 45); // nombre cliente
             $table->string('num_cel_cli', 10); // numero celular cliente
-            $table->string('dir_cli', 45); // direccion cliente
             $table->timestamps();
         });
     }
