@@ -5,7 +5,7 @@
 
     <style>
         body {
-            background-image: url('{{ asset('vendor/adminlte/dist/img/trucks-kenworth.jpg') }}');
+            background-image: url('{{ asset('vendor/adminlte/dist/img/TuDriverLogin.jpg') }}');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -70,7 +70,7 @@
         </div>
 
         <div class="col-13">
-            <button type=submit class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
+            <button type="submit" class="btn btn-block btn-danger mb-3">
                 <span class="fas fa-sign-in-alt"></span>
                 {{ __('Ingresar') }}
             </button>
@@ -80,16 +80,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="icheck-primary" title="{{ __('adminlte::adminlte.remember_me_hint') }}">
-                {{--<input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                    <label for="remember">
-                        {{ __('Acuérdate de mí') }}
-                    </label> --}}
-
                     {{-- Register link --}}
                     @if($register_url)
-                        <p class="my-0">
-                            <a href="{{ $register_url }}">
+                        <p class="my-0 text-danger">
+                            <a href="{{ $register_url }}" class="text-danger">
                                 {{ __('Registrar una nueva membresía') }}
                             </a>
                         </p>
