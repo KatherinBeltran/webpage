@@ -91,8 +91,8 @@
                         <li class="media">
                             <img class="mr-3 img-fluid" src="vendor/adminlte/dist/img/Tip1.jpeg" alt="Generic placeholder image">
                             <div class="media-body">
-                                <h5 class="mt-0 mb-1">List-based media object</h5>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                                <h5 class="mt-0 mb-1">¡En TuDriver, tu seguridad es nuestra prioridad número uno! 🚗💨</h5>
+                                Recuerda siempre usar los frenos de tu carro de manera adecuada: evite frenar bruscamente, mantén velocidades prudentes y revisa tu vehículo regularmente. 🔧✅ ¡Conducir seguro es conducir inteligente! 🌟 #TuDriver #ConducciónSegura 🛣️🚦#Bogotá #Ibagué.
                             </div>
                         </li>
                     </ul>
@@ -102,8 +102,8 @@
                         <li class="media">
                             <img class="mr-3 img-fluid" src="vendor/adminlte/dist/img/Tip2.jpeg" alt="Generic placeholder image">
                             <div class="media-body">
-                                <h5 class="mt-0 mb-1">List-based media object</h5>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                                <h5 class="mt-0 mb-1">¡Con TuDriver, mantenemos tu viaje en la mejor ruta! 🚗💨</h5>
+                                ¿Sabías que un cambio oportuno de aceite es como una melodía perfecta para tu vehículo? 🎶 No dejes que tu motor suene a desafinado, agenda tu viaje con nosotros y llega a tu destino con el mejor sonido. 🎵✨ #TuDriver #CambioDeAceite 🛣️🔧 #Bogotá #Ibagué.
                             </div>
                         </li>
                     </ul>
@@ -111,10 +111,10 @@
                 <div class="col-md-4 col-12">
                     <ul class="list-unstyled">
                         <li class="media">
-                            <img class="mr-3 img-fluid" src="vendor/adminlte/dist/img/Tip3.jpeg" alt="Generic placeholder image">
+                            <img class="mr-3 img-fluid" src="vendor/adminlte/dist/img/Tip3.png" alt="Generic placeholder image">
                             <div class="media-body">
-                                <h5 class="mt-0 mb-1">List-based media object</h5>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                                <h5 class="mt-0 mb-1">¡Recuerda revisar el motor de tu carro antes y después de cada viaje! 🚗🔧</h5>
+                                Mantén tu vehículo en óptimas condiciones para disfrutar de un viaje seguo y sin contratiempos. ✅✨ ¡Prevenir es conducir inteligente! #TuDriver #CulturaVial 🛣️👩‍🔧 #Bogotá #Ibagué.
                             </div>
                         </li>
                     </ul>
@@ -202,7 +202,7 @@
     </div>
     <hr>
     <a href="#" class="float">
-        <img src="{{ asset('vendor/adminlte/dist/img/gato.jpg') }}" alt="Gato" class="img-fluid rounded" style="width: 80px; height: 80px; object-fit: cover;">
+        <img src="{{ asset('vendor/adminlte/dist/img/CONTACTANOS TU DRIVER.png') }}" alt="Contactanos" class="img-fluid rounded" style="width: 80px; height: 80px; object-fit: cover;">
     </a>
     <footer class="text-center">
         <div class="container">
